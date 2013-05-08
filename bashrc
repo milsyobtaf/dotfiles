@@ -1,7 +1,9 @@
+# prepares powerline-shell usage
 function _update_ps1() {
    export PS1="$(~/.powerline-shell.py $?)"
 }
 
+#enables powerline-shell
 export PROMPT_COMMAND="_update_ps1"
 
 #enables color in the terminal bash shell export
