@@ -31,5 +31,9 @@ cdf() {
 # open Finder window to current path
 alias finder='open -a Finder ./'
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# If fortune is installed, run a fortune
+if [ -e /usr/local/bin/fortune ]; then
+    fortune -so
+    echo " "
+fi
 
