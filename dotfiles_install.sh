@@ -7,7 +7,7 @@
 ########## Variables
 
 dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
+olddir=~/.dotfiles_old             # old dotfiles backup directory
 files="bash_profile bashrc gitconfig gitignore_global powerline-shell ssh vimrc vim"    # list of files/folders to symlink in homedir
 
 ##########
