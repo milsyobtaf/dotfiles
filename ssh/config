@@ -1,6 +1,7 @@
 Host *
 # Forward ssh agent to the remote machine.
 ForwardAgent yes
+StrictHostKeyChecking no
 
 host dev.lib
 hostname dev.lib.utexas.edu
