@@ -46,3 +46,5 @@
 	excludesfile = ~/.gitignore_global
 [diff]
 	algorithm = patience
+[push]
+	default = simple
