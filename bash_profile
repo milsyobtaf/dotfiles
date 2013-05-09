@@ -1,6 +1,6 @@
 # prepares powerline-shell usage
 function _update_ps1() {
-   export PS1="$(~/.powerline-shell.py $?)"
+   export PS1="$(~/dotfiles/powerline-shell.py $?)"
 }
 
 #enables powerline-shell
