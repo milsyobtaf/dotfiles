@@ -6,6 +6,10 @@ function _update_ps1() {
 #enables powerline-shell
 export PROMPT_COMMAND="_update_ps1"
 
+#fixes path issue for homebrew
+homebrew=/usr/local/bin:/usr/local/sbin
+export PATH=$homebrew:$PATH
+
 #enables color in the terminal bash shell export
 export CLICOLOR=1
 
