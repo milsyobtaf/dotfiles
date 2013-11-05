@@ -45,5 +45,9 @@ SEGMENTS = [
 ]
 
 # Change the colors used to draw individual segments in your prompt
-THEME = 'solarized-dark'
+THEME = 'basic'
+#THEME = 'colortest'
 #THEME = 'default'
+# THEME = 'washed'
+# THEME = 'solarized-dark'
+
