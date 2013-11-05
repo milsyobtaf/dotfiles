@@ -11,14 +11,17 @@ def warn(msg):
 class Powerline:
     symbols = {
         'compatible': {
+            'lock': 'RO',
             'separator': u'\u25B6',
             'separator_thin': u'\u276F'
         },
         'patched': {
-            'separator': u'\u2B80',
-            'separator_thin': u'\u2B81'
+            'lock': u'\uE0A2',
+            'separator': u'\uE0B0',
+            'separator_thin': u'\uE0B1'
         },
         'flat': {
+            'lock': '',
             'separator': '',
             'separator_thin': ''
         },
@@ -36,6 +39,7 @@ class Powerline:
         mode, shell = args.mode, args.shell
         self.color_template = self.color_templates[shell]
         self.reset = self.color_template % '[0m'
+        self.lock = Powerline.symbols[mode]['lock']
         self.separator = Powerline.symbols[mode]['separator']
         self.separator_thin = Powerline.symbols[mode]['separator_thin']
         self.segments = []
@@ -100,11 +104,13 @@ if __name__ == "__main__":
             help='Only show the current directory')
     arg_parser.add_argument('--cwd-max-depth', action='store', type=int,
             default=5, help='Maximum number of directories to show in path')
+    arg_parser.add_argument('--colorize-hostname', action='store_true',
+            help='Colorize the hostname based on a hash of itself.')
     arg_parser.add_argument('--mode', action='store', default='patched',
             help='The characters used to make separators between segments',
             choices=['patched', 'compatible', 'flat'])
     arg_parser.add_argument('--shell', action='store', default='bash',
-            help='Set this to your shell type', choices=['bash', 'zsh'])
+            help='Set this to your shell type', choices=['bash', 'zsh', 'bare'])
     arg_parser.add_argument('prev_error', nargs='?', type=int, default=0,
             help='Error code returned by the last command')
     args = arg_parser.parse_args()
@@ -112,22 +118,35 @@ if __name__ == "__main__":
     powerline = Powerline(args, get_valid_cwd())
 
 
-class Color:
+class DefaultColor:
+    """
+    This class should have the default colors for every segment.
+    Please test every new segment with this theme first.
+    """
     USERNAME_FG = 250
     USERNAME_BG = 240
 
     HOSTNAME_FG = 250
     HOSTNAME_BG = 238
 
+    HOME_SPECIAL_DISPLAY = True
+    HOME_BG = 31  # blueish
+    HOME_FG = 15  # white
     PATH_BG = 237  # dark grey
     PATH_FG = 250  # light grey
     CWD_FG = 254  # nearly-white grey
     SEPARATOR_FG = 244
 
+    READONLY_BG = 124
+    READONLY_FG = 254
+
     REPO_CLEAN_BG = 148  # a light green color
     REPO_CLEAN_FG = 0  # black
     REPO_DIRTY_BG = 161  # pink/red
     REPO_DIRTY_FG = 15  # white
+
+    JOBS_FG = 39
+    JOBS_BG = 238
 
     CMD_PASSED_BG = 236
     CMD_PASSED_FG = 15
@@ -140,14 +159,85 @@ class Color:
     VIRTUAL_ENV_BG = 35  # a mid-tone green
     VIRTUAL_ENV_FG = 00
 
+class Color(DefaultColor):
+    """
+    This subclass is required when the user chooses to use 'default' theme.
+    Because the segments require a 'Color' class for every theme.
+    """
+    pass
+
+
+class DefaultColor:
+    """
+    This class should have the default colors for every segment.
+    Please test every new segment with this theme first.
+    """
+    USERNAME_FG = 250
+    USERNAME_BG = 240
+
+    HOSTNAME_FG = 250
+    HOSTNAME_BG = 238
+
+    HOME_SPECIAL_DISPLAY = True
+    HOME_BG = 31  # blueish
+    HOME_FG = 15  # white
+    PATH_BG = 237  # dark grey
+    PATH_FG = 250  # light grey
+    CWD_FG = 254  # nearly-white grey
+    SEPARATOR_FG = 244
+
+    READONLY_BG = 124
+    READONLY_FG = 254
+
+    REPO_CLEAN_BG = 148  # a light green color
+    REPO_CLEAN_FG = 0  # black
+    REPO_DIRTY_BG = 161  # pink/red
+    REPO_DIRTY_FG = 15  # white
+
+    JOBS_FG = 39
+    JOBS_BG = 238
+
+    CMD_PASSED_BG = 236
+    CMD_PASSED_FG = 15
+    CMD_FAILED_BG = 161
+    CMD_FAILED_FG = 15
+
+    SVN_CHANGES_BG = 148
+    SVN_CHANGES_FG = 22  # dark green
+
+    VIRTUAL_ENV_BG = 35  # a mid-tone green
+    VIRTUAL_ENV_FG = 00
+
+class Color(DefaultColor):
+    """
+    This subclass is required when the user chooses to use 'default' theme.
+    Because the segments require a 'Color' class for every theme.
+    """
+    pass
+
 
 def add_hostname_segment():
-    host_prompts = {
-        'bash': ' \\h',
-        'zsh': ' %m'
-    }
-    powerline.append(host_prompts[powerline.args.shell], Color.HOSTNAME_FG,
-            Color.HOSTNAME_BG)
+    if powerline.args.colorize_hostname:
+        from lib.color_compliment import stringToHashToColorAndOpposite
+        from lib.colortrans import rgb2short
+        from socket import gethostname
+        hostname = gethostname()
+        FG, BG = stringToHashToColorAndOpposite(hostname)
+        FG, BG = (rgb2short(*color) for color in [FG, BG])
+        host_prompt = ' %s' % hostname.split('.')[0]
+
+        powerline.append(host_prompt, FG, BG)
+    else:
+        if powerline.args.shell == 'bash':
+            host_prompt = ' \\h '
+        elif powerline.args.shell == 'zsh':
+            host_prompt = ' %m '
+        else:
+            import socket
+            host_prompt = ' %s ' % socket.gethostname().split('.')[0]
+
+        powerline.append(host_prompt, Color.HOSTNAME_FG, Color.HOSTNAME_BG)
+
 
 add_hostname_segment()
 
@@ -163,8 +253,9 @@ def get_short_path(cwd):
         path += os.sep + names[i]
         if os.path.samefile(path, home):
             return ['~'] + names[i+1:]
+    if not names[0]:
+        return ['/']
     return names
-
 
 def add_cwd_segment():
     cwd = powerline.cwd or os.getenv('PWD')
@@ -176,9 +267,16 @@ def add_cwd_segment():
 
     if not powerline.args.cwd_only:
         for n in names[:-1]:
-            powerline.append(' %s ' % n, Color.PATH_FG, Color.PATH_BG,
+            if n == '~' and Color.HOME_SPECIAL_DISPLAY:
+                powerline.append(' %s ' % n, Color.HOME_FG, Color.HOME_BG)
+            else:
+                powerline.append(' %s ' % n, Color.PATH_FG, Color.PATH_BG,
                     powerline.separator_thin, Color.SEPARATOR_FG)
-    powerline.append(' %s ' % names[-1], Color.CWD_FG, Color.PATH_BG)
+
+    if names[-1] == '~' and Color.HOME_SPECIAL_DISPLAY:
+        powerline.append(' %s ' % names[-1], Color.HOME_FG, Color.HOME_BG)
+    else:
+        powerline.append(' %s ' % names[-1], Color.CWD_FG, Color.PATH_BG)
 
 add_cwd_segment()
 
