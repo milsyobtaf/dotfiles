@@ -8,7 +8,7 @@
 
 SEGMENTS = [
 # Show current virtual environment (see http://www.virtualenv.org/)
-   'virtual_env',
+#    'virtual_env',
 
 # Show the current user's username as in ordinary prompts
 #    'username',
@@ -45,9 +45,5 @@ SEGMENTS = [
 ]
 
 # Change the colors used to draw individual segments in your prompt
-THEME = 'basic'
-#THEME = 'colortest'
+THEME = 'solarized-dark'
 #THEME = 'default'
-# THEME = 'washed'
-# THEME = 'solarized-dark'
-
