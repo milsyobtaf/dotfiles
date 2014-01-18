@@ -35,6 +35,9 @@ cdf() {
 # open Finder window to current path
 alias finder='open -a Finder ./'
 
+# alias ls -la to ll
+alias ll='ls -la'
+
 # If fortune is installed, run a fortune
 if [ -e /usr/local/bin/fortune ]; then
     fortune -so
