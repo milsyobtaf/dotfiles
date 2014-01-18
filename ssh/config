@@ -11,8 +11,12 @@ host cms.lib
 hostname cms.lib.utexas.edu
 user utlol
 
-host cmsd7
-hostname cms1-d7.lib.utexas.edu
+host cmsd7.lib
+hostname cms2-d7.lib.utexas.edu
+user utlol
+
+host drupal7.lib
+hostname drupal7.lib.utexas.edu
 user utlol
 
 host conf.lib
@@ -35,3 +39,6 @@ host milsyobtaf.com
 hostname milsyobtaf.com
 user milsyobtaf
 
+host dspace
+hostname dspace2.lib.utexas.edu
+user dspace
