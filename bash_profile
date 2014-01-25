@@ -45,3 +45,8 @@ if [ -e /usr/local/bin/fortune ]; then
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# git autocomplete script
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
