@@ -25,3 +25,6 @@ alias dockspacer="defaults write com.apple.dock persistent-apps -array-add '{til
 
 # Dock Spacer on the other side
 alias dockspacer-other="defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type=\"spacer-tile\";}'"
+
+# DNS flushing for dnsmasq purposes
+alias flushdns='dscacheutil -flushcache'
