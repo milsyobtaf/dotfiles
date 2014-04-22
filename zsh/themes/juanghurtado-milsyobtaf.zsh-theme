@@ -1,0 +1,1 @@
+/Users/milsyobtaf/dotfiles/zsh-personal/themes/juanghurtado-milsyobtaf.zsh
