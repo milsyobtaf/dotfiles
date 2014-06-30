@@ -4,6 +4,8 @@
 [github]
   user = milsyobtaf
 [alias]
+# add
+  add = add --all    # add all, including removals
 # branch
 	branch = branch -v		# branch (verbose)
 # commit
@@ -24,6 +26,8 @@
   uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
   filelog = log -u                  # show changes to a file
   mt = mergetool                    # fire up the merge tool
+# log
+  log = --pretty=
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
 	ui = auto
@@ -41,7 +45,7 @@
 	changed = yellow
 	untracked = red
 [format]
-  pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
+  pretty = format:%Cred%h%Creset %C(bold blue)<%an>%Creset %Cgreen(%cr) -%C(yellow)%d%Creset %s %Creset
 [core]
 	excludesfile = ~/.gitignore_global
 [diff]
