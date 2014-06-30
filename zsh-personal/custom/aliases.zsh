@@ -31,6 +31,10 @@ trash() {
   IFS=$temp_ifs
 }
 
+shout() {
+  figlet "$@" | pbcopy
+}
+
 # open Finder window to current path
 alias finder='open -a Finder ./'
 
