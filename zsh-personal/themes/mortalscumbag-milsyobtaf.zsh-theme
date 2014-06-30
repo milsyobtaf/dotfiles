@@ -1,6 +1,6 @@
 function my_git_prompt() {
   tester=$(git rev-parse --git-dir 2> /dev/null) || return
-  
+
   INDEX=$(git status --porcelain 2> /dev/null)
   STATUS=""
 
@@ -51,9 +51,9 @@ PROMPT=$'\n%{$fg_bold[green]%}%n@%m%  $fg[white]in $fg[magenta]%~$(my_git_prompt
 
 #ZSH_THEME_PROMPT_RETURNCODE_PREFIX="%{$fg_bold[red]%}"
 ZSH_THEME_GIT_PROMPT_PREFIX=" $fg_bold[white]on %{$fg_bold[yellow]%}"
-ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg_bold[magenta]%}↑"
+ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg_bold[magenta]%}☝"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●"
-ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[red]%}●"
+ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[yellow]%}●"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[white]%}●"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg_bold[red]%}✕"
 ZSH_THEME_GIT_PROMPT_SUFFIX=" $fg_bold[white]%{$reset_color%}"
