@@ -80,3 +80,6 @@ if [ -e /usr/local/bin/fortune ]; then
     fortune -so
     echo " "
 fi
+
+# Ignore certain paths in CD
+export FIGNORE="Application Scripts:ScriptingAdditions"
