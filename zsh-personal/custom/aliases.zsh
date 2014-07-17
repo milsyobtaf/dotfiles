@@ -31,9 +31,13 @@ trash() {
   IFS=$temp_ifs
 }
 
+# shortcut to get figlet text for IRC, etc
 shout() {
   figlet "$@" | pbcopy
 }
+
+# list out apps installed by homebrew
+alias brews='brew list'
 
 # open Finder window to current path
 alias finder='open -a Finder ./'
