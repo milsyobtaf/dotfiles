@@ -50,7 +50,7 @@ ZSH_THEME="mortalscumbag-milsyobtaf"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git)
-plugins=(git git-remote-branch sudo)
+plugins=(git sudo)
 
 source $ZSH/oh-my-zsh.sh
 
