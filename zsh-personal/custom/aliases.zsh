@@ -59,3 +59,7 @@ alias dockspacer-other="defaults write com.apple.dock persistent-others -array-a
 
 # DNS flushing for dnsmasq purposes
 alias flushdns='dscacheutil -flushcache'
+
+# reload zsh config
+alias reload='source ~/.zshrc'
+
