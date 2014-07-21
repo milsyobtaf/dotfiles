@@ -3,6 +3,10 @@ Host *
 ForwardAgent yes
 StrictHostKeyChecking no
 
+# Keepalive and autodisconnect
+ServerAliveInterval 30
+ServerAliveCountMax 4
+
 host milsyobtaf.com
 hostname milsyobtaf.com
 user milsyobtaf
