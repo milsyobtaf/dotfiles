@@ -3,42 +3,10 @@ Host *
 ForwardAgent yes
 StrictHostKeyChecking no
 
-host dev.lib
-hostname dev.lib.utexas.edu
-user utlol
-
-host cms.lib
-hostname cms.lib.utexas.edu
-user utlol
-
-host cmsd7.lib
-hostname cms2-d7.lib.utexas.edu
-user utlol
-
-host drupal7.lib
-hostname drupal7.lib.utexas.edu
-user utlol
-
-host conf.lib
-hostname conferences1.lib.utexas.edu
-user utlol
-
-host drupal.lib
-hostname drupal.lib.utexas.edu
-user utlol
-
-host guides.lib
-hostname guides.lib.utexas.edu
-user utlol
-
-host staff.lib
-hostname staff.lib.utexas.edu
-user utlol
-
 host milsyobtaf.com
 hostname milsyobtaf.com
 user milsyobtaf
 
-host dspace
-hostname dspace2.lib.utexas.edu
-user dspace
+host mosco
+hostname mosco.alley.ws
+user dustin
