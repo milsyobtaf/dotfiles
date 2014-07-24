@@ -63,3 +63,8 @@ alias flushdns='dscacheutil -flushcache'
 # reload zsh config
 alias reload='source ~/.zshrc'
 
+# run multitail -c
+alias tailc='multitail -c'
+
+# make local mysql a bit easier
+alias devsql='mysql -uroot -ppassword'
