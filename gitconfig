@@ -26,6 +26,7 @@
   uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
   filelog = log -u                  # show changes to a file
   mt = mergetool                    # fire up the merge tool
+  dt = difftool                     # fire up the diff tool
 # log
   log = --pretty=
 # git alias finder, from http://brettterpstra.com/2014/08/04/shell-tricks-one-git-alias-to-rule-them-all/
@@ -51,12 +52,13 @@
 [core]
 	excludesfile = ~/.gitignore_global
 [diff]
-	algorithm = patience
+  tool = sublimerge
+  algorithm = patience
+[difftool "sublimerge"]
+  cmd = subl -n --wait \"$REMOTE\" \"$LOCAL\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": true}\"
+  prompt = false
 [merge]
-  tool = sublime
-[mergetool "sublime"]
-  cmd = subl -w $MERGED
-  keepBackup = false
+  tool = sublimerge
+[mergetool "sublimerge"]
+  cmd = subl -n --wait \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\" --command \"sublimerge_diff_views\"
   trustExitCode = false
-  [push]
-    default = simple
