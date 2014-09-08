@@ -14,3 +14,7 @@ user milsyobtaf
 host mosco
 hostname mosco.alley.ws
 user dustin
+
+host turing
+hostname 54.86.161.93
+user dustin
