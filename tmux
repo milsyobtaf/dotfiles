@@ -57,7 +57,7 @@ bind Escape copy-mode
 # set the title bar
 set -g set-titles on
 # removed below due to crazy sporadic CPU hijacking
-# set -g set-titles-string '#(whoami) :: #h :: #(curl ipecho.net/plain;echo)'
+set -g set-titles-string 'cat ~/.cache/my-ip'
 
 # set status bar
 set-option -g status-position top
