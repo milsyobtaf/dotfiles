@@ -11,6 +11,8 @@
 # commit
 	c = commit -m			# commit with message
 	ca = commit -am			# commit all with message
+# list branches by date
+  latest = for-each-ref --sort=-committerdate refs/heads --format='%(color:green)%(committerdate:short) - %(color:white)%(refname:short)'
 # status
 	s = status -sb			# status
 	st = status -sb			# status
