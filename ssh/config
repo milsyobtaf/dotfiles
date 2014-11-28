@@ -6,15 +6,3 @@ StrictHostKeyChecking no
 # Keepalive and autodisconnect
 ServerAliveInterval 30
 ServerAliveCountMax 4
-
-host milsyobtaf.com
-hostname milsyobtaf.com
-user milsyobtaf
-
-host mosco
-hostname mosco.alley.ws
-user dustin
-
-host turing
-hostname 54.86.161.93
-user dustin
