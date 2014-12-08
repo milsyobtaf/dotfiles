@@ -46,14 +46,11 @@ ZSH_THEME="mortalscumbag-milsyobtaf"
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=~/dotfiles/zsh-personal/custom
 
-# Alias hub to git
-eval "$(hub alias -s)"
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git)
-plugins=(git sudo)
+plugins=(git github rbenv sudo vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
