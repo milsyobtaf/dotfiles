@@ -50,7 +50,7 @@ ZSH_CUSTOM=~/dotfiles/zsh-personal/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git)
-plugins=(git github rbenv sudo vagrant)
+plugins=(git github hub rbenv sudo vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
