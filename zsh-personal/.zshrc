@@ -50,13 +50,15 @@ ZSH_CUSTOM=~/dotfiles/zsh-personal/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git)
-plugins=(git github hub rbenv sudo vagrant)
+plugins=(drush git github hub rbenv sudo vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+# add composer to path
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

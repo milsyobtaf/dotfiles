@@ -68,3 +68,6 @@ alias tailc='multitail -c'
 
 # make local mysql a bit easier
 alias devsql='mysql -uroot -ppassword'
+
+# shortcut to display file sizes in terminal
+alias sizes="du -sh * | sort -n"
