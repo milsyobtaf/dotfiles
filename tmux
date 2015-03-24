@@ -67,9 +67,18 @@ set -g status-fg '#272822'
 set -g status-interval 1
 set -g status-left-length 90
 set -g status-right-length 60
-set -g status-left '  tmux [#P]'
+set -g status-left '  tmux '
 set -g status-justify left
 set -g status-right '%a %l:%M %p |%d| '
+
+# set window list colors
+set-window-option -g window-status-fg '#272822'
+set-window-option -g window-status-bg blue
+set-window-option -g window-status-attr dim
+
+set-window-option -g window-status-current-fg blue
+set-window-option -g window-status-current-bg '#272822'
+set-window-option -g window-status-current-attr bright
 
 # set color of pane separator
 set-option -g pane-active-border-fg blue
