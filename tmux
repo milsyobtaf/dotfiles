@@ -90,9 +90,11 @@ set -g mouse-resize-pane on
 set -g mouse-select-pane on
 set -g mouse-select-window on
 
-# monitor activity in other windows
-setw -g monitor-activity on
-set -g visual-activity on
+# monitor activity in other windows, but ignore basic activity like top
+set status on
+setw -g monitor-activity off
+set -g visual-activity off
+set -g visual-bell on
 
 # osx specific tmux conf
 set-option -g default-command "reattach-to-user-namespace -l zsh"
