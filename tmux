@@ -82,6 +82,7 @@ set-window-option -g window-status-current-attr bright
 
 # set color of pane separator
 set-option -g pane-active-border-fg blue
+set-option -g pane-border white
 # set-option -g pane-active-border-fg '#FD971F'
 
 # mouse mode
@@ -91,7 +92,7 @@ set -g mouse-select-pane on
 set -g mouse-select-window on
 
 # monitor activity in other windows, but ignore basic activity like top
-set status on
+set -g status on
 setw -g monitor-activity off
 set -g visual-activity off
 set -g visual-bell on
