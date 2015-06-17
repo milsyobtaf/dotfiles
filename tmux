@@ -64,12 +64,13 @@ set-option -g status-position top
 set -g status-bg blue
 # set -g status-bg '#FD971F' # orange
 set -g status-fg '#272822'
-set -g status-interval 1
+set -g status-interval 15
 set -g status-left-length 90
 set -g status-right-length 60
 set -g status-left '  tmux '
 set -g status-justify left
-set -g status-right '%a %l:%M %p |%d| '
+set -g status-right '#{battery_percentage}#{battery_icon}  %a %l:%M %p |%d| '
+set -g @batt_discharging_icon "✨"
 
 # set window list colors
 set-window-option -g window-status-fg '#272822'
@@ -82,7 +83,6 @@ set-window-option -g window-status-current-attr bright
 
 # set color of pane separator
 set-option -g pane-active-border-fg blue
-set-option -g pane-border white
 # set-option -g pane-active-border-fg '#FD971F'
 
 # mouse mode
@@ -99,3 +99,19 @@ set -g visual-bell on
 
 # osx specific tmux conf
 set-option -g default-command "reattach-to-user-namespace -l zsh"
+
+# turn tmux-continuum restore on by default
+set -g @continuum-boot 'on'
+set -g @continuum-restore 'on'
+
+# List of plugins
+# Supports `github_username/repo` or full git repo URLs
+set -g @tpm_plugins '               \
+  tmux-plugins/tpm                  \
+  tmux-plugins/tmux-battery         \
+  tmux-plugins/tmux-continuum       \
+  tmux-plugins/tmux-logging         \
+'
+# Initializes TMUX plugin manager.
+# Keep this line at the very bottom of tmux.conf.
+run-shell '~/.tmux/plugins/tpm/tpm'
