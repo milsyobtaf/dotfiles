@@ -71,3 +71,10 @@ alias devsql='mysql -uroot -ppassword'
 
 # shortcut to display file sizes in terminal
 alias sizes="du -sh * | sort -n"
+
+# because i keep forgetting
+alias subl='atom'
+
+# old drush instead of new drush
+alias drush7='/usr/local/Cellar/drush/7.0.0/bin/drush'
+
