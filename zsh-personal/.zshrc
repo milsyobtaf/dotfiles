@@ -79,7 +79,7 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # If fortune is installed, run a fortune
 if [ -e /usr/local/bin/fortune ]; then
-    fortune -so
+    fortune -s
     echo " "
 fi
 
