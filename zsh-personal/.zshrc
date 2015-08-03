@@ -31,7 +31,7 @@ ZSH_THEME="mortalscumbag-milsyobtaf"
 # DISABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -50,13 +50,13 @@ ZSH_CUSTOM=~/dotfiles/zsh-personal/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git)
-plugins=(bd drush git github gulp hub rbenv sudo vagrant)
+plugins=(bd git github grunt gulp hub nvm nyan rvm sudo vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 # add composer to path
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -79,10 +79,18 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # If fortune is installed, run a fortune
 if [ -e /usr/local/bin/fortune ]; then
-    fortune -so
+    fortune -s
     echo " "
 fi
 
 # Ignore certain paths in CD
 export FIGNORE="Application Scripts:ScriptingAdditions"
 
+# Source drush autocomplete, from https://github.com/drush-ops/drush/blob/master/drush.complete.sh
+autoload bashcompinit
+bashcompinit
+source $HOME/.composer/vendor/bin/drush.complete.sh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

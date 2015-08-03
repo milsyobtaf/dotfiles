@@ -54,3 +54,6 @@ Privileges -bool true
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+# Set Grab.app to save file as png instead of tiff
+defaults write com.apple.screencapture type png
