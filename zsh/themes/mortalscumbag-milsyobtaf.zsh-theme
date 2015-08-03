@@ -1,1 +1,1 @@
-/Volumes/Falcor/Users/milsyobtaf/dotfiles/zsh-personal/themes/mortalscumbag-milsyobtaf.zsh-theme
+/Users/milsyobtaf/dotfiles/zsh-personal/themes/mortalscumbag-milsyobtaf.zsh-theme

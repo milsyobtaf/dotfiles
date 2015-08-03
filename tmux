@@ -82,8 +82,8 @@ set-window-option -g window-status-current-attr bright
 
 # set color of pane separator
 set-option -g pane-active-border-fg blue
-# set-option -g pane-border white
-set-option -g pane-active-border-fg '#FD971F'
+set-option -g pane-border white
+# set-option -g pane-active-border-fg '#FD971F'
 
 # mouse mode
 set -g mode-mouse on
