@@ -36,8 +36,8 @@ syntax enable             " enable syntax highlighting (previously syntax on).
 "colorscheme codeschool
 "colorscheme railscast
 "colorscheme desert256
-colorscheme specialsboard
-
+"colorscheme specialsboard
+colorscheme seti
 " Prettify JSON files
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd Syntax json sou ~/.vim/syntax/json.vim
