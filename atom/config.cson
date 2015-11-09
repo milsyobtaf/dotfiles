@@ -1,0 +1,92 @@
+"*":
+  editor:
+    invisibles: {}
+    fontFamily: "Anonymous Pro"
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+    showIndentGuide: true
+    showInvisibles: true
+    showLineNumbers: true
+    scrollPastEnd: true
+    softWrap: true
+    fontSize: 18
+  whitespace: {}
+  core:
+    themes: [
+      "seti-ui"
+      "seti-syntax"
+    ]
+    followSymlinks: true
+    disabledPackages: [
+      "deprecation-cop"
+      "linter"
+    ]
+    excludeVcsIgnoredPaths: false
+  "exception-reporting":
+    userId: "44890254-0af3-270e-9f07-49c05c4037ca"
+  welcome:
+    showOnStartup: false
+  "atom-color-highlight": {}
+  "git-log": {}
+  docblockr: {}
+  minimap: {}
+  "markdown-preview":
+    useGitHubStyle: true
+  "file-icons": {}
+  Ruler:
+    enabled: true
+    position: 80
+  drupal:
+    fileTypesPhp: "module,install,inc,test"
+  pigments: {}
+  "grunt-runner":
+    gruntPaths: [
+      "/usr/local/bin/grunt"
+    ]
+  "autocomplete-plus":
+    includeCompletionsFromAllBuffers: false
+  "merge-conflicts": {}
+  "atom-beautify":
+    _analyticsUserId: "4eb46fa7-d7f2-4186-a4ef-de0a802d5884"
+  "node-debugger": {}
+  "php-debug": {}
+  linter: {}
+  "linter-phpcs":
+    executablePath: "/Users/milsyobtaf/.composer/vendor/bin/phpcs"
+  "tree-view": {}
+  "copy-as-rtf": {}
+".drupal.html.php.text":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".tabular.text.tsv":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".csv.tabular.text":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".apache-config.mod_perl.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".dust.html.text":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".apache-config.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".ini.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".source.sql":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".drupal.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".diff.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".makefile.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".md":
+  whitespace:
+    removeTrailingWhitespace: false
