@@ -78,7 +78,7 @@ set-window-option -g window-status-bg blue
 set-window-option -g window-status-attr dim
 
 set-window-option -g window-status-current-fg blue
-set-window-option -g window-status-current-bg '#272822'
+set-window-option -g window-status-current-bg black #'#272822'
 set-window-option -g window-status-current-attr bright
 
 # set color of pane separator
@@ -100,16 +100,11 @@ set -g visual-bell on
 # osx specific tmux conf
 set-option -g default-command "reattach-to-user-namespace -l zsh"
 
-# turn tmux-continuum restore on by default
-set -g @continuum-boot 'on'
-set -g @continuum-restore 'on'
-
 # List of plugins
 # Supports `github_username/repo` or full git repo URLs
 set -g @tpm_plugins '               \
   tmux-plugins/tpm                  \
   tmux-plugins/tmux-battery         \
-  tmux-plugins/tmux-continuum       \
   tmux-plugins/tmux-logging         \
 '
 # Initializes TMUX plugin manager.
