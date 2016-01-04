@@ -19,6 +19,7 @@
     disabledPackages: [
       "deprecation-cop"
       "linter"
+      "php-debug"
     ]
     excludeVcsIgnoredPaths: false
   "exception-reporting":
@@ -48,13 +49,24 @@
   "atom-beautify":
     _analyticsUserId: "4eb46fa7-d7f2-4186-a4ef-de0a802d5884"
   "node-debugger": {}
-  "php-debug": {}
+  "php-debug":
+    PathMaps: [
+      {
+        local: "/Users/milsyobtaf/www"
+        remote: "/var/www"
+      }
+    ]
+    MaxChildren: 128
+    MaxDepth: 5
   linter: {}
   "linter-phpcs":
     executablePath: "/Users/milsyobtaf/.composer/vendor/bin/phpcs"
   "tree-view": {}
   "copy-as-rtf": {}
 ".drupal.html.php.text":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".js.regexp.replacement.source":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
 ".tabular.text.tsv":
@@ -67,6 +79,9 @@
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
 ".dust.html.text":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".js.regexp.source":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
 ".apache-config.source":
@@ -85,6 +100,9 @@
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
 ".makefile.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".js.source":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
 ".md":
