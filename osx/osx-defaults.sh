@@ -57,3 +57,6 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Set Grab.app to save file as png instead of tiff
 defaults write com.apple.screencapture type png
+
+# Set Tweetbot to bypass dumb t.co links
+defaults write com.tapbots.TweetbotMac OpenURLsDirectly YES
