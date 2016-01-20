@@ -1,110 +1,110 @@
 "*":
-  editor:
-    invisibles: {}
-    fontFamily: "Anonymous Pro"
-    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
-    showIndentGuide: true
-    showInvisibles: true
-    showLineNumbers: true
-    scrollPastEnd: true
-    softWrap: true
-    fontSize: 18
-  whitespace: {}
+  Ruler:
+    enabled: true
+    position: 80
+  "atom-beautify":
+    _analyticsUserId: "4eb46fa7-d7f2-4186-a4ef-de0a802d5884"
+  "atom-color-highlight": {}
+  "autocomplete-plus":
+    includeCompletionsFromAllBuffers: false
+  "copy-as-rtf": {}
   core:
-    themes: [
-      "seti-ui"
-      "seti-syntax"
-    ]
-    followSymlinks: true
     disabledPackages: [
       "deprecation-cop"
       "linter"
       "php-debug"
     ]
     excludeVcsIgnoredPaths: false
-  "exception-reporting":
-    userId: "44890254-0af3-270e-9f07-49c05c4037ca"
-  welcome:
-    showOnStartup: false
-  "atom-color-highlight": {}
-  "git-log": {}
+    followSymlinks: true
+    themes: [
+      "seti-ui"
+      "seti-syntax"
+    ]
   docblockr: {}
-  minimap: {}
-  "markdown-preview":
-    useGitHubStyle: true
-  "file-icons": {}
-  Ruler:
-    enabled: true
-    position: 80
   drupal:
     fileTypesPhp: "module,install,inc,test"
-  pigments: {}
+  editor:
+    fontFamily: "Anonymous Pro"
+    fontSize: 18
+    invisibles: {}
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+    showLineNumbers: true
+    softWrap: true
+  "exception-reporting":
+    userId: "44890254-0af3-270e-9f07-49c05c4037ca"
+  "file-icons": {}
+  "git-log": {}
   "grunt-runner":
     gruntPaths: [
       "/usr/local/bin/grunt"
     ]
-  "autocomplete-plus":
-    includeCompletionsFromAllBuffers: false
+  linter: {}
+  "linter-phpcs":
+    executablePath: "/Users/milsyobtaf/.composer/vendor/bin/phpcs"
+  "markdown-preview":
+    useGitHubStyle: true
   "merge-conflicts": {}
-  "atom-beautify":
-    _analyticsUserId: "4eb46fa7-d7f2-4186-a4ef-de0a802d5884"
+  minimap: {}
   "node-debugger": {}
   "php-debug":
+    MaxChildren: 128
+    MaxDepth: 5
     PathMaps: [
       {
         local: "/Users/milsyobtaf/www"
         remote: "/var/www"
       }
     ]
-    MaxChildren: 128
-    MaxDepth: 5
-  linter: {}
-  "linter-phpcs":
-    executablePath: "/Users/milsyobtaf/.composer/vendor/bin/phpcs"
+  pigments: {}
   "tree-view": {}
-  "copy-as-rtf": {}
-".drupal.html.php.text":
-  editor:
-    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
-".js.regexp.replacement.source":
-  editor:
-    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
-".tabular.text.tsv":
-  editor:
-    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
-".csv.tabular.text":
-  editor:
-    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+  welcome:
+    showOnStartup: false
+  whitespace: {}
 ".apache-config.mod_perl.source":
-  editor:
-    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
-".dust.html.text":
-  editor:
-    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
-".js.regexp.source":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
 ".apache-config.source":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
-".ini.source":
-  editor:
-    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
-".source.sql":
-  editor:
-    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
-".drupal.source":
+".csv.tabular.text":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
 ".diff.source":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
-".makefile.source":
+".drupal.html.php.text":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".drupal.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".dust.html.text":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".ini.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".js.regexp.replacement.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".js.regexp.source":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
 ".js.source":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".makefile.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
 ".md":
   whitespace:
     removeTrailingWhitespace: false
+".source.sql":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".tabular.text.tsv":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"

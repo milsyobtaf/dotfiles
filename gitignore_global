@@ -44,3 +44,5 @@ node_modules
 *.orig
 
 *.sublime-projectcompletions
+
+*.swp
