@@ -94,7 +94,7 @@ export FIGNORE="Application Scripts:ScriptingAdditions"
 # Source drush autocomplete, from https://github.com/drush-ops/drush/blob/master/drush.complete.sh
 autoload bashcompinit
 bashcompinit
-source $HOME/.composer/vendor/bin/drush.complete.sh
+source $HOME/dotfiles/drush.complete.sh
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 

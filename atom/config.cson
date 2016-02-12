@@ -12,7 +12,7 @@
     disabledPackages: [
       "deprecation-cop"
       "linter"
-      "php-debug"
+      "wrap-guide"
     ]
     excludeVcsIgnoredPaths: false
     followSymlinks: true
@@ -25,11 +25,10 @@
     fileTypesPhp: "module,install,inc,test"
   editor:
     fontFamily: "Anonymous Pro"
-    fontSize: 18
+    fontSize: 19
     invisibles: {}
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
     scrollPastEnd: true
-    showIndentGuide: true
     showInvisibles: true
     showLineNumbers: true
     softWrap: true
@@ -48,16 +47,12 @@
     useGitHubStyle: true
   "merge-conflicts": {}
   minimap: {}
+  "multi-wrap-guide": {}
   "node-debugger": {}
   "php-debug":
     MaxChildren: 128
     MaxDepth: 5
-    PathMaps: [
-      {
-        local: "/Users/milsyobtaf/www"
-        remote: "/var/www"
-      }
-    ]
+    PathMaps: []
   pigments: {}
   "tree-view": {}
   welcome:
