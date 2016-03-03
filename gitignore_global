@@ -46,3 +46,5 @@ node_modules
 *.sublime-projectcompletions
 
 *.swp
+
+sites/all/modules/contrib/stage_file_proxy/

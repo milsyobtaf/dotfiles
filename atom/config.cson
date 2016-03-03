@@ -25,7 +25,7 @@
     fileTypesPhp: "module,install,inc,test"
   editor:
     fontFamily: "Anonymous Pro"
-    fontSize: 19
+    fontSize: 18
     invisibles: {}
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
     scrollPastEnd: true
@@ -73,6 +73,11 @@
 ".drupal.html.php.text":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+    preferredLineLength: 80
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
 ".drupal.source":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
@@ -97,6 +102,13 @@
 ".md":
   whitespace:
     removeTrailingWhitespace: false
+".null-grammar.plain.text":
+  editor:
+    preferredLineLength: 80
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
 ".source.sql":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
