@@ -55,8 +55,8 @@ plugins=(bd git github grunt gulp hub nvm nyan rvm sudo tmuxinator vagrant)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-export PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:$PATH"
+export PATH="$PATH:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 # add composer to path
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 # add diff-highlight to path
@@ -73,7 +73,7 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='atom'
+  export EDITOR='vim'
 fi
 
 # Compilation flags
@@ -95,6 +95,8 @@ export FIGNORE="Application Scripts:ScriptingAdditions"
 autoload bashcompinit
 bashcompinit
 source $HOME/dotfiles/drush.complete.sh
+
+export PATH="$(brew --prefix php56)/bin:$PATH"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 

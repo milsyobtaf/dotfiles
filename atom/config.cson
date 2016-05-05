@@ -3,7 +3,54 @@
     enabled: true
     position: 80
   "atom-beautify":
-    _analyticsUserId: "4eb46fa7-d7f2-4186-a4ef-de0a802d5884"
+    apex: {}
+    arduino: {}
+    c: {}
+    cfml: {}
+    coffeescript: {}
+    cpp: {}
+    cs: {}
+    css: {}
+    d: {}
+    ejs: {}
+    erb: {}
+    fortran: {}
+    general:
+      _analyticsUserId: "4eb46fa7-d7f2-4186-a4ef-de0a802d5884"
+    gherkin: {}
+    handlebars: {}
+    html: {}
+    jade: {}
+    java: {}
+    js: {}
+    json: {}
+    jsx: {}
+    latex: {}
+    less: {}
+    marko: {}
+    mustache: {}
+    objectivec: {}
+    pawn: {}
+    perl: {}
+    php:
+      cs_fixer_path: "/Users/milsyobtaf/.composer/vendor/bin/php-cs-fixer"
+    python: {}
+    riot: {}
+    ruby: {}
+    rust: {}
+    sass: {}
+    scss: {}
+    spacebars: {}
+    sql: {}
+    svg: {}
+    swig: {}
+    tss: {}
+    twig: {}
+    typescript: {}
+    vala: {}
+    visualforce: {}
+    xml: {}
+    xtemplate: {}
   "atom-color-highlight": {}
   "autocomplete-plus":
     includeCompletionsFromAllBuffers: false
@@ -17,8 +64,8 @@
     excludeVcsIgnoredPaths: false
     followSymlinks: true
     themes: [
-      "seti-ui"
-      "seti-syntax"
+      "one-dark-ui"
+      "firewatch-syntax"
     ]
   docblockr: {}
   drupal:
@@ -49,6 +96,8 @@
   minimap: {}
   "multi-wrap-guide": {}
   "node-debugger": {}
+  "one-dark-ui":
+    layoutMode: "Compact"
   "php-debug":
     MaxChildren: 128
     MaxDepth: 5
@@ -67,6 +116,11 @@
 ".csv.tabular.text":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+    preferredLineLength: 80
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
 ".diff.source":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
@@ -113,5 +167,11 @@
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
 ".tabular.text.tsv":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".text.xml":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".text.xml.xsl":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"

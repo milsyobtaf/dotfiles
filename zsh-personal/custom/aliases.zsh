@@ -1,6 +1,9 @@
 # list out apps installed by homebrew
 alias brews='brew list'
 
+# list of all out of date homebrew apps
+alias brewu='brew outdated'
+
 # open Finder window to current path
 alias finder='open -a Finder ./'
 
@@ -37,5 +40,3 @@ alias sizes="du -sh * | sort -n"
 # because i keep forgetting
 alias subl='atom'
 
-# old drush instead of new drush
-alias drush7='/usr/local/Cellar/drush/7.0.0/bin/drush'

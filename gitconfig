@@ -13,6 +13,8 @@
   ca = commit -am			# commit all with message
 # list branches by date
   latest = for-each-ref --sort=-committerdate refs/heads --format='%(color:green)%(committerdate:short) - %(color:white)%(refname:short)'
+# force push, nicely
+  pushf = push --force-with-lease
 # status
   s = status -sb			# status
   st = status -sb			# status
@@ -76,3 +78,5 @@
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f
   required = true
+[branch]
+  autosetuprebase = always
