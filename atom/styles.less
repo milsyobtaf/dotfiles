@@ -15,11 +15,16 @@
 // style the background and foreground colors on the atom-text-editor-element
 // itself
 atom-text-editor {
-
+  text-rendering: optimizeLegibility;
 }
 
 // To style other content in the text editor's shadow DOM, use the ::shadow
 // expression
 atom-text-editor::shadow .cursor {
 
+}
+
+atom-text-editor::shadow .string.quoted,
+atom-text-editor::shadow .string.regexp {
+  -webkit-font-feature-settings: "liga" off, "calt" off;
 }

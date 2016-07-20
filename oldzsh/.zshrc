@@ -1,0 +1,1 @@
+dotfiles/zsh-personal/.zshrc
