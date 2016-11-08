@@ -96,8 +96,7 @@
   minimap: {}
   "multi-wrap-guide": {}
   "node-debugger": {}
-  "one-dark-ui":
-    layoutMode: "Compact"
+  "one-dark-ui": {}
   "php-debug":
     MaxChildren: 128
     MaxDepth: 5

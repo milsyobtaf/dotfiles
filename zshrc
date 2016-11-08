@@ -53,11 +53,11 @@ plugins=(bd git github grunt gulp nvm nyan rvm sudo vagrant)
 
 # User configuration
 
-export PATH=$PATH:"/Users/milsyobtaf/.composer/vendor/bin:"
-export PATH=$PATH:"/usr/local/bin:"
-export PATH=$PATH:"/usr/local/sbin:"
+export PATH="/Users/milsyobtaf/.composer/vendor/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
-export PATH="$(brew --prefix php56)/bin:$PATH"
+export PATH=$PATH:"$(brew --prefix php56)/bin"
 
 source $ZSH/oh-my-zsh.sh
 
