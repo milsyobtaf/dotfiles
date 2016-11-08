@@ -71,7 +71,7 @@
   drupal:
     fileTypesPhp: "module,install,inc,test"
   editor:
-    fontFamily: "Anonymous Pro"
+    fontFamily: "FiraCode-Retina"
     fontSize: 18
     invisibles: {}
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
@@ -96,8 +96,7 @@
   minimap: {}
   "multi-wrap-guide": {}
   "node-debugger": {}
-  "one-dark-ui":
-    layoutMode: "Compact"
+  "one-dark-ui": {}
   "php-debug":
     MaxChildren: 128
     MaxDepth: 5
@@ -113,6 +112,13 @@
 ".apache-config.source":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".basic.html.text":
+  editor:
+    preferredLineLength: 80
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
 ".csv.tabular.text":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
@@ -166,6 +172,13 @@
 ".source.sql":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".source.yaml":
+  editor:
+    preferredLineLength: 80
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
 ".tabular.text.tsv":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
