@@ -4,6 +4,9 @@ known_hosts
 .netrwhist
 netrwhist
 
+log/
+zsh/themes/*milsyobtaf*
+
 # atom
 atom/*-cache
 atom/.*
