@@ -1,1 +1,0 @@
-../custom/themes/shouse-milsyobtaf.zsh-theme

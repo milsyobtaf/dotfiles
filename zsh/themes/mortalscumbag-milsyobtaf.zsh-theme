@@ -1,1 +1,0 @@
-../custom/themes/mortalscumbag-milsyobtaf.zsh-theme
