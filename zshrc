@@ -53,7 +53,7 @@ plugins=(bd git github grunt gulp nvm nyan rvm sudo vagrant)
 
 # User configuration
 
-export PATH="/Users/milsyobtaf/.composer/vendor/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
