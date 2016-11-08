@@ -57,7 +57,7 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
-export PATH=$PATH:"$(brew --prefix php56)/bin"
+#export PATH=$PATH:"$(brew --prefix php56)/bin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,3 +102,4 @@ source $HOME/dotfiles/drush.complete.sh
 #export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
