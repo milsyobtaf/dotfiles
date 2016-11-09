@@ -26,7 +26,7 @@ alias dockspacer-other="defaults write com.apple.dock persistent-others -array-a
 alias flushdns='dscacheutil -flushcache'
 
 # reload zsh config
-alias reload='source ~/.zshrc  && source ~/dotfiles/zsh/custom/aliases.zsh && source ~/dotfiles/zsh/custom/functions.zsh'
+alias reload='source ~/.zshrc  && source ~/dotfiles/zsh-custom/aliases.zsh && source ~/dotfiles/zsh-custom/functions.zsh'
 
 # run multitail -c
 alias tailc='multitail -c'
