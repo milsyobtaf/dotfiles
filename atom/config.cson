@@ -63,6 +63,7 @@
     ]
     excludeVcsIgnoredPaths: false
     followSymlinks: true
+    telemetryConsent: "no"
     themes: [
       "one-dark-ui"
       "firewatch-syntax"
