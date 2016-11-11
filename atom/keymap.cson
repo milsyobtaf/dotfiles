@@ -33,3 +33,7 @@
   'cmd-k alt-down': 'window:focus-pane-below'
   'cmd-k alt-left': 'window:focus-pane-on-left'
   'cmd-k alt-right': 'window:focus-pane-on-right'
+  'ctrl-tab ^ctrl': 'unset!'
+  'ctrl-shift-tab ^ctrl': 'unset!'
+  'ctrl-tab': 'pane:show-next-item'
+  'ctrl-shift-tab': 'pane:show-previous-item'
