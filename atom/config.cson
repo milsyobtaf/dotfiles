@@ -173,6 +173,9 @@
 ".source.sql":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".source.ssh-config":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
 ".source.yaml":
   editor:
     preferredLineLength: 80
