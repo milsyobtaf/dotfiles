@@ -17,10 +17,15 @@ alias grep='grep --color=auto'
 alias ping='ping -c 5'
 
 # Dock Spacer on the application side
-alias dockspacer="defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type=\"spacer-tile\";}'"
-
+# Pre-Sierra
+# alias dockspacer="defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type=\"spacer-tile\";}'"
+# Sierra
+alias dockspacer="defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock"
 # Dock Spacer on the other side
-alias dockspacer-other="defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type=\"spacer-tile\";}'"
+# Pre-Sierra
+# alias dockspacer-other="defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type=\"spacer-tile\";}'"
+# Sierra
+alias dockspacer-other="defaults write com.apple.dock persistent-others -array-add '{"tile-type"="spacer-tile";}'; killall Dock"
 
 # DNS flushing for dnsmasq purposes
 alias flushdns='dscacheutil -flushcache'
