@@ -26,17 +26,14 @@ alias dockspacer-other="defaults write com.apple.dock persistent-others -array-a
 alias flushdns='dscacheutil -flushcache'
 
 # reload zsh config
-alias reload='source ~/.zshrc  && source ~/dotfiles/zsh-custom/aliases.zsh && source ~/dotfiles/zsh-custom/functions.zsh'
+alias reload='source ~/.zshrc  && source ~/dotfiles/zsh/zsh-custom/aliases.zsh && source ~/dotfiles/zsh/zsh-custom/functions.zsh'
 
 # run multitail -c
 alias tailc='multitail -c'
+alias mtail='multitail -c'
 
 # make local mysql a bit easier
 alias devsql='mysql -uroot -ppassword'
 
 # shortcut to display file sizes in terminal
 alias sizes="du -sh * | sort -n"
-
-# because i keep forgetting
-#alias subl='atom'
-
