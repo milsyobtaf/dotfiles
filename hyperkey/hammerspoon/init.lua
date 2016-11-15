@@ -10,8 +10,9 @@ k = hs.hotkey.modal.new({}, "F17")
 -- k → Skitch Crosshair Screenshot (configure in BTT preferences)
 -- e → Evernote (configure in BTT preferences)
 -- b → Bartender (configure in Bartender preferences)
+-- v → Clean paste
 
-hyperBindings = {'w','d','c','t','k','e','b'}
+hyperBindings = {'w','d','c','t','k','e','b','v'}
 
 for i,key in ipairs(hyperBindings) do
   k:bind({}, key, nil, function() hs.eventtap.keyStroke({'cmd','alt','shift','ctrl'}, key)
