@@ -80,6 +80,7 @@
     showInvisibles: true
     showLineNumbers: true
     softWrap: true
+    softWrapAtPreferredLineLength: true
   "exception-reporting":
     userId: "44890254-0af3-270e-9f07-49c05c4037ca"
   "file-icons": {}
@@ -97,12 +98,18 @@
   minimap: {}
   "multi-wrap-guide": {}
   "node-debugger": {}
+  "omni-ruler":
+    columns: [
+      "80"
+      "120"
+    ]
   "one-dark-ui": {}
   "php-debug":
     MaxChildren: 128
     MaxDepth: 5
     PathMaps: []
   pigments: {}
+  "split-diff": {}
   "tree-view": {}
   welcome:
     showOnStartup: false
@@ -157,6 +164,9 @@
 ".js.source":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".logo.source":
+  editor:
+    softWrapAtPreferredLineLength: false
 ".makefile.source":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
