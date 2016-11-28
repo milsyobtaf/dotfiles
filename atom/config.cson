@@ -110,6 +110,18 @@
     PathMaps: []
   pigments: {}
   "split-diff": {}
+  "todo-show":
+    findTheseTodos: [
+      "FIXME"
+      "TODO"
+      "CHANGED"
+      "XXX"
+      "IDEA"
+      "HACK"
+      "NOTE"
+      "REVIEW"
+      "todo"
+    ]
   "tree-view": {}
   welcome:
     showOnStartup: false
