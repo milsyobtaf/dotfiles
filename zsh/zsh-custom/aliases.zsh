@@ -1,5 +1,5 @@
 # list out apps installed by homebrew
-alias brews='brew list'
+alias brews='echo -- "brews --------------------" && brew list && echo "-- casks -----------------" && brew cask list'
 
 # list of all out of date homebrew apps
 alias brewu='brew outdated'
