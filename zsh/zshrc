@@ -99,12 +99,27 @@ bashcompinit
 source $HOME/dotfiles/zsh/drush.complete.sh
 
 # This line has moved to .profile
-#export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # include AH (Acquia Hosting) profile
 if [ -f ~/.ah_profile ]; then
   . ~/.ah_profile
 fi
+
+function blt() {
+  if [ "`git rev-parse --show-cdup 2> /dev/null`" != "" ]; then
+    GIT_ROOT=$(git rev-parse --show-cdup)
+  else
+    GIT_ROOT="."
+  fi
+
+  if [ -f "$GIT_ROOT/vendor/bin/blt" ]; then
+    $GIT_ROOT/vendor/bin/blt "$@"
+  else
+    echo "You must run this command from within a BLT-generated project repository."
+    return 1
+  fi
+}
