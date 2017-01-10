@@ -31,11 +31,18 @@
 .DS_Store
 .DS_Store?
 Desktop.ini
+.AppleDouble
+.LSOverride
 
+# Icon must end with two \r
+Icon
+
+
+
+# Thumbnails
 ._*
 .Spotlight-V100
 .Trashes
-#Icon?
 ehthumbs.db
 Thumbs.db
 
@@ -44,6 +51,7 @@ node_modules
 *.orig
 
 *.sublime-projectcompletions
+.idea
 
 *.swp
 
