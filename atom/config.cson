@@ -56,6 +56,18 @@
     includeCompletionsFromAllBuffers: false
   "copy-as-rtf": {}
   core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
     disabledPackages: [
       "deprecation-cop"
       "linter"
@@ -63,6 +75,9 @@
     ]
     excludeVcsIgnoredPaths: false
     followSymlinks: true
+    packagesWithKeymapsDisabled: [
+      "blame"
+    ]
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
@@ -105,11 +120,15 @@
     ]
   "one-dark-ui": {}
   "php-debug":
+    GutterPosition: "Left"
     MaxChildren: 128
     MaxDepth: 5
     PathMaps: []
   pigments: {}
+  "project-manager": {}
   "split-diff": {}
+  "symbols-list":
+    startUp: false
   "todo-show":
     findTheseTodos: [
       "FIXME"
@@ -125,7 +144,8 @@
   "tree-view": {}
   welcome:
     showOnStartup: false
-  whitespace: {}
+  whitespace:
+    removeTrailingWhitespace: false
 ".apache-config.mod_perl.source":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
@@ -195,6 +215,7 @@
 ".source.sql":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+    showIndentGuide: false
 ".source.ssh-config":
   editor:
     nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
