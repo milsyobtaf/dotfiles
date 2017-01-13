@@ -2,6 +2,8 @@
   name = Dustin Younse
   email = milsyobtaf@gmail.com
   signingkey = BEE90EAF
+[commit]
+  gpgsign = true
 [github]
   user = milsyobtaf
 [alias]
@@ -10,9 +12,8 @@
 # branch
   branch = branch -v		# branch (verbose)
 # commit
-  c = commit -m			# commit with message
-  ca = commit -am			# commit all with message
-  gpgsign = true
+  c = commit -S -m			# commit with message
+  ca = commit -S -am			# commit all with message
 # list branches by date
   latest = for-each-ref --sort=-committerdate refs/heads --format='%(color:green)%(committerdate:short) - %(color:white)%(refname:short)'
 # force push, nicely
