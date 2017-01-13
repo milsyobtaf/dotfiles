@@ -11,6 +11,7 @@
 # commit
   c = commit -m			# commit with message
   ca = commit -am			# commit all with message
+  gpgsign = true
 # list branches by date
   latest = for-each-ref --sort=-committerdate refs/heads --format='%(color:green)%(committerdate:short) - %(color:white)%(refname:short)'
 # force push, nicely
@@ -34,7 +35,7 @@
   dt = difftool                     # fire up the diff tool
   diffwords = diff --color-words
 # log
-  lg = log --color --graph -15 --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lg = log --color --graph -50 --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 # git alias finder, from http://brettterpstra.com/2014/08/04/shell-tricks-one-git-alias-to-rule-them-all/
   finda = "!grepalias() { git config --global --get-regexp alias | grep -i \"$1\" | awk -v nr=2 '{sub(/^alias\\./,\"\")};{printf \"\\033[31m%_10s\\033[1;37m\", $1};{sep=FS};{for (x=nr; x<=NF; x++) {printf \"%s%s\", sep, $x; }; print \"\\033[0;39m\"}'; }; grepalias"
 [color]
