@@ -10,18 +10,18 @@
 # add
   add = add --all    # add all, including removals
 # branch
-  branch = branch -v		# branch (verbose)
+  branch = branch -v --sort=-committerdate    # branch (verbose output, sorted by most recently used)
 # commit
-  c = commit -S -m			# commit with message
-  ca = commit -S -am			# commit all with message
+  c = commit -S -v      # commit with message
+  ca = commit -S -av      # commit all with message
 # list branches by date
   latest = for-each-ref --sort=-committerdate refs/heads --format='%(color:green)%(committerdate:short) - %(color:white)%(refname:short)'
 # force push, nicely
   pushf = push --force-with-lease
 # status
-  s = status -sb			# status
-  st = status -sb			# status
-  stat = remote update		# update remote status
+  s = status -sb      # status
+  st = status -sb      # status
+  stat = remote update    # update remote status
 # assume a file so it  can be ignored temporarily
   assume   = update-index --assume-unchanged
   unassume = update-index --no-assume-unchanged
@@ -79,7 +79,7 @@
   default = simple
 [filter "lfs"]
   required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
 [branch]
   autosetuprebase = always
