@@ -70,13 +70,14 @@
       ]
     disabledPackages: [
       "deprecation-cop"
-      "linter"
       "wrap-guide"
     ]
     excludeVcsIgnoredPaths: false
     followSymlinks: true
     packagesWithKeymapsDisabled: [
       "blame"
+      "linter-drupalcs"
+      "git-plus"
     ]
     telemetryConsent: "no"
     themes: [
@@ -100,11 +101,17 @@
     userId: "44890254-0af3-270e-9f07-49c05c4037ca"
   "file-icons": {}
   "git-log": {}
+  "git-plus":
+    general:
+      analytics: false
+      splitPane: "Right"
   "grunt-runner":
     gruntPaths: [
       "/usr/local/bin/grunt"
     ]
-  linter: {}
+  linter:
+    showErrorPanel: false
+  "linter-drupalcs": {}
   "linter-phpcs":
     executablePath: "/Users/milsyobtaf/.composer/vendor/bin/phpcs"
   "markdown-preview":
