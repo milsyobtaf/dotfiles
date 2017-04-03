@@ -71,6 +71,9 @@
     disabledPackages: [
       "deprecation-cop"
       "wrap-guide"
+      "php-cs-fixer"
+      "linter-drupalcs"
+      "linter"
     ]
     excludeVcsIgnoredPaths: false
     followSymlinks: true
@@ -133,7 +136,8 @@
     PathMaps: []
   pigments: {}
   "project-manager": {}
-  "split-diff": {}
+  "split-diff":
+    ignoreWhitespace: true
   "symbols-list":
     startUp: false
   "todo-show":
@@ -152,6 +156,7 @@
   welcome:
     showOnStartup: false
   whitespace:
+    ensureSingleTrailingNewline: false
     removeTrailingWhitespace: false
 ".apache-config.mod_perl.source":
   editor:

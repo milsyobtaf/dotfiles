@@ -64,7 +64,7 @@
 [format]
   pretty = format:%Cred%h%Creset %C(bold blue)<%an>%Creset %Cgreen(%cr) -%C(yellow)%d%Creset %s %Creset
 [core]
-  excludesfile = ~/.gitignore_global
+	excludesfile = /Users/dustin.younse/.gitignore_global
   # insanely beautiful diffs, from https://github.com/paulirish/dotfiles/commit/6743b907ff586c28cd36e08d1e1c634e2968893e
   # pager = zsh -lc 'diff-highlight | less -r' -
     pager = "diff-so-fancy | less --tabs=1,5 -RFX"
@@ -83,3 +83,9 @@
   smudge = git-lfs smudge -- %f
 [branch]
   autosetuprebase = always
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
