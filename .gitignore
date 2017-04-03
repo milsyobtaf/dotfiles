@@ -15,3 +15,6 @@ atom/packages/
 atom/storage/
 atom/blob-store
 atom/split-diff/*
+
+# phpstorm
+!phpstorm/*.jar
