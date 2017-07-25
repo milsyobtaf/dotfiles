@@ -23,7 +23,9 @@
             },
             "name": "Default profile",
             "selected": true,
-            "simple_modifications": {},
+            "simple_modifications": {
+              "caps_lock": "f18"
+            },
             "complex_modifications": {
                 "rules": [
                     {

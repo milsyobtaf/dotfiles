@@ -13,7 +13,7 @@ k = hs.hotkey.modal.new({}, "F17")
 -- v → Clean paste
 -- space, right, left, up, down → SkipTunes / iTunes shortcuts
 
-hyperBindings = {'w','d','c','t','k','e','b','v','space','right','left','up','down'}
+hyperBindings = {'w','d','c','t','k','e','b','v','o','space','right','left','up','down'}
 
 for i,key in ipairs(hyperBindings) do
   k:bind({}, key, nil, function() hs.eventtap.keyStroke({'cmd','alt','shift','ctrl'}, key)
@@ -27,7 +27,7 @@ ofun = function()
   hs.alert.show("Config loaded")
   k.triggered = true
 end
-k:bind({}, 'o', nil, ofun)
+k:bind({}, 'r', nil, ofun)
 
 -- Enter Hyper Mode when F18 (Hyper/Capslock) is pressed
 pressedF18 = function()

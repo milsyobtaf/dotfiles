@@ -109,8 +109,7 @@
     gruntPaths: [
       "/usr/local/bin/grunt"
     ]
-  linter:
-    showErrorPanel: false
+  linter: {}
   "linter-drupalcs": {}
   "linter-phpcs":
     executablePath: "/Users/milsyobtaf/.composer/vendor/bin/phpcs"
@@ -125,7 +124,8 @@
       "80"
       "120"
     ]
-  "one-dark-ui": {}
+  "one-dark-ui":
+    tabSizing: "Even"
   "php-debug":
     GutterPosition: "Left"
     MaxChildren: 128
