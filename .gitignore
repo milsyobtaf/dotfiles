@@ -12,6 +12,12 @@ atom/*-cache
 atom/.*
 atom/nohup.out
 atom/packages/
+atom/recovery/
 atom/storage/
 atom/blob-store
 atom/split-diff/*
+
+# phpstorm
+!phpstorm/*.jar
+
+.DS_Store

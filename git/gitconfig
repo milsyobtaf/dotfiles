@@ -1,24 +1,27 @@
 [user]
   name = Dustin Younse
   email = milsyobtaf@gmail.com
+  signingkey = BEE90EAF
+[commit]
+  gpgsign = true
 [github]
   user = milsyobtaf
 [alias]
 # add
   add = add --all    # add all, including removals
 # branch
-  branch = branch -v		# branch (verbose)
+  branch = branch -v --sort=-committerdate    # branch (verbose output, sorted by most recently used)
 # commit
-  c = commit -m			# commit with message
-  ca = commit -am			# commit all with message
+  c = commit -S -v      # commit with message
+  ca = commit -S -av      # commit all with message
 # list branches by date
   latest = for-each-ref --sort=-committerdate refs/heads --format='%(color:green)%(committerdate:short) - %(color:white)%(refname:short)'
 # force push, nicely
   pushf = push --force-with-lease
 # status
-  s = status -sb			# status
-  st = status -sb			# status
-  stat = remote update		# update remote status
+  s = status -sb      # status
+  st = status -sb      # status
+  stat = remote update    # update remote status
 # assume a file so it  can be ignored temporarily
   assume   = update-index --assume-unchanged
   unassume = update-index --no-assume-unchanged
@@ -34,12 +37,12 @@
   dt = difftool                     # fire up the diff tool
   diffwords = diff --color-words
 # log
-  lg = log --color --graph -15 --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lg = log --color --graph -50 --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 # git alias finder, from http://brettterpstra.com/2014/08/04/shell-tricks-one-git-alias-to-rule-them-all/
   finda = "!grepalias() { git config --global --get-regexp alias | grep -i \"$1\" | awk -v nr=2 '{sub(/^alias\\./,\"\")};{printf \"\\033[31m%_10s\\033[1;37m\", $1};{sep=FS};{for (x=nr; x<=NF; x++) {printf \"%s%s\", sep, $x; }; print \"\\033[0;39m\"}'; }; grepalias"
 [color]
 # Use colors in Git commands that are capable of colored output when outputting to the terminal
-  ui = auto
+  ui = always 
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -59,9 +62,9 @@
   newNormal = "green bold"
   newHighlight = "green bold 22"
 [format]
-  pretty = format:%Cred%h%Creset %C(bold blue)<%an>%Creset %Cgreen(%cr) -%C(yellow)%d%Creset %s %Creset
+  pretty = format:%Cred%h%Creset %C(bold blue)<%an>%Creset %Cgreen(%cr) %C(yellow)%d%Creset %n%C(bold white)%s%Creset %Creset %n%b
 [core]
-  excludesfile = ~/.gitignore_global
+	excludesfile = /Users/dustin.younse/.gitignore_global
   # insanely beautiful diffs, from https://github.com/paulirish/dotfiles/commit/6743b907ff586c28cd36e08d1e1c634e2968893e
   # pager = zsh -lc 'diff-highlight | less -r' -
     pager = "diff-so-fancy | less --tabs=1,5 -RFX"
@@ -76,7 +79,13 @@
   default = simple
 [filter "lfs"]
   required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
 [branch]
   autosetuprebase = always
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

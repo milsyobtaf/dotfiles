@@ -52,6 +52,20 @@ function f_notifyme {
 # inject this function in front of every command 
 export PS1='$(f_notifyme)'$PS1
 
+# git clone and cd into the new directory
+# https://gist.github.com/natchiketa/6026183
+function clone() {
+  cd $HOME/Github
+	REPONAME=$(node -e "console.log(process.argv[1].match(/.*?\/([a-zA-Z0-9\-]+).git/)[1]);" $1)
+	git clone $1 && cd "${REPONAME}"
+}
+
+# BZ custom code sniffer command 
+function bzcs () {
+  ./vendor/bin/phpcs --standard=./vendor/drupal/coder/coder_sniffer/Drupal/ruleset.xml --extensions=php,module,inc,install,test,profile,theme,js,css,info,txt,md "$1"
+}
+
+# Acquia BLT
 function blt() {
   if [ "`git rev-parse --show-cdup 2> /dev/null`" != "" ]; then
     GIT_ROOT=$(git rev-parse --show-cdup)
