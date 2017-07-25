@@ -118,7 +118,8 @@
       "80"
       "120"
     ]
-  "one-dark-ui": {}
+  "one-dark-ui":
+    tabSizing: "Even"
   "php-debug":
     GutterPosition: "Left"
     MaxChildren: 128
