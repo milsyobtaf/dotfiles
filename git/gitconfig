@@ -42,7 +42,7 @@
   finda = "!grepalias() { git config --global --get-regexp alias | grep -i \"$1\" | awk -v nr=2 '{sub(/^alias\\./,\"\")};{printf \"\\033[31m%_10s\\033[1;37m\", $1};{sep=FS};{for (x=nr; x<=NF; x++) {printf \"%s%s\", sep, $x; }; print \"\\033[0;39m\"}'; }; grepalias"
 [color]
 # Use colors in Git commands that are capable of colored output when outputting to the terminal
-  ui = auto
+  ui = always 
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -62,7 +62,7 @@
   newNormal = "green bold"
   newHighlight = "green bold 22"
 [format]
-  pretty = format:%Cred%h%Creset %C(bold blue)<%an>%Creset %Cgreen(%cr) -%C(yellow)%d%Creset %s %Creset
+  pretty = format:%Cred%h%Creset %C(bold blue)<%an>%Creset %Cgreen(%cr) %C(yellow)%d%Creset %n%C(bold white)%s%Creset %Creset %n%b
 [core]
 	excludesfile = /Users/dustin.younse/.gitignore_global
   # insanely beautiful diffs, from https://github.com/paulirish/dotfiles/commit/6743b907ff586c28cd36e08d1e1c634e2968893e

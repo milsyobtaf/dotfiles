@@ -71,9 +71,6 @@
     disabledPackages: [
       "deprecation-cop"
       "wrap-guide"
-      "php-cs-fixer"
-      "linter-drupalcs"
-      "linter"
     ]
     excludeVcsIgnoredPaths: false
     followSymlinks: true
@@ -152,7 +149,8 @@
       "REVIEW"
       "todo"
     ]
-  "tree-view": {}
+  "tree-view":
+    autoReveal: true
   welcome:
     showOnStartup: false
   whitespace:
