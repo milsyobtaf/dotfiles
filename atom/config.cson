@@ -71,6 +71,7 @@
     disabledPackages: [
       "deprecation-cop"
       "wrap-guide"
+      "linter-phpcs"
     ]
     excludeVcsIgnoredPaths: false
     followSymlinks: true
@@ -112,6 +113,8 @@
   linter: {}
   "linter-drupalcs": {}
   "linter-phpcs":
+    codeStandardOrConfigFile: "PSR0"
+    disableWhenNoConfigFile: true
     executablePath: "/Users/milsyobtaf/.composer/vendor/bin/phpcs"
   "markdown-preview":
     useGitHubStyle: true
