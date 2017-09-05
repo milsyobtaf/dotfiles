@@ -10,6 +10,8 @@ ZSH_THEME="spaceship"
 
 [[ -s "$HOME/dotfiles/zsh/zsh-custom/spaceship.zsh" ]] && source "$HOME/dotfiles/zsh/zsh-custom/spaceship.zsh"
 
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -52,7 +54,7 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh/zsh-custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bd git github grunt gulp nvm nyan rvm sudo vagrant yarn zsh-autosuggestions)
+plugins=(bd git github grunt gulp nvm nyan phpbrew rvm sudo vagrant yarn zsh-autosuggestions)
 
 # User configuration
 

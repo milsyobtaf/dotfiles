@@ -72,6 +72,7 @@
       "deprecation-cop"
       "wrap-guide"
       "atom-markboard"
+      "linter-phpcs"
     ]
     excludeVcsIgnoredPaths: false
     followSymlinks: true
@@ -110,10 +111,11 @@
     gruntPaths: [
       "/usr/local/bin/grunt"
     ]
-  linter:
-    showErrorPanel: false
+  linter: {}
   "linter-drupalcs": {}
   "linter-phpcs":
+    codeStandardOrConfigFile: "PSR0"
+    disableWhenNoConfigFile: true
     executablePath: "/Users/milsyobtaf/.composer/vendor/bin/phpcs"
   "markdown-preview":
     useGitHubStyle: true
@@ -126,7 +128,8 @@
       "80"
       "120"
     ]
-  "one-dark-ui": {}
+  "one-dark-ui":
+    tabSizing: "Even"
   "php-debug":
     GutterPosition: "Left"
     MaxChildren: 128
