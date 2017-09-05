@@ -21,3 +21,4 @@ atom/split-diff/*
 !phpstorm/*.jar
 
 .DS_Store
+.DS_Store?
