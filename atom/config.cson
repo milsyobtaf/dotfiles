@@ -71,6 +71,7 @@
     disabledPackages: [
       "deprecation-cop"
       "wrap-guide"
+      "atom-markboard"
     ]
     excludeVcsIgnoredPaths: false
     followSymlinks: true

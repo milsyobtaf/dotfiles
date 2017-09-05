@@ -37,6 +37,9 @@ alias reload='source ~/.zshrc  && source ~/dotfiles/zsh/zsh-custom/aliases.zsh &
 alias tailc='multitail -c'
 alias mtail='multitail -c'
 
+# phpunit with colors by default
+alias phpunit='phpunit --colors'
+
 # make local mysql a bit easier
 alias devsql='mysql -uroot -ppassword'
 

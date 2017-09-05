@@ -49,6 +49,9 @@ autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
+" Set a 72 character ruler for git commit purposes
+set colorcolumn=72
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 04. Vim UI                                                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

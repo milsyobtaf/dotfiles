@@ -41,3 +41,7 @@
   'ctrl-shift-tab ^ctrl': 'unset!'
   'ctrl-tab': 'pane:show-next-item'
   'ctrl-shift-tab': 'pane:show-previous-item'
+  'alt-shift-down': 'editor:move-line-down'
+  'alt-shift-left': 'editor:move-selection-left'
+  'alt-shift-right': 'editor:move-selection-right'
+  'alt-shift-up': 'editor:move-line-up'

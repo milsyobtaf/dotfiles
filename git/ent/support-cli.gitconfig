@@ -1,0 +1,22 @@
+[alias]
+    # Release details at https://confluence.acquia.com/x/zw18
+    # Sync your local master branch from the upstream repo
+    sync = "!f() { git checkout master && git fetch --all && git rebase upstream/master && git push -f origin master; }; f"
+
+    # Return commit messages for the current tag
+    merges = "!f() { git log --oneline --merges --simplify-merges --pretty=format:\"%B\" $(git ahtag)..master | egrep -v '(^Merge|^$)' | sed -e 's/^/  * /'; }; f"
+
+    # Return a list of contributors
+    contribs = "!f() { git log --oneline --no-merges --pretty=format:\"%an\" $(git ahtag)..master | sort -u |  awk '{print}' ORS='++ ' | sed -e 's/^/Contributions by: /'; }; f"
+
+    # Get the remote name of the acquia/support-cli upstream repo
+    ahremote = "!f() { git remote -v | grep -m 1 \"acquia/support-cli\" | cut -f1 ; }; f"
+
+    # Construct nicely formatted  release notes
+    prnotes2 = "!f() { echo 'This release:' ; git merges ; echo; git contribs ; echo; git ahtag; }; f"
+
+    # Get the most recent tag
+    ahtag = "!f() { git ls-remote --tags $(git ahremote) release-* | cut -f2  | sort | tail -n1 ; }; f"
+
+    # Create a tagged release and push to the upstream repo
+    prod-release = "!f() { ACQUIA_REMOTE=$(git remote -v | grep -m 1 \"git@github.com:acquia/support-cli.git (push)\" | cut -f1) && RELEASE_TAG=$(date -u +release-%F-%H-%M) && git tag -a ${RELEASE_TAG} && git push ${ACQUIA_REMOTE} ${RELEASE_TAG} && git --no-pager log --pretty=format:\"%n%C(yellow)%h%Creset %s%Cblue [%an]%n       %Cred%d%Creset%n\" --decorate -1; }; f"
