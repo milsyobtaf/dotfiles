@@ -17,6 +17,25 @@ atom/storage/
 atom/blob-store
 atom/split-diff/*
 
+# Sublime Text
+sublimetext3/*.id*
+sublimetext3/Backup
+sublimetext3/Cache
+sublimetext3/Index
+sublimetext3/Installed Packages
+sublimetext3/Lib
+sublimetext3/Local
+sublimetext3/Packages/*
+!sublimetext3/Packages/User*
+sublimetext3/Packages/User/*.cache
+sublimetext3/Packages/User/*.last-run
+sublimetext3/Packages/User/*.merged-ca-bundle
+sublimetext3/Packages/User/*.user-ca-bundle
+sublimetext3/Packages/User/*.sublime-license
+sublimetext3/Packages/User/encoding_cache.json
+sublimetext3/Packages/User/oscrypto-ca-bundle.crt
+
+
 # phpstorm
 !phpstorm/*.jar
 
