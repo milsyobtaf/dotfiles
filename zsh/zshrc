@@ -58,9 +58,9 @@ plugins=(bd git github grunt gulp nvm nyan phpbrew rvm sudo vagrant yarn zsh-aut
 
 # User configuration
 
-export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 #export PATH=$PATH:"$(brew --prefix php56)/bin"
 

@@ -71,7 +71,6 @@
     disabledPackages: [
       "deprecation-cop"
       "wrap-guide"
-      "atom-markboard"
       "linter-phpcs"
     ]
     excludeVcsIgnoredPaths: false
@@ -111,6 +110,8 @@
     gruntPaths: [
       "/usr/local/bin/grunt"
     ]
+  "ide-php":
+    phpPath: "/Users/dustin.younse/.phpbrew/php/php-7.1.9/bin"
   linter: {}
   "linter-drupalcs": {}
   "linter-phpcs":
