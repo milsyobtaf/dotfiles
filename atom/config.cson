@@ -118,6 +118,8 @@
     codeStandardOrConfigFile: "PSR0"
     disableWhenNoConfigFile: true
     executablePath: "/Users/milsyobtaf/.composer/vendor/bin/phpcs"
+  "linter-ui-default":
+    panelHeight: 69
   "markdown-preview":
     useGitHubStyle: true
   "merge-conflicts": {}
