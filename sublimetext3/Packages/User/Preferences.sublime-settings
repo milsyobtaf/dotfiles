@@ -1,7 +1,4 @@
 {
-	"Seti_SB_blue": false,
-	"Seti_SB_orange": false,
-	"Seti_orange_label": false,
 	"always_show_minimap_viewport": true,
 	"auto_complete": true,
 	"auto_complete_commit_on_tab": true,
@@ -29,13 +26,13 @@
 	"caret_extra_width": 1,
 	"caret_style": "solid",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/peacocks-in-space (SL).tmTheme",
 	"create_window_at_startup": false,
 	"default_line_ending": "unix",
 	"detect_indentation": true,
 	"draw_white_space": "all",
 	"enable_tab_scrolling": false,
-	"ensure_newline_at_eof_on_save": false,
+	"ensure_newline_at_eof_on_save": true,
 	"fade_fold_buttons": false,
 	"fallback_encoding": "UTF-8",
 	"file_exclude_patterns":
@@ -62,12 +59,6 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Ansible",
-		"ApacheConf.tmLanguage",
-		"Behat Completions",
-		"Behat Features",
-		"Codebug",
-		"Gulp",
 		"Vintage"
 	],
 	"indent_guide_options":
@@ -75,23 +66,22 @@
 		"draw_normal",
 		"draw_active"
 	],
-	"material_theme_accent_orange": false,
-	"material_theme_bold_tab": true,
-	"material_theme_disable_folder_animation": false,
-	"material_theme_panel_separator": true,
-	"material_theme_small_statusbar": true,
-	"material_theme_small_tab": true,
-	"material_theme_tabs_separator": true,
+	"line_padding_bottom": 4,
+	"line_padding_top": 4,
 	"rulers":
 	[
+		55,
+		72,
 		80
 	],
+	"save_on_focus_lost": true,
+	"scroll_past_end": true,
 	"shift_tab_unindent": true,
 	"show_encoding": true,
 	"show_full_path": true,
 	"show_line_endings": true,
-	"tab_height_short": true,
-	"tab_height_tall": false,
+	"tab_height_short": false,
+	"tab_height_tall": true,
 	"tab_size": 2,
 	"theme": "Adaptive.sublime-theme",
 	"trailing_spaces_file_max_size": 500000,
