@@ -29,7 +29,7 @@
 	"caret_extra_width": 1,
 	"caret_style": "solid",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/User/SublimeLinter/OneDark (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
 	"create_window_at_startup": false,
 	"default_line_ending": "unix",
 	"detect_indentation": true,
@@ -62,14 +62,13 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"BracketHighlighter",
-		"Color Highlighter (Fantasia's conflicted copy 2016-11-10)",
-		"HTML Mustache",
-		"Missing Palette Commands (Fantasia's conflicted copy 2016-11-10)",
-		"SideBarEnhancements (Fantasia's conflicted copy 2016-11-10)",
-		"Theme - Gravity (Fantasia's conflicted copy 2016-11-10)",
-		"Vintage",
-		"Wordpress"
+		"Ansible",
+		"ApacheConf.tmLanguage",
+		"Behat Completions",
+		"Behat Features",
+		"Codebug",
+		"Gulp",
+		"Vintage"
 	],
 	"indent_guide_options":
 	[
@@ -94,8 +93,7 @@
 	"tab_height_short": true,
 	"tab_height_tall": false,
 	"tab_size": 2,
-	"theme": "Gravity One.sublime-theme",
-	"tm-github-token": "2914136a034411048cad3e5b8aa7db5ea95aba48",
+	"theme": "Adaptive.sublime-theme",
 	"trailing_spaces_file_max_size": 500000,
 	"trailing_spaces_highlight_color": "constant.character.escape",
 	"trailing_spaces_include_current_line": false,

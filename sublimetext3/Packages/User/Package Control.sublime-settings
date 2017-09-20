@@ -2,6 +2,8 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"Behat Completions",
+		"Codebug"
 	],
 	"installed_packages":
 	[
@@ -14,9 +16,7 @@
 		"Behat Completions",
 		"Behat Features",
 		"BracketHighlighter",
-		"Codebug",
 		"Color Highlighter",
-		"Color Scheme - Nice Blue Soda",
 		"ConvertToUTF8",
 		"CSS3",
 		"CSSLint",
@@ -50,33 +50,22 @@
 		"Minify",
 		"Missing Palette Commands",
 		"nginx",
-		"One Dark Material - Theme",
 		"Origami",
 		"Package Control",
 		"Patch Apply",
 		"PHP-Twig",
 		"Sass",
-		"Schemr",
 		"SCSS",
-		"Seti_UI",
 		"SideBarEnhancements",
 		"Siteleaf Liquid Syntax",
 		"specialsboard",
 		"SublimeCodeIntel",
 		"SublimeLinter",
-		"Sublimerge 3",
 		"SyncedSideBar",
 		"Syntax Highlighting for Sass",
-		"Theme - Flatland",
-		"Theme - Gravity",
-		"Theme - Soda",
-		"Theme - Spaceblack",
-		"Theme - Spacegray",
-		"Themr",
 		"TicketMaster",
 		"TrailingSpaces",
-		"WordPress",
-		"Xdebug Client"
+		"WordPress"
 	],
 	"repositories":
 	[
