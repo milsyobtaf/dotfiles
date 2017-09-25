@@ -34,7 +34,7 @@
 # tools
   filelog = log -u                  # show changes to a file
   mt = mergetool                    # fire up the merge tool
-  dt = difftool                     # fire up the diff tool
+  dt = difftool                     # fire up Kaleidoscope diff
   diffwords = diff --color-words
 # log
   lg = log --color --graph -50 --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
@@ -42,7 +42,7 @@
   finda = "!grepalias() { git config --global --get-regexp alias | grep -i \"$1\" | awk -v nr=2 '{sub(/^alias\\./,\"\")};{printf \"\\033[31m%_10s\\033[1;37m\", $1};{sep=FS};{for (x=nr; x<=NF; x++) {printf \"%s%s\", sep, $x; }; print \"\\033[0;39m\"}'; }; grepalias"
 [color]
 # Use colors in Git commands that are capable of colored output when outputting to the terminal
-  ui = always 
+  ui = auto 
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -67,12 +67,18 @@
   excludesfile = /Users/dustin.younse/.gitignore_global
     pager = "diff-so-fancy | less --tabs=1,5 -RFX"
 [diff]
+  tool = Kaleidoscope
   algorithm = patience
-[merge]
-  tool = p4merge 
-[mergetool "p4merge"]
-  keepTemporaries = false
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
   prompt = false
+[merge]
+  tool = Kaleidoscope
+[mergetool]
+  prompt = false
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" \"$REMOTE\"
 [push]
   default = simple
 [filter "lfs"]
@@ -81,9 +87,3 @@
   smudge = git-lfs smudge -- %f
 [branch]
   autosetuprebase = always
-[difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path = 
-[mergetool "sourcetree"]
-  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-  trustExitCode = true
