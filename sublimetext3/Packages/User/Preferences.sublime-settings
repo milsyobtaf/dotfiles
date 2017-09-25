@@ -59,6 +59,19 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"Ansible",
+		"ApacheConf.tmLanguage",
+		"ApplySyntax",
+		"Auto Semi-Colon",
+		"AutoFileName",
+		"Behat Completions",
+		"Behat Features",
+		"BracketHighlighter",
+		"Codebug",
+		"Color Highlighter",
+		"Color Scheme - Nice Blue Soda",
+		"CSS3",
+		"Syntax Highlighting for Sass",
 		"Vintage"
 	],
 	"indent_guide_options":
