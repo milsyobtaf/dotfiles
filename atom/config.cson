@@ -71,7 +71,6 @@
     disabledPackages: [
       "deprecation-cop"
       "wrap-guide"
-      "linter-phpcs"
     ]
     excludeVcsIgnoredPaths: false
     followSymlinks: true

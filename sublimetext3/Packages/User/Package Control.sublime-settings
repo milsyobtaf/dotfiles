@@ -7,11 +7,13 @@
 	[
 		"AdvancedNewFile",
 		"Dayle Rees Color Schemes",
+		"MarkdownPreview",
 		"Package Control",
 		"PHP Companion",
 		"PHP CS Fixer",
 		"SublimeLinter",
 		"SublimeLinter-phpcs",
-		"Theme - Gravity"
+		"Theme - Gravity",
+		"Vuejs Complete Package"
 	]
 }
