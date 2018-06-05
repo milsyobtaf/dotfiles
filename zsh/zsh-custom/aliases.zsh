@@ -45,3 +45,8 @@ alias devsql='mysql -uroot -ppassword'
 
 # shortcut to display file sizes in terminal
 alias sizes="du -sh * | sort -n"
+
+# sublime text shortcut
+alias subl="sublime"
+
+alias phpstan='docker run -v $PWD:/app --rm phpstan/phpstan'
