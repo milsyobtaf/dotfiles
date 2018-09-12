@@ -54,6 +54,7 @@ node_modules
 *.sublime-projectcompletions
 .idea
 *.swp
+.vscode/
 
 # Drupal specific
 web/sites/default/settings.local.php

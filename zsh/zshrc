@@ -106,9 +106,8 @@ source $HOME/dotfiles/zsh/drush.complete.sh
 # This line has moved to .profile
 export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 
-eval "$(rbenv init -)"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 
 # In order for gpg to find gpg-agent, gpg-agent must be running, and there must be an env
@@ -121,7 +120,7 @@ if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
     source ~/.gnupg/.gpg-agent-info
     export GPG_AGENT_INFO
 else
-    eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+    eval $(gpg-agent --daemon ~/.gnupg/.gpg-agent-info)
 fi
 
 # include AH (Acquia Hosting) profile
