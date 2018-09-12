@@ -10,6 +10,9 @@ alias finder='open -a Finder ./'
 # alias ls -la to ll
 alias ll='ls -la'
 
+# alias git status -sb to st
+alias st='git st'
+
 # always highlight grep search term
 alias grep='grep --color=auto'
 
@@ -50,3 +53,17 @@ alias sizes="du -sh * | sort -n"
 alias subl="sublime"
 
 alias phpstan='docker run -v $PWD:/app --rm phpstan/phpstan'
+
+# better name for https://gist.github.com/brianloveswords/7534169715b5750a892cddcf54c2aa0e
+alias tweetgif="gif-from-tweet"
+
+# the following three are from https://remysharp.com/2018/08/23/cli-improved
+# ncdu with some prettification
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+
+# prettyping with ping limits
+alias ping='prettyping -c 5 --nolegend'
+
+# bat for cat purposes
+alias cat='bat'
+
