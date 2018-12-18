@@ -1,73 +1,9 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/dotfiles/zsh/oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-#ZSH_THEME="mortalscumbag-milsyobtaf"
-ZSH_THEME="spaceship"
-
-[[ -s "$HOME/dotfiles/zsh/zsh-custom/spaceship.zsh" ]] && source "$HOME/dotfiles/zsh/zsh-custom/spaceship.zsh"
-
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$HOME/dotfiles/zsh/zsh-custom
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(bd git github grunt gulp nvm nyan phpbrew rvm sudo vagrant yarn zsh-autosuggestions)
-
-# User configuration
-
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/.composer/vendor/bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
-#export PATH=$PATH:"$(brew --prefix php56)/bin"
-
-source $ZSH/oh-my-zsh.sh
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+source "$HOME/Github/dotfiles/zsh/spaceship.zsh"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -75,19 +11,6 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='vim'
 fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # If fortune is installed, run a fortune
 if [ -e /usr/local/bin/fortune ]; then
@@ -98,49 +21,173 @@ fi
 # Ignore certain paths in CD
 export FIGNORE="Application Scripts:ScriptingAdditions"
 
-# Source drush autocomplete, from https://github.com/drush-ops/drush/blob/master/drush.complete.sh
-autoload bashcompinit
-bashcompinit
-source $HOME/dotfiles/zsh/drush.complete.sh
+### Functions ###
 
-# This line has moved to .profile
-export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-
-# In order for gpg to find gpg-agent, gpg-agent must be running, and there must be an env
-# variable pointing GPG to the gpg-agent socket. This little script, which must be sourced
-# in your shell's init script (ie, .bash_profile, .zshrc, whatever), will either start
-# gpg-agent or set up the GPG_AGENT_INFO variable if it's already running.
-
-# Add the following to your shell init to set up gpg-agent automatically for every shell
-if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
-    source ~/.gnupg/.gpg-agent-info
-    export GPG_AGENT_INFO
-else
-    eval $(gpg-agent --daemon ~/.gnupg/.gpg-agent-info)
-fi
-
-# include AH (Acquia Hosting) profile
-if [ -f ~/.ah_profile ]; then
-  . ~/.ah_profile
-fi
-
-# added by travis gem
-[ -f /Users/dustin.younse/.travis/travis.sh ] && source /Users/dustin.younse/.travis/travis.sh
-function blt() {
-  if [ "`git rev-parse --show-cdup 2> /dev/null`" != "" ]; then
-    GIT_ROOT=$(git rev-parse --show-cdup)
+# cd to the path of the front Finder window
+cdf() {
+  target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+  if [ "$target" != "" ]; then
+    cd "$target"; pwd
   else
-    GIT_ROOT="."
-  fi
-
-  if [ -f "$GIT_ROOT/vendor/bin/blt" ]; then
-    $GIT_ROOT/vendor/bin/blt "$@"
-  else
-    echo "You must run this command from within a BLT-generated project repository."
-    return 1
+    echo 'No Finder window found' >&2
   fi
 }
+
+# open a specified man page in Preview
+man-preview() {
+  man -t "$@" | open -f -a Preview
+}
+
+# move a specified file to the OSX Trash
+trash() {
+  local trash_dir="${HOME}/.Trash"
+  local temp_ifs=$IFS
+  IFS=$'\n'
+  for item in "$@"; do
+    if [[ -e "$item" ]]; then
+      item_name="$(basename $item)"
+      if [[ -e "${trash_dir}/${item_name}" ]]; then
+        mv -f "$item" "${trash_dir}/${item_name} $(date "+%H-%M-%S")"
+      else
+        mv -f "$item" "${trash_dir}/"
+      fi
+    fi
+  done
+  IFS=$temp_ifs
+}
+
+# # notify on completion, from http://frantic.im/notify-on-completion
+# function f_notifyme {
+#   LAST_EXIT_CODE=$?
+#   CMD=$(fc -ln -1)
+#   # No point in waiting for the command to complete
+#   notifyme "$CMD" "$LAST_EXIT_CODE" &
+# }
+# # inject this function in front of every command
+# export PS1='$(f_notifyme)'$PS1
+
+# git clone and cd into the new directory
+# https://gist.github.com/natchiketa/6026183
+function clone() {
+  cd $HOME/github
+	REPONAME=$(node -e "console.log(process.argv[1].match(/.*?\/([a-zA-Z0-9\-]+).git/)[1]);" $1)
+	git clone $1 && cd "${REPONAME}"
+}
+
+# Hot gif action
+# From https://gist.github.com/brianloveswords/7534169715b5750a892cddcf54c2aa0e
+video-url-from-tweet() {
+    if [ "$1" ]; then
+        url=$1
+    else
+        echo "Must provide a url"
+        return 1
+    fi
+
+    curl --silent $url |\
+        # should find the <meta> tag with content="<thumbnail url>"
+        (grep -m1 "tweet_video_thumb" ||\
+          echo "Could not find video" && return 1) |\
+
+        # from: <meta property="og:image" content="https://pbs.twimg.com/tweet_video_thumb/xxxxxxxxxx.jpg">
+        # to: https://pbs.twimg.com/tweet_video_thumb/xxxxxxxxxx.jpg
+        cut -d '"' -f 4 |\
+
+        # from: https://pbs.twimg.com/tweet_video_thumb/xxxxxxxxxx.jpg
+        # to: https://video.twimg.com/tweet_video/xxxxxxxxxx.mp4
+        sed 's/.jpg/.mp4/g' |\
+        sed 's/pbs.twimg.com\/tweet_video_thumb/video.twimg.com\/tweet_video/g'
+}
+video-from-tweet() {
+    if [ "$1" ]; then
+        url=$1
+    else
+        echo "Must provide a url"
+        return 1
+    fi
+    curl $(video-url-from-tweet $url)
+}
+video-to-gif() {
+    # derived from https://engineering.giphy.com/how-to-make-gifs-with-ffmpeg/
+    if [ "$2" ]; then
+        input=$1
+        output=$2
+    else
+        echo "Must provide an input file and output file"
+        return 1
+    fi
+
+    ffmpeg -i $input \
+           -filter_complex "[0:v] split [a][b];[a] palettegen [p];[b][p] paletteuse" \
+           -f gif \
+           $output
+}
+gif-from-tweet() {
+    if [ "$2" ]; then
+        url=$1
+        output=$2
+    else
+        echo "Must provide a url and an output filename"
+        return 1
+    fi
+    video-from-tweet $url | video-to-gif - $output
+}
+
+### Aliases ###
+# list out apps installed by homebrew
+alias brews='echo -- "brews --------------------" && brew list && echo "-- casks -----------------" && brew cask list'
+
+# list of all out of date homebrew apps
+alias brewu='brew outdated'
+
+# open Finder window to current path
+alias finder='open -a Finder ./'
+
+# alias ls -la to ll
+alias ll='ls -la'
+
+# alias git status -sb to st
+alias st='git st'
+
+# always highlight grep search term
+alias grep='grep --color=auto'
+
+# Dock Spacer on the application side
+# Pre-Sierra
+# alias dockspacer="defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type=\"spacer-tile\";}'"
+# Sierra
+alias dockspacer="defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock"
+# Dock Spacer on the other side
+# Pre-Sierra
+# alias dockspacer-other="defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type=\"spacer-tile\";}'"
+# Sierra
+alias dockspacer-other="defaults write com.apple.dock persistent-others -array-add '{"tile-type"="spacer-tile";}'; killall Dock"
+
+# DNS flushing for dnsmasq purposes
+alias flushdns='dscacheutil -flushcache'
+
+# reload zsh config
+alias reload='source ~/.zshrc'
+
+# run multitail -c
+alias tailc='multitail -c'
+alias mtail='multitail -c'
+
+# shortcut to display file sizes in terminal
+alias sizes="du -sh * | sort -n"
+
+# sublime text shortcut
+alias subl="sublime"
+
+# better name for https://gist.github.com/brianloveswords/7534169715b5750a892cddcf54c2aa0e
+alias tweetgif="gif-from-tweet"
+
+# the following three are from https://remysharp.com/2018/08/23/cli-improved
+# ncdu with some prettification
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+
+# prettyping with ping limits
+alias ping='prettyping -c 5 --nolegend'
+
+# bat for cat purposes
+alias cat='bat'
