@@ -1,9 +1,15 @@
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 export PATH="/usr/local/bin:$PATH"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Prezto Settings
+setopt no_share_history
+unsetopt share_history
 
 source "$HOME/Github/dotfiles/zsh/spaceship.zsh"
+
+source "$HOME/.zprofile"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -20,6 +26,11 @@ fi
 
 # Ignore certain paths in CD
 export FIGNORE="Application Scripts:ScriptingAdditions"
+
+# Single-brace syntax because this is required in bash and sh alike
+if [ -e "$HOME/env/etc/indeedrc" ]; then
+    . "$HOME/env/etc/indeedrc"
+fi
 
 ### Functions ###
 
@@ -67,13 +78,21 @@ trash() {
 # export PS1='$(f_notifyme)'$PS1
 
 # git clone and cd into the new directory
-# https://gist.github.com/natchiketa/6026183
-function clone() {
-  cd $HOME/github
-	REPONAME=$(node -e "console.log(process.argv[1].match(/.*?\/([a-zA-Z0-9\-]+).git/)[1]);" $1)
-	git clone $1 && cd "${REPONAME}"
+# combo of these two solutions:
+# https://unix.stackexchange.com/a/276483
+# https://stackoverflow.com/a/12059200
+git(){
+  case "$1" in
+    (clone) git-clone "${@:2}";;
+    (*) command git "$@";;
+  esac
 }
-
+git-clone(){
+    url=$1;
+    reponame=$(echo $url | awk -F/ '{print $NF}' | sed -e 's/.git$//');
+    command git clone $url $reponame;
+    cd $reponame;
+}
 # Hot gif action
 # From https://gist.github.com/brianloveswords/7534169715b5750a892cddcf54c2aa0e
 video-url-from-tweet() {
@@ -140,11 +159,14 @@ alias brews='echo -- "brews --------------------" && brew list && echo "-- casks
 # list of all out of date homebrew apps
 alias brewu='brew outdated'
 
+# list of all globally installed npm apps
+alias npms='npm list -g --depth 0'
+
 # open Finder window to current path
 alias finder='open -a Finder ./'
 
 # alias ls -la to ll
-alias ll='ls -la'
+alias ll='ls -la --color=auto'
 
 # alias git status -sb to st
 alias st='git st'
@@ -167,14 +189,18 @@ alias dockspacer-other="defaults write com.apple.dock persistent-others -array-a
 alias flushdns='dscacheutil -flushcache'
 
 # reload zsh config
-alias reload='source ~/.zshrc'
+# alias reload='source ~/.zshrc'
+alias reload='exec zsh'
 
 # run multitail -c
 alias tailc='multitail -c'
 alias mtail='multitail -c'
 
+# force mtr to be sudo-run
+alias mtr='sudo mtr'
+
 # shortcut to display file sizes in terminal
-alias sizes="du -sh * | sort -n"
+#alias sizes="du -sh * | sort -n"
 
 # sublime text shortcut
 alias subl="sublime"
@@ -191,3 +217,16 @@ alias ping='prettyping -c 5 --nolegend'
 
 # bat for cat purposes
 alias cat='bat'
+
+# Quick Look a file from Terminal
+alias ql="qlmanage -px &>/dev/null"
+
+# copy the working directory path
+alias cpwd='pwd|tr -d "\n"|pbcopy'
+
+# retrieve current external ip
+alias myip='curl -4 https://icanhazip.com'
+
+# weather and the moon from @noopkat
+alias weather='curl -4 https://wttr.in/Austin'
+alias moon='curl -4 https://wttr.in/Moon'

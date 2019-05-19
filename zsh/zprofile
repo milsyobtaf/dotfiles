@@ -1,0 +1,14 @@
+# Single-brace syntax because this is required in bash, dash, zsh, etc
+if [ -e "$HOME/env/etc/indeed_profile" ]; then
+    . "$HOME/env/etc/indeed_profile"
+fi
+
+# OPTIONAL, but recommended: Add ~/env/bin to your PATH to use the shared shell scripts from delivery/env
+if [ -d "$HOME/env/bin" ]; then
+    PATH="$HOME/env/bin:$PATH"
+fi
+
+# On OSX, explicitly source .bashrc so that OS X bash is guaranteed to include all definitions, changing .bashrc to .zshrc for zsh
+#if [ "Darwin" = "$(uname -s)" ]; then
+#    [ -s "$HOME/.zshrc" ] && . "$HOME/.zshrc"
+#fi

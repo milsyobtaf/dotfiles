@@ -1,4 +1,10 @@
 Host *
+# Add key to ssh-agent automatically
+IgnoreUnknown AddKeysToAgent,UseKeychain
+AddKeysToAgent yes
+UseKeychain yes
+IdentityFile ~/.ssh/tealc
+
 # Forward ssh agent to the remote machine.
 ForwardAgent yes
 StrictHostKeyChecking no

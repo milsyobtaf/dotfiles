@@ -2,6 +2,8 @@
   name = Dustin Younse
   email = milsyobtaf@gmail.com
 #  signingkey = BEE90EAF
+[includeIf "gitdir:~/www/"]
+  path = ~/www/.gitconfig
 [commit]
 #  gpgsign = true
 [github]
@@ -11,13 +13,11 @@
   add = add --all    # add all, including removals
 # branch
   branch = branch -v --sort=-committerdate    # branch (verbose output, sorted by most recently used)
-# commit
-#  c = commit -S -v      # commit with message
-#  ca = commit -S -av      # commit all with message
-   c = commit -v # commit with message
-   ca = commit -av # commit all with message
 # list branches by date
   latest = for-each-ref --sort=-committerdate refs/heads --format='%(color:green)%(committerdate:short) - %(color:white)%(refname:short)'
+# commit
+   c = commit -v # commit with message
+   ca = commit -av # commit all with message
 # force push, nicely
   pushf = push --force-with-lease
 # status
@@ -29,7 +29,7 @@
   unassume = update-index --no-assume-unchanged
   assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
 # remote
-  r = remote -v                     # show remotes (verbose)
+  remotes = remote -v                     # show remotes (verbose)
 # reset
   unstage = reset HEAD              # remove files from index (tracking)
   uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
@@ -39,12 +39,13 @@
   dt = difftool                     # fire up Kaleidoscope diff
   diffwords = diff --color-words
 # log
-  lg = log --color --graph -50 --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  log = log --date=human
+  lg = log --date=human --color --graph -50 --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 # git alias finder, from http://brettterpstra.com/2014/08/04/shell-tricks-one-git-alias-to-rule-them-all/
   finda = "!grepalias() { git config --global --get-regexp alias | grep -i \"$1\" | awk -v nr=2 '{sub(/^alias\\./,\"\")};{printf \"\\033[31m%_10s\\033[1;37m\", $1};{sep=FS};{for (x=nr; x<=NF; x++) {printf \"%s%s\", sep, $x; }; print \"\\033[0;39m\"}'; }; grepalias"
 [color]
 # Use colors in Git commands that are capable of colored output when outputting to the terminal
-  ui = auto 
+  ui = auto
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -88,5 +89,6 @@
   required = true
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 [branch]
   autosetuprebase = always
