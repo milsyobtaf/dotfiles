@@ -36,9 +36,11 @@ zstyle ':prezto:load' pmodule \
   'autosuggestions' \
   'directory' \
   'spectrum' \
+  'gnu-utility' \
   'utility' \
   'completion' \
   'fasd' \
+  'contrib-prompt' \
   'prompt' \
   'node'
 
@@ -162,7 +164,7 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 
 # Set the SSH identities to load into the agent.
 # zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'
-zstyle ':prezto:module:ssh:load' identities 'tealc'
+zstyle ':prezto:module:ssh:load' identities 'thebus'
 #
 # Syntax Highlighting
 #
