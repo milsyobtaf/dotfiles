@@ -1,5 +1,9 @@
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 export PATH="/usr/local/bin:$PATH"
+# Fix ll / coreutils / gnu-utility issue
+# https://github.com/sorin-ionescu/prezto/issues/966#issuecomment-172003005
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
@@ -7,6 +11,7 @@ export PATH="/usr/local/bin:$PATH"
 setopt no_share_history
 unsetopt share_history
 
+# Spaceship theme loading and config
 source "$HOME/Github/dotfiles/zsh/spaceship.zsh"
 
 source "$HOME/.zprofile"
