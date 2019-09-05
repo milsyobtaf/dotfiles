@@ -5,6 +5,8 @@ AddKeysToAgent yes
 UseKeychain yes
 IdentityFile ~/.ssh/tealc
 
+Include ~/.ssh/zephyr.conf
+
 # Forward ssh agent to the remote machine.
 ForwardAgent yes
 StrictHostKeyChecking no

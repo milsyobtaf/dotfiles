@@ -39,5 +39,8 @@ sublimetext3/Packages/User/oscrypto-ca-bundle.crt
 # phpstorm
 !phpstorm/*.jar
 
+# karabiner
+hyperkey/karabiner/configuration/automatic_backups
+
 .DS_Store
 .DS_Store?

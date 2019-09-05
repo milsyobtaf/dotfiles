@@ -1,5 +1,7 @@
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
 # Fix ll / coreutils / gnu-utility issue
 # https://github.com/sorin-ionescu/prezto/issues/966#issuecomment-172003005
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
