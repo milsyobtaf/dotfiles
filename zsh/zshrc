@@ -32,6 +32,11 @@ if [ -e "$HOME/env/etc/indeedrc" ]; then
     . "$HOME/env/etc/indeedrc"
 fi
 
+# Remove hyphen as part of words
+# https://gist.github.com/anchor/4076792
+autoload -U select-word-style
+select-word-style bash
+
 ### Functions ###
 
 # cd to the path of the front Finder window
@@ -108,13 +113,19 @@ video-url-from-tweet() {
         (grep -m1 "tweet_video_thumb" ||\
           echo "Could not find video" && return 1) |\
 
-        # from: <meta property="og:image" content="https://pbs.twimg.com/tweet_video_thumb/xxxxxxxxxx.jpg">
-        # to: https://pbs.twimg.com/tweet_video_thumb/xxxxxxxxxx.jpg
-        cut -d '"' -f 4 |\
+        ## It looks like Twitter changed some page format things, this is now the old and busted  
+        ## from: <meta property="og:image" content="https://pbs.twimg.com/tweet_video_thumb/xxxxxxxxxx.jpg">
+        ## to: https://pbs.twimg.com/tweet_video_thumb/xxxxxxxxxx.jpg
+        #cut -d '"' -f 4 |\
+
+        ## This is now the new hotness
+        # from: <img src="https://pbs.twimg.com/tweet_video_thumb/D7z5JahXsAEkH_z.jpg:small"/>
+        # to: https://pbs.twimg.com/tweet_video_thumb/D7z5JahXsAEkH_z.jpg:small
+        cut -d '"' -f 2 |\
 
         # from: https://pbs.twimg.com/tweet_video_thumb/xxxxxxxxxx.jpg
         # to: https://video.twimg.com/tweet_video/xxxxxxxxxx.mp4
-        sed 's/.jpg/.mp4/g' |\
+        sed 's/.jpg:small/.mp4/g' |\
         sed 's/pbs.twimg.com\/tweet_video_thumb/video.twimg.com\/tweet_video/g'
 }
 video-from-tweet() {
