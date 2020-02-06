@@ -1,0 +1,4 @@
+London|London|United Kingdom|51.5112139|-0.1198244|0|Europe/London|Greenwich Mean Time|UTC+0
+Boston|Boston|United States|42.3600825|-71.0588801|-14400|America/New_York|Eastern Daylight Time|UTC-4
+Portland|Portland|United States|45.5230622|-122.6764815|-25200|America/Los_Angeles|Pacific Daylight Time|UTC-7
+Sydney|Sydney|Australia|-33.8688197|151.2092955|36000|Australia/Sydney|Australian Eastern Standard Time|UTC+10

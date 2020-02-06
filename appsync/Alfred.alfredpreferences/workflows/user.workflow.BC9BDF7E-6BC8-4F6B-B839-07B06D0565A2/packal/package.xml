@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Lulz</name>
+  <version>2</version>
+  <bundle>net.coderanger.lulz</bundle>
+  <updated>1407279495</updated>
+  <file>lulz.alfredworkflow</file>
+</workflow>

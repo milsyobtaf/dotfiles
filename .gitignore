@@ -1,3 +1,7 @@
+# dumb indeed stuff
+ssh/indeed.conf
+scripts/iql
+
 id_rsa
 id_rsa.pub
 known_hosts

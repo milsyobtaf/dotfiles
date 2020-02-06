@@ -34,15 +34,33 @@ fi
 # Ignore certain paths in CD
 export FIGNORE="Application Scripts:ScriptingAdditions"
 
-# Single-brace syntax because this is required in bash and sh alike
-if [ -e "$HOME/env/etc/indeedrc" ]; then
-    . "$HOME/env/etc/indeedrc"
-fi
-
 # Remove hyphen as part of words
 # https://gist.github.com/anchor/4076792
 autoload -U select-word-style
 select-word-style bash
+
+# Run `nvm use` when loading a folder with a .nvmrc file
+# From https://github.com/nvm-sh/nvm#calling-nvm-use-automatically-in-a-directory-with-a-nvmrc-file
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
 
 ### Functions ###
 
@@ -239,8 +257,13 @@ alias cat='bat'
 # Quick Look a file from Terminal
 alias ql="qlmanage -px &>/dev/null"
 
+# next 4 from https://brettterpstra.com/2019/08/29/shell-tricks-a-random-selection/
 # copy the working directory path
 alias cpwd='pwd|tr -d "\n"|pbcopy'
+alias pwdcopy='pwd|tr -d "\n"|pbcopy'
+
+alias gitmine="git status|grep -e '^U'|sed -e 's/^UU *//'|xargs git checkout --ours"
+alias gittheirs="git status|grep -e '^U'|sed -e 's/^UU *//'|xargs git checkout --theirs"
 
 # retrieve current external ip
 alias myip='curl -4 https://icanhazip.com'
@@ -248,3 +271,12 @@ alias myip='curl -4 https://icanhazip.com'
 # weather and the moon from @noopkat
 alias weather='curl -4 https://wttr.in/Austin'
 alias moon='curl -4 https://wttr.in/Moon'
+
+# BEGIN env Setup -- Managed by Ansible DO NOT EDIT.
+
+# Single-brace syntax because this is required in bash and sh alike
+if [ -e "$HOME/env/etc/indeedrc" ]; then
+    . "$HOME/env/etc/indeedrc"
+fi
+
+# END env Setup -- Managed by Ansible DO NOT EDIT.

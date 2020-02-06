@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<snippets>
+	<snippet>
+		<shortcut></shortcut>
+		<text></text>
+	</snipper>
+</snippets>
+
+
+Expansion of: http://dferg.us/using-alfred-2-as-a-text-expander/
+
+Script Filter
+keyword: ex (expand)
+ex list (show in hud)
+
+ex add (term) (version)
+ex add (term) (clipboard)
+
+ex rem (term)
+ex remove (term)
+
+
+optional: notification
+action: copy to clipboard
+
+Uses	email templates

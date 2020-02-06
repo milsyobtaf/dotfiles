@@ -14,3 +14,5 @@ StrictHostKeyChecking no
 # Keepalive and autodisconnect
 ServerAliveInterval 30
 ServerAliveCountMax 4
+
+Include ~/.ssh/indeed.conf

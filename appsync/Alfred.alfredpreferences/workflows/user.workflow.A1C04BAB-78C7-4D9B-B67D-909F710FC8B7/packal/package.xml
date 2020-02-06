@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Down for everyone</name>
+  <version>1.0</version>
+  <bundle>florian.down</bundle>
+  <updated>1407924654</updated>
+  <file>down_for_everyone.alfredworkflow</file>
+</workflow>
