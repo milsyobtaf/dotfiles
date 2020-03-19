@@ -6,8 +6,8 @@ export PATH="/usr/local/sbin:$PATH"
 # https://github.com/sorin-ionescu/prezto/issues/966#issuecomment-172003005
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Prezto Settings
 setopt no_share_history
@@ -271,6 +271,10 @@ alias myip='curl -4 https://icanhazip.com'
 # weather and the moon from @noopkat
 alias weather='curl -4 https://wttr.in/Austin'
 alias moon='curl -4 https://wttr.in/Moon'
+
+# enable startup chime
+alias startupchimeon='sudo nvram StartupMute=%00'
+alias startupchimeoff='sudo nvram StartupMute=%01'
 
 # BEGIN env Setup -- Managed by Ansible DO NOT EDIT.
 

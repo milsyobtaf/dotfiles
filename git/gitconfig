@@ -12,7 +12,7 @@
 # add
   add = add --all    # add all, including removals
 # branch
-  branch = branch -v --sort=-committerdate    # branch (verbose output, sorted by most recently used)
+  groot = branch -v --sort=-committerdate    # branch (verbose output, sorted by most recently used)
 # list branches by date
   latest = for-each-ref --sort=-committerdate refs/heads --format='%(color:green)%(committerdate:short) - %(color:white)%(refname:short)'
 # commit
@@ -93,8 +93,6 @@
   process = git-lfs filter-process
 [branch]
   autosetuprebase = always
-[sequence]
-  #editor = interactive-rebase-tool
 
 # BEGIN Managed by shell_setup role
 [core]
