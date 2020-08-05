@@ -36,7 +36,7 @@
 # tools
   filelog = log -u                  # show changes to a file
   mt = mergetool                    # fire up the merge tool
-  cdiff = diff -- ':!*lock*'        # clean diff without lock files
+  cdiff = diff -- ':!*[-.]lock*'        # clean diff without lock files
   dt = difftool                     # fire up Kaleidoscope diff
   diffwords = diff --color-words
 # log
