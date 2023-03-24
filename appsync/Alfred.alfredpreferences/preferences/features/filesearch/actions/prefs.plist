@@ -2,12 +2,45 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>disabledDefaultActions</key>
+	<dict>
+		<key>alfred.action.addtobuffer</key>
+		<true/>
+		<key>alfred.action.copy</key>
+		<true/>
+		<key>alfred.action.copyreplace</key>
+		<true/>
+		<key>alfred.action.delete</key>
+		<true/>
+		<key>alfred.action.mixed.email</key>
+		<true/>
+		<key>alfred.action.mixed.emailto</key>
+		<true/>
+		<key>alfred.action.move</key>
+		<true/>
+		<key>alfred.action.movereplace</key>
+		<true/>
+		<key>alfred.action.recent</key>
+		<true/>
+		<key>alfred.action.showpackagecontents</key>
+		<true/>
+		<key>alfred.action.text.openindictionary</key>
+		<true/>
+		<key>alfred.action.text.saveassnippet</key>
+		<true/>
+		<key>alfred.action.url.open</key>
+		<true/>
+		<key>alfred.action.url.openin</key>
+		<true/>
+		<key>alfred.action.url.usedomainfromurl</key>
+		<true/>
+	</dict>
 	<key>finderSelectionHotkey</key>
 	<dict>
 		<key>key</key>
 		<integer>-1</integer>
 		<key>mod</key>
-		<integer>1048576</integer>
+		<integer>262144</integer>
 		<key>string</key>
 		<string>double tap</string>
 	</dict>
