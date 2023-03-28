@@ -2,6 +2,10 @@ source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
+# Add Homebrew to $PATH
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+
 # Fix ll / coreutils / gnu-utility issue
 # https://github.com/sorin-ionescu/prezto/issues/966#issuecomment-172003005
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -110,18 +114,18 @@ trash() {
 # combo of these two solutions:
 # https://unix.stackexchange.com/a/276483
 # https://stackoverflow.com/a/12059200
-git(){
-  case "$1" in
-    (clone) git-clone "${@:2}";;
-    (*) command git "$@";;
-  esac
-}
-git-clone(){
-    url=$1;
-    reponame=$(echo $url | awk -F/ '{print $NF}' | sed -e 's/.git$//');
-    command git clone $url $reponame;
-    cd $reponame;
-}
+#git(){
+#  case "$1" in
+#    (clone) git-clone "${@:2}";;
+#    (*) command git "$@";;
+#  esac
+#}
+#git-clone(){
+#   url=$1;
+#    reponame=$(echo $url | awk -F/ '{print $NF}' | sed -e 's/.git$//');
+#    command git clone $url $reponame;
+#    cd $reponame;
+#}
 # Hot gif action
 # From https://gist.github.com/brianloveswords/7534169715b5750a892cddcf54c2aa0e
 video-url-from-tweet() {
@@ -288,3 +292,4 @@ if [ -e "${INDEED_ENV_DIR}/etc/indeedrc" ]; then
 fi
 
 # END env Setup -- Managed by Ansible DO NOT EDIT.
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
