@@ -10,11 +10,13 @@ export PATH="/opt/homebrew/sbin:$PATH"
 # https://github.com/sorin-ionescu/prezto/issues/966#issuecomment-172003005
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
+export PATH="${HOME}/.pyenv/shims:${PATH}"
+
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use # This loads nvm
 
 # Prezto Settings
-setopt no_share_history
 unsetopt share_history
+setopt no_share_history
 
 # Spaceship theme loading and config
 source "$HOME/Github/dotfiles/zsh/spaceship.zsh"

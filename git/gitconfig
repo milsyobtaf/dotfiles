@@ -1,6 +1,6 @@
 [user]
-  name = Dustin Younse
-  email = milsyobtaf@gmail.com
+	name = Dustin Younse
+	email = dustiny@indeed.com
 #  signingkey = BEE90EAF
 [includeIf "gitdir:~/www/"]
   path = ~/www/.gitconfig
@@ -39,6 +39,8 @@
   cdiff = diff -- ':!*[-.]lock*'        # clean diff without lock files
   dt = difftool                     # fire up Kaleidoscope diff
   diffwords = diff --color-words
+  remote-clean = fetch --prune      # fetch from remote and prune deleted branches
+  local-clean = "git branch -vv | grep 'gone]' | awk '{print $1}' | xargs git branch -D"  # delete local branches that no longer exist on the remote
 # log
   log = log --date=human
   lg = log --date=human --color --graph -50 --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
@@ -69,14 +71,6 @@
   pretty = format:%Cred%h%Creset %C(bold blue)<%an>%Creset %Cgreen(%cr) %C(yellow)%d%Creset %n%C(bold white)%s%Creset %Creset %n%b
 [core]
   excludesfile = ~/.gitignore_global
-  pager = "diff-so-fancy | less --tabs=1,5 -RFX"
-[diff]
-  tool = Kaleidoscope
-  algorithm = patience
-[difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[difftool]
-  prompt = false
 [merge]
   tool = Kaleidoscope
 [mergetool]
@@ -99,7 +93,7 @@
     path = /Users/dustiny/env//etc/git/aliases
     path = /Users/dustiny/env//etc/git/general-config
 
- 
+
 # END Managed by shell_setup role
 [pull]
 	ff = only

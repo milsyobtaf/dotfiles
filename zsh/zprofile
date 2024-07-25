@@ -21,3 +21,6 @@ if [ -d "${INDEED_ENV_DIR}/bin" ]; then
 fi
 
 # END env Setup -- Managed by Ansible DO NOT EDIT.
+
+# Added by OrbStack: command-line tools and integration
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
