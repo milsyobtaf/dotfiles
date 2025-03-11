@@ -1,3 +1,11 @@
+# Added by OrbStack: 'orb' SSH host for Linux machines
+# This only works if it's at the top of ssh_config (before any Host blocks).
+# Comment this line if you don't want it to be added again.
+Include ~/.orbstack/ssh/config
+ Host code.corp.indeed.com
+   AddKeysToAgent yes
+   IdentityFile ~/.ssh/tealc
+
 Host *
 # Add key to ssh-agent automatically
 IgnoreUnknown AddKeysToAgent,UseKeychain
@@ -5,7 +13,7 @@ AddKeysToAgent yes
 UseKeychain yes
 IdentityFile ~/.ssh/tealc
 
-Include ~/.ssh/zephyr.conf
+# Include ~/.ssh/zephyr.conf
 
 # Forward ssh agent to the remote machine.
 ForwardAgent yes
@@ -14,5 +22,3 @@ StrictHostKeyChecking no
 # Keepalive and autodisconnect
 ServerAliveInterval 30
 ServerAliveCountMax 4
-
-Include ~/.ssh/indeed.conf

@@ -1,0 +1,28 @@
+theme = Dark Modern
+background = #161616
+unfocused-split-fill = #424242
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = false
+cursor-color = #f190d4
+cursor-opacity = 1
+font-family = Source Code Pro for Powerline
+font-size = 14
+bold-is-bright = true
+selection-invert-fg-bg = true
+scrollback-limit = 50000000
+
+window-colorspace = display-p3
+
+window-padding-x = 16
+window-padding-y = 8
+
+mouse-hide-while-typing = true
+macos-auto-secure-input = true
+window-new-tab-position = end
+auto-update = download
+
+macos-icon = custom-style
+macos-icon-frame = aluminum
+macos-icon-ghost-color = #ff00b3
+macos-icon-screen-color = #424242

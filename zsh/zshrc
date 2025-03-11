@@ -19,7 +19,7 @@ unsetopt share_history
 setopt no_share_history
 
 # Spaceship theme loading and config
-source "$HOME/Github/dotfiles/zsh/spaceship.zsh"
+source "$HOME/github/dotfiles/zsh/spaceship.zsh"
 
 source "$HOME/.zprofile"
 
@@ -128,69 +128,17 @@ trash() {
 #    command git clone $url $reponame;
 #    cd $reponame;
 #}
-# Hot gif action
-# From https://gist.github.com/brianloveswords/7534169715b5750a892cddcf54c2aa0e
-video-url-from-tweet() {
-    if [ "$1" ]; then
-        url=$1
+
+# git extra features
+# from https://stackoverflow.com/a/73756647
+# - clone + cd 
+function git() {
+    if [ $1 = "clone" ]
+    then 
+        command git $@ && cd "$(basename "$_" .git)"
     else
-        echo "Must provide a url"
-        return 1
+        command git $@
     fi
-
-    curl --silent $url |\
-        # should find the <meta> tag with content="<thumbnail url>"
-        (grep -m1 "tweet_video_thumb" ||\
-          echo "Could not find video" && return 1) |\
-
-        ## It looks like Twitter changed some page format things, this is now the old and busted  
-        ## from: <meta property="og:image" content="https://pbs.twimg.com/tweet_video_thumb/xxxxxxxxxx.jpg">
-        ## to: https://pbs.twimg.com/tweet_video_thumb/xxxxxxxxxx.jpg
-        #cut -d '"' -f 4 |\
-
-        ## This is now the new hotness
-        # from: <img src="https://pbs.twimg.com/tweet_video_thumb/D7z5JahXsAEkH_z.jpg:small"/>
-        # to: https://pbs.twimg.com/tweet_video_thumb/D7z5JahXsAEkH_z.jpg:small
-        cut -d '"' -f 2 |\
-
-        # from: https://pbs.twimg.com/tweet_video_thumb/xxxxxxxxxx.jpg
-        # to: https://video.twimg.com/tweet_video/xxxxxxxxxx.mp4
-        sed 's/.jpg:small/.mp4/g' |\
-        sed 's/pbs.twimg.com\/tweet_video_thumb/video.twimg.com\/tweet_video/g'
-}
-video-from-tweet() {
-    if [ "$1" ]; then
-        url=$1
-    else
-        echo "Must provide a url"
-        return 1
-    fi
-    curl $(video-url-from-tweet $url)
-}
-video-to-gif() {
-    # derived from https://engineering.giphy.com/how-to-make-gifs-with-ffmpeg/
-    if [ "$2" ]; then
-        input=$1
-        output=$2
-    else
-        echo "Must provide an input file and output file"
-        return 1
-    fi
-
-    ffmpeg -i $input \
-           -filter_complex "[0:v] split [a][b];[a] palettegen [p];[b][p] paletteuse" \
-           -f gif \
-           $output
-}
-gif-from-tweet() {
-    if [ "$2" ]; then
-        url=$1
-        output=$2
-    else
-        echo "Must provide a url and an output filename"
-        return 1
-    fi
-    video-from-tweet $url | video-to-gif - $output
 }
 
 ### Aliases ###
@@ -246,9 +194,6 @@ alias mtr='sudo mtr'
 # sublime text shortcut
 alias subl="sublime"
 
-# better name for https://gist.github.com/brianloveswords/7534169715b5750a892cddcf54c2aa0e
-alias tweetgif="gif-from-tweet"
-
 # the following three are from https://remysharp.com/2018/08/23/cli-improved
 # ncdu with some prettification
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
@@ -274,24 +219,9 @@ alias gittheirs="git status|grep -e '^U'|sed -e 's/^UU *//'|xargs git checkout -
 alias myip='curl -4 https://icanhazip.com'
 
 # weather and the moon from @noopkat
-alias weather='curl -4 https://wttr.in/Austin'
+alias weather='curl -4 https://wttr.in/Maynard\?format\="%l:+%c+%t+%m\n"'
 alias moon='curl -4 https://wttr.in/Moon'
 
 # enable startup chime
 alias startupchimeon='sudo nvram StartupMute=%00'
 alias startupchimeoff='sudo nvram StartupMute=%01'
-
-# BEGIN env Setup -- Managed by Ansible DO NOT EDIT.
-
-# Setup INDEED_ENV_DIR earlier.
-if [ -z "${INDEED_ENV_DIR}" ]; then
-    export INDEED_ENV_DIR="${HOME}/env/"
-fi
-
-# Single-brace syntax because this is required in bash and sh alike
-if [ -e "${INDEED_ENV_DIR}/etc/indeedrc" ]; then
-    . "${INDEED_ENV_DIR}/etc/indeedrc"
-fi
-
-# END env Setup -- Managed by Ansible DO NOT EDIT.
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

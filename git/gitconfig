@@ -1,6 +1,6 @@
 [user]
-	name = Dustin Younse
-	email = dustiny@indeed.com
+  name = Dustin Younse
+  email = dustiny@indeed.com
 #  signingkey = BEE90EAF
 [includeIf "gitdir:~/www/"]
   path = ~/www/.gitconfig
@@ -8,6 +8,10 @@
 #  gpgsign = true
 [github]
   user = milsyobtaf
+[init]
+  defaultBranch = main
+[pull]
+  ff = only
 [alias]
 # add
   add = add --all    # add all, including removals
@@ -31,16 +35,16 @@
 # remote
   remotes = remote -v                     # show remotes (verbose)
 # reset
-  unstage = reset HEAD              # remove files from index (tracking)
   uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
+  unstage = reset HEAD              # remove files from index (tracking)
 # tools
-  filelog = log -u                  # show changes to a file
-  mt = mergetool                    # fire up the merge tool
   cdiff = diff -- ':!*[-.]lock*'        # clean diff without lock files
   dt = difftool                     # fire up Kaleidoscope diff
   diffwords = diff --color-words
-  remote-clean = fetch --prune      # fetch from remote and prune deleted branches
+  filelog = log -u                  # show changes to a file
   local-clean = "git branch -vv | grep 'gone]' | awk '{print $1}' | xargs git branch -D"  # delete local branches that no longer exist on the remote
+  mt = mergetool                    # fire up the merge tool
+  remote-clean = fetch --prune      # fetch from remote and prune deleted branches
 # log
   log = log --date=human
   lg = log --date=human --color --graph -50 --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
@@ -71,12 +75,13 @@
   pretty = format:%Cred%h%Creset %C(bold blue)<%an>%Creset %Cgreen(%cr) %C(yellow)%d%Creset %n%C(bold white)%s%Creset %Creset %n%b
 [core]
   excludesfile = ~/.gitignore_global
+  editor = code --wait
 [merge]
-  tool = Kaleidoscope
+  tool = kaleidoscope
 [mergetool]
   prompt = false
   keepBackup = false
-[mergetool "Kaleidoscope"]
+[mergetool "kaleidoscope"]
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" \"$REMOTE\"
 [push]
   default = simple
@@ -92,13 +97,8 @@
 [include]
     path = /Users/dustiny/env//etc/git/aliases
     path = /Users/dustiny/env//etc/git/general-config
-
-
 # END Managed by shell_setup role
-[pull]
-	ff = only
 # BEGIN Managed by git_ssh role
-
 [includeIf "gitdir:~/artifacts/"]
     path = .gitconfig-ind
 [includeIf "gitdir:/Users/dustiny/indeed/"]
@@ -108,5 +108,3 @@
 [includeIf "gitdir:~/go/src/indeed.com/"]
     path = .gitconfig-ind
 # END Managed by git_ssh role
-[init]
-	defaultBranch = main
