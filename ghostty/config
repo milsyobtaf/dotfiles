@@ -12,6 +12,8 @@ bold-is-bright = true
 selection-invert-fg-bg = true
 scrollback-limit = 50000000
 
+confirm-close-surface = false
+
 window-colorspace = display-p3
 
 window-padding-x = 16
