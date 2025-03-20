@@ -21,3 +21,4 @@ if [ -d "${INDEED_ENV_DIR}/bin" ]; then
 fi
 
 # END env Setup -- Managed by Ansible DO NOT EDIT.
+eval "$(/opt/homebrew/bin/brew shellenv)"

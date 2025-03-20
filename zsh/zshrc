@@ -123,73 +123,17 @@ git-clone(){
     cd $reponame;
 }
 # Hot gif action
-# From https://gist.github.com/brianloveswords/7534169715b5750a892cddcf54c2aa0e
-video-url-from-tweet() {
-    if [ "$1" ]; then
-        url=$1
-    else
-        echo "Must provide a url"
-        return 1
-    fi
-
-    curl --silent $url |\
-        # should find the <meta> tag with content="<thumbnail url>"
-        (grep -m1 "tweet_video_thumb" ||\
-          echo "Could not find video" && return 1) |\
-
-        ## It looks like Twitter changed some page format things, this is now the old and busted  
-        ## from: <meta property="og:image" content="https://pbs.twimg.com/tweet_video_thumb/xxxxxxxxxx.jpg">
-        ## to: https://pbs.twimg.com/tweet_video_thumb/xxxxxxxxxx.jpg
-        #cut -d '"' -f 4 |\
-
-        ## This is now the new hotness
-        # from: <img src="https://pbs.twimg.com/tweet_video_thumb/D7z5JahXsAEkH_z.jpg:small"/>
-        # to: https://pbs.twimg.com/tweet_video_thumb/D7z5JahXsAEkH_z.jpg:small
-        cut -d '"' -f 2 |\
-
-        # from: https://pbs.twimg.com/tweet_video_thumb/xxxxxxxxxx.jpg
-        # to: https://video.twimg.com/tweet_video/xxxxxxxxxx.mp4
-        sed 's/.jpg:small/.mp4/g' |\
-        sed 's/pbs.twimg.com\/tweet_video_thumb/video.twimg.com\/tweet_video/g'
-}
-video-from-tweet() {
-    if [ "$1" ]; then
-        url=$1
-    else
-        echo "Must provide a url"
-        return 1
-    fi
-    curl $(video-url-from-tweet $url)
-}
-video-to-gif() {
-    # derived from https://engineering.giphy.com/how-to-make-gifs-with-ffmpeg/
-    if [ "$2" ]; then
-        input=$1
-        output=$2
-    else
-        echo "Must provide an input file and output file"
-        return 1
-    fi
-
-    ffmpeg -i $input \
-           -filter_complex "[0:v] split [a][b];[a] palettegen [p];[b][p] paletteuse" \
-           -f gif \
-           $output
-}
-gif-from-tweet() {
-    if [ "$2" ]; then
-        url=$1
-        output=$2
-    else
-        echo "Must provide a url and an output filename"
-        return 1
-    fi
-    video-from-tweet $url | video-to-gif - $output
+# From https://gist.github.com/brianloveswords/7534169715b5750a892cddcf54c2aa0e?permalink_comment_id=3069305#gistcomment-3069305
+tweet-to-gif() {
+  youtube-dl -o - $1 | ffmpeg -i pipe: \
+    -filter_complex "[0:v] split [a][b];[a] palettegen [p];[b][p] paletteuse" \
+    -hide_banner -loglevel panic \
+    -f gif ${1##*/}.gif
 }
 
 ### Aliases ###
 # list out apps installed by homebrew
-alias brews='echo -- "brews --------------------" && brew list && echo "-- casks -----------------" && brew list --cask'
+alias brews='echo -- "brews --------------------" && brew leaves && echo "-- casks -----------------" && brew list --cask'
 
 # list of all out of date homebrew apps
 alias brewu='brew outdated'
@@ -240,8 +184,8 @@ alias mtr='sudo mtr'
 # sublime text shortcut
 alias subl="sublime"
 
-# better name for https://gist.github.com/brianloveswords/7534169715b5750a892cddcf54c2aa0e
-alias tweetgif="gif-from-tweet"
+# better name for https://gist.github.com/brianloveswords/7534169715b5750a892cddcf54c2aa0e?permalink_comment_id=3069305#gistcomment-3069305
+alias tweetgif="tweet-to-gif"
 
 # the following three are from https://remysharp.com/2018/08/23/cli-improved
 # ncdu with some prettification
@@ -288,3 +232,4 @@ if [ -e "${INDEED_ENV_DIR}/etc/indeedrc" ]; then
 fi
 
 # END env Setup -- Managed by Ansible DO NOT EDIT.
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

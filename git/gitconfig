@@ -114,3 +114,5 @@
 [includeIf "gitdir:~/go/src/indeed.com/"]
     path = .gitconfig-ind
 # END Managed by git_ssh role
+[init]
+	defaultBranch = main

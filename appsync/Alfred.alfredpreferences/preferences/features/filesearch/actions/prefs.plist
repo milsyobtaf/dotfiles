@@ -7,9 +7,11 @@
 		<key>key</key>
 		<integer>-1</integer>
 		<key>mod</key>
-		<integer>1048576</integer>
+		<integer>524288</integer>
 		<key>string</key>
 		<string>double tap</string>
 	</dict>
+	<key>sortByUsage</key>
+	<true/>
 </dict>
 </plist>

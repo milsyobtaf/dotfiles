@@ -3,7 +3,7 @@ Host *
 IgnoreUnknown AddKeysToAgent,UseKeychain
 AddKeysToAgent yes
 UseKeychain yes
-IdentityFile ~/.ssh/tealc
+#IdentityFile ~/.ssh/tealc
 
 Include ~/.ssh/zephyr.conf
 
@@ -15,4 +15,4 @@ StrictHostKeyChecking no
 ServerAliveInterval 30
 ServerAliveCountMax 4
 
-Include ~/.ssh/indeed.conf
+#Include ~/.ssh/indeed.conf
