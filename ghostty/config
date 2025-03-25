@@ -1,6 +1,6 @@
 theme = Dark Modern
 background = #161616
-unfocused-split-fill = #424242
+unfocused-split-fill = #595959
 shell-integration-features = no-cursor
 cursor-style = block
 cursor-style-blink = false
@@ -23,6 +23,8 @@ mouse-hide-while-typing = true
 macos-auto-secure-input = true
 window-new-tab-position = end
 auto-update = download
+
+macos-titlebar-proxy-icon = hidden
 
 macos-icon = custom-style
 macos-icon-frame = aluminum
