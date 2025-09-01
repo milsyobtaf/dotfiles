@@ -1,6 +1,6 @@
 [user]
   name = Dustin Younse
-  email = dustiny@indeed.com
+  email = milsyobtaf@gmail.com
 #  signingkey = BEE90EAF
 [includeIf "gitdir:~/www/"]
   path = ~/www/.gitconfig
@@ -72,7 +72,7 @@
   newNormal = "green bold"
   newHighlight = "green bold 22"
 [format]
-  pretty = format:%Cred%h%Creset %C(bold blue)<%an>%Creset %Cgreen(%cr) %C(yellow)%d%Creset %n%C(bold white)%s%Creset %Creset %n%b
+  pretty = format:%Cred%h%Creset %C(bold blue)%an%Creset %C(blue)<%ae>%Creset %Cgreen(%cr) %C(yellow)%d%Creset %n%C(bold white)%s%Creset %Creset %n%b
 [core]
   excludesfile = ~/.gitignore_global
   editor = code --wait
@@ -92,19 +92,3 @@
   process = git-lfs filter-process
 [branch]
   autosetuprebase = always
-
-# BEGIN Managed by shell_setup role
-[include]
-    path = /Users/dustiny/env//etc/git/aliases
-    path = /Users/dustiny/env//etc/git/general-config
-# END Managed by shell_setup role
-# BEGIN Managed by git_ssh role
-[includeIf "gitdir:~/artifacts/"]
-    path = .gitconfig-ind
-[includeIf "gitdir:/Users/dustiny/indeed/"]
-    path = .gitconfig-ind
-[includeIf "gitdir:~/env/"]
-    path = .gitconfig-ind
-[includeIf "gitdir:~/go/src/indeed.com/"]
-    path = .gitconfig-ind
-# END Managed by git_ssh role
