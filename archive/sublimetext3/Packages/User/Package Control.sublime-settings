@@ -1,0 +1,21 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Dayle Rees Color Schemes",
+		"HTML-CSS-JS Prettify",
+		"Jade",
+		"MarkdownPreview",
+		"Package Control",
+		"PHP Companion",
+		"PHP CS Fixer",
+		"SublimeLinter",
+		"SublimeLinter-phpcs",
+		"Theme - Gravity",
+		"Vuejs Complete Package"
+	]
+}

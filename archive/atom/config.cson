@@ -1,0 +1,253 @@
+"*":
+  Ruler:
+    enabled: true
+    position: 80
+  "atom-beautify":
+    apex: {}
+    arduino: {}
+    c: {}
+    cfml: {}
+    coffeescript: {}
+    cpp: {}
+    cs: {}
+    css: {}
+    d: {}
+    ejs: {}
+    erb: {}
+    fortran: {}
+    general:
+      _analyticsUserId: "4eb46fa7-d7f2-4186-a4ef-de0a802d5884"
+    gherkin: {}
+    handlebars: {}
+    html: {}
+    jade: {}
+    java: {}
+    js: {}
+    json: {}
+    jsx: {}
+    latex: {}
+    less: {}
+    marko: {}
+    mustache: {}
+    objectivec: {}
+    pawn: {}
+    perl: {}
+    php:
+      cs_fixer_path: "/Users/milsyobtaf/.composer/vendor/bin/php-cs-fixer"
+    python: {}
+    riot: {}
+    ruby: {}
+    rust: {}
+    sass: {}
+    scss: {}
+    spacebars: {}
+    sql: {}
+    svg: {}
+    swig: {}
+    tss: {}
+    twig: {}
+    typescript: {}
+    vala: {}
+    visualforce: {}
+    xml: {}
+    xtemplate: {}
+  "atom-color-highlight": {}
+  "autocomplete-plus":
+    includeCompletionsFromAllBuffers: false
+  "copy-as-rtf": {}
+  core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
+    disabledPackages: [
+      "deprecation-cop"
+      "wrap-guide"
+    ]
+    excludeVcsIgnoredPaths: false
+    followSymlinks: true
+    packagesWithKeymapsDisabled: [
+      "blame"
+      "linter-drupalcs"
+      "git-plus"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "firewatch-syntax"
+    ]
+  docblockr: {}
+  drupal:
+    fileTypesPhp: "module,install,inc,test"
+  editor:
+    fontFamily: "FiraCode-Retina"
+    fontSize: 18
+    invisibles: {}
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+    scrollPastEnd: true
+    showInvisibles: true
+    showLineNumbers: true
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+  "exception-reporting":
+    userId: "44890254-0af3-270e-9f07-49c05c4037ca"
+  "file-icons": {}
+  "git-log": {}
+  "git-plus":
+    general:
+      analytics: false
+      splitPane: "Right"
+  "grunt-runner":
+    gruntPaths: [
+      "/usr/local/bin/grunt"
+    ]
+  "ide-php":
+    phpPath: "/Users/dustin.younse/.phpbrew/php/php-7.1.9/bin"
+  linter: {}
+  "linter-drupalcs": {}
+  "linter-phpcs":
+    codeStandardOrConfigFile: "PSR0"
+    disableWhenNoConfigFile: true
+    executablePath: "/Users/milsyobtaf/.composer/vendor/bin/phpcs"
+  "linter-ui-default":
+    panelHeight: 69
+  "markdown-preview":
+    useGitHubStyle: true
+  "merge-conflicts": {}
+  minimap: {}
+  "multi-wrap-guide": {}
+  "node-debugger": {}
+  "omni-ruler":
+    columns: [
+      "80"
+      "120"
+    ]
+  "one-dark-ui":
+    tabSizing: "Even"
+  "php-debug":
+    GutterPosition: "Left"
+    MaxChildren: 128
+    MaxDepth: 5
+    PathMaps: []
+  pigments: {}
+  "project-manager": {}
+  "split-diff":
+    ignoreWhitespace: true
+  "symbols-list":
+    startUp: false
+  "todo-show":
+    findTheseTodos: [
+      "FIXME"
+      "TODO"
+      "CHANGED"
+      "XXX"
+      "IDEA"
+      "HACK"
+      "NOTE"
+      "REVIEW"
+      "todo"
+    ]
+  "tree-view":
+    autoReveal: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ensureSingleTrailingNewline: false
+    removeTrailingWhitespace: false
+".apache-config.mod_perl.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".apache-config.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".basic.html.text":
+  editor:
+    preferredLineLength: 80
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+".csv.tabular.text":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+    preferredLineLength: 80
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+".diff.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".drupal.html.php.text":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+    preferredLineLength: 80
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+".drupal.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".dust.html.text":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".ini.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".js.regexp.replacement.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".js.regexp.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".js.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".logo.source":
+  editor:
+    softWrapAtPreferredLineLength: false
+".makefile.source":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".md":
+  whitespace:
+    removeTrailingWhitespace: false
+".null-grammar.plain.text":
+  editor:
+    preferredLineLength: 80
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+".source.sql":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+    showIndentGuide: false
+".source.ssh-config":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".source.yaml":
+  editor:
+    preferredLineLength: 80
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+".tabular.text.tsv":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".text.xml":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
+".text.xml.xsl":
+  editor:
+    nonWordCharacters: "./\\\\()\\\"'-_:,.;<>~!@#%^&*|+=[]{}`~?"
