@@ -1,12 +1,3 @@
-[submodule ".zprezto"]
-	path = .zprezto
-	url = https://github.com/sorin-ionescu/prezto.git
-[submodule "zsh/contrib"]
-	path = zsh/contrib
-	url = https://github.com/belak/prezto-contrib.git
-[submodule "zsh/eza-themes"]
-	path = zsh/eza-themes
-	url = git@github.com:eza-community/eza-themes.git
 [submodule ".vim/plugged/vim-gitgutter"]
 	path = .vim/plugged/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
@@ -25,3 +16,12 @@
 [submodule ".vim/plugged/vim-surround"]
 	path = .vim/plugged/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule ".zprezto"]
+	path = .zprezto
+	url = https://github.com/sorin-ionescu/prezto.git
+[submodule "zsh/contrib"]
+	path = zsh/contrib
+	url = https://github.com/belak/prezto-contrib.git
+[submodule "zsh/eza-themes"]
+	path = zsh/eza-themes
+	url = git@github.com:eza-community/eza-themes.git
