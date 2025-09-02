@@ -1,4 +1,12 @@
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+# Fix for homebrew-installed package completions in prezto
+# https://github.com/sorin-ionescu/prezto/issues/2103#issuecomment-3218303002
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
@@ -16,6 +24,9 @@ export PATH="${HOME}/.pyenv/shims:${PATH}"
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Set eza config directory for color themes
+export EZA_CONFIG_DIR="$HOME/.config/eza"
+
 # Prezto Settings
 unsetopt share_history
 setopt no_share_history
@@ -23,19 +34,21 @@ setopt no_share_history
 # Spaceship theme loading and config
 source "$HOME/github/dotfiles/zsh/spaceship.zsh"
 
-source "$HOME/.zprofile"
-
 # Preferred editor for local and remote sessions
 # currently they are the same, but not always
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
   export EDITOR='vim'
+  export VISUAL='nova'
 fi
 
 # If fortune is installed, run a fortune
-if [ -e /usr/local/bin/fortune ]; then
-    fortune -s
+if command -v fortune > /dev/null; then
+    echo " "
+    printf '%.s-' $(seq 1 $(tput cols))
+    echo ✨🔮✨ $(fortune -s)
+    printf '%.s-' $(seq 1 $(tput cols))
     echo " "
 fi
 
@@ -147,6 +160,9 @@ alias finder='open -a Finder ./'
 alias ls="eza --icons=always"
 alias ll="eza -alh  --icons=always"
 alias tree="eza --tree  --icons=always"
+
+# Alias zoxide to cd
+eval "$(zoxide init --cmd cd zsh)"
 
 # always highlight grep search term
 alias grep='grep --color=auto'
