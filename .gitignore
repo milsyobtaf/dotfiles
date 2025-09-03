@@ -10,6 +10,7 @@ netrwhist
 
 log/
 zsh/themes/*milsyobtaf*
+*.zwc
 
 # atom
 atom/*-cache
