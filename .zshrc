@@ -31,8 +31,11 @@ export EZA_CONFIG_DIR="$HOME/.config/eza"
 unsetopt share_history
 setopt no_share_history
 
-# Spaceship theme loading and config
-source "$HOME/github/dotfiles/zsh/spaceship.zsh"
+# enable Spaceship
+source "/opt/homebrew/opt/spaceship/spaceship.zsh"
+
+# Spaceship theme config
+# export SPACESHIP_CONFIG="$HOME/github/dotfiles/zsh/spaceship.zsh"
 
 # Preferred editor for local and remote sessions
 # currently they are the same, but not always
@@ -161,9 +164,6 @@ alias ls="eza --icons=always"
 alias ll="eza -alh  --icons=always"
 alias tree="eza --tree  --icons=always"
 
-# Alias zoxide to cd
-eval "$(zoxide init --cmd cd zsh)"
-
 # always highlight grep search term
 alias grep='grep --color=auto'
 
@@ -219,3 +219,6 @@ alias myip='curl -4 https://icanhazip.com'
 # weather and the moon from @noopkat
 alias weather='curl -4 https://wttr.in/Boxborough\?format\="%l:+%c+%t+%m\n"'
 alias moon='curl -4 https://wttr.in/Moon'
+
+# Enabled zoxide with the cd alias
+eval "$(zoxide init --cmd cd zsh)"
