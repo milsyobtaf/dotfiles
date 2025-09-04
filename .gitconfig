@@ -75,7 +75,7 @@
   pretty = format:%Cred%h%Creset %C(bold blue)%an%Creset %C(blue)<%ae>%Creset %Cgreen(%cr) %C(yellow)%d%Creset %n%C(bold white)%s%Creset %Creset %n%b
 [core]
   excludesfile = ~/.gitignore_global
-  editor = code --wait
+  editor = vim 
 [merge]
   tool = kaleidoscope
 [mergetool]
