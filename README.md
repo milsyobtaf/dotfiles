@@ -2,6 +2,18 @@
 
 gettin' all dotfiled up in here
 
+## install all the things
+
+`brew` can now manage regular packages through `brew`, app store apps through `mas`, and vs code plugins. there are separate brewfiles for each machine, because of different needs.
+
+### install brew
+
+`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+### install the stuff
+
+`brew bundle install --file=correctBrewFileHere`
+
 ## stow
 
 i'm now using `stow` to manage the symlinking mishegas. it's weird, but works a treat.
