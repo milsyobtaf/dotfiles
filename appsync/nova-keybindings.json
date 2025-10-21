@@ -1,0 +1,34 @@
+{
+  "menuItems" : {
+    "AddCursorsAtEndOfLine" : {
+      "shortcut" : "cmd-shift-l"
+    },
+    "NextTab" : {
+      "shortcut" : "ctrl-tab"
+    },
+    "OpenQuickly" : {
+      "shortcut" : "cmd-p"
+    },
+    "PreviousTab" : {
+      "shortcut" : "ctrl-shift-backtab"
+    },
+    "Print" : {
+
+    },
+    "ShowFilesSidebar" : {
+      "shortcut" : "cmd-1"
+    },
+    "ShowFindSidebar" : {
+      "shortcut" : "cmd-2"
+    },
+    "ShowGitSidebar" : {
+      "shortcut" : "cmd-3"
+    },
+    "ShowNextWindowTab" : {
+
+    },
+    "ShowPreviousWindowTab" : {
+
+    }
+  }
+}
