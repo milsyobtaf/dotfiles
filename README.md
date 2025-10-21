@@ -17,8 +17,10 @@ i'm now using `stow` to manage the symlinking mishegas. it's weird, but works a 
 ### refresh symlinks
 
 `stow --restow --target $HOME .`
-notes:
 
+### notes:
+
+- don't add ssh keys into `dotfiles/.ssh`, add them into `$HOME/.ssh` so they aren't picked up by `git`
 - https://archive.is/ZL2gt
   - https://web.archive.org/web/20241008102622/https://medium.com/@protiumx/bash-gnu-stow-take-a-walk-while-your-new-macbook-is-being-set-up-351a6f2f9225
 - https://archive.is/TZ8Iw
