@@ -1,11 +1,8 @@
 [user]
   name = Dustin Younse
   email = milsyobtaf@gmail.com
-#  signingkey = BEE90EAF
 [includeIf "gitdir:~/www/"]
   path = ~/www/.gitconfig
-[commit]
-#  gpgsign = true
 [github]
   user = milsyobtaf
 [init]
@@ -85,6 +82,7 @@
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" \"$REMOTE\"
 [push]
   default = simple
+  autoSetupRemote = true
 [filter "lfs"]
   required = true
   clean = git-lfs clean -- %f
