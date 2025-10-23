@@ -38,3 +38,13 @@ i'm now using `stow` to manage the symlinking mishegas. it's weird, but works a 
 - https://archive.is/TZ8Iw
   - https://web.archive.org/web/20250723093511/https://tamerlan.dev/how-i-manage-my-dotfiles-using-gnu-stow/
 - https://www.youtube.com/watch?v=y6XCebnB9gs
+
+## various macos fixes
+
+### put application switcher on multiple screens
+
+```sh
+defaults write com.apple.Dock appswitcher-all-displays -bool true
+killall Dock
+```
+
