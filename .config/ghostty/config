@@ -8,14 +8,13 @@ cursor-color = #f190d4
 cursor-opacity = 1
 font-family = Source Code Pro for Powerline
 font-size = 14
-# theme = AtomOneDark
-theme = Dracula
 bold-is-bright = true
 selection-invert-fg-bg = true
 scrollback-limit = 50000000
 
 confirm-close-surface = false
 keybind = cmd+q>cmd+q=quit
+window-save-state = always
 
 window-colorspace = display-p3
 
@@ -30,6 +29,7 @@ auto-update = download
 macos-titlebar-proxy-icon = hidden
 
 macos-icon = custom-style
-macos-icon-frame = aluminum
 macos-icon-ghost-color = #ff00b3
 macos-icon-screen-color = #424242
+quick-terminal-position = bottom
+keybind = global:cmd+opt+ctrl+shift+backquote=toggle_quick_terminal
