@@ -21,13 +21,14 @@ window-colorspace = display-p3
 window-padding-x = 16
 window-padding-y = 8
 macos-titlebar-style = native
-
-mouse-hide-while-typing = true
-macos-auto-secure-input = true
-window-new-tab-position = end
-auto-update = download
-
 macos-titlebar-proxy-icon = hidden
+
+macos-auto-secure-input = true
+mouse-hide-while-typing = true
+window-new-tab-position = end
+window-show-tab-bar = always
+
+auto-update = download
 
 macos-icon = custom-style
 macos-icon-ghost-color = #ff00b3
