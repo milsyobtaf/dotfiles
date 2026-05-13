@@ -1,21 +1,3 @@
-[submodule ".vim/plugged/vim-gitgutter"]
-	path = .vim/plugged/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter
-[submodule ".vim/plugged/ctrlp.vim"]
-	path = .vim/plugged/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim
-[submodule ".vim/plugged/nerdcommenter"]
-	path = .vim/plugged/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter
-[submodule ".vim/plugged/vim-fugitive"]
-	path = .vim/plugged/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
-[submodule ".vim/plugged/vim-obsession"]
-	path = .vim/plugged/vim-obsession
-	url = https://github.com/tpope/vim-obsession
-[submodule ".vim/plugged/vim-surround"]
-	path = .vim/plugged/vim-surround
-	url = https://github.com/tpope/vim-surround
 [submodule ".zprezto"]
 	path = .zprezto
 	url = https://github.com/sorin-ionescu/prezto.git
