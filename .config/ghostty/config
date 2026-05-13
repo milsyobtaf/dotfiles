@@ -20,6 +20,7 @@ window-colorspace = display-p3
 
 window-padding-x = 16
 window-padding-y = 8
+macos-titlebar-style = native
 
 mouse-hide-while-typing = true
 macos-auto-secure-input = true
@@ -33,3 +34,13 @@ macos-icon-ghost-color = #ff00b3
 macos-icon-screen-color = #424242
 quick-terminal-position = bottom
 keybind = global:cmd+opt+ctrl+shift+backquote=toggle_quick_terminal
+
+# Word navigation
+keybind = opt+arrow_left=text:\x1bb
+keybind = opt+arrow_right=text:\x1bf
+keybind = opt+backspace=text:\x17
+
+# Line navigation
+keybind = cmd+arrow_left=csi:H
+keybind = cmd+arrow_right=csi:F
+keybind = cmd+backspace=text:\x15

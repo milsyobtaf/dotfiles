@@ -20,6 +20,9 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 export PATH="${HOME}/.pyenv/shims:${PATH}"
 
+# Amazon toolbox app
+export PATH=$HOME/.toolbox/bin:$PATH
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
