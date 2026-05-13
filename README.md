@@ -30,6 +30,20 @@ i'm now using `stow` to manage the symlinking mishegas. it's weird, but works a 
 
 `stow --restow --target $HOME .`
 
+## zsh setup
+
+`git submodule update --init --recursive`
+
+this installs all of the submodules we need, currently `.zprezto` and `/zsh/eza-themes`.
+
+## vim setup
+
+- `vim`
+- `PlugInstall`
+- `PlugCleanup`
+
+this installs any defined plugins and cleans up any cruft.
+
 ### notes:
 
 - don't add ssh keys into `dotfiles/.ssh`, add them into `$HOME/.ssh` so they aren't picked up by `git`
