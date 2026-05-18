@@ -50,7 +50,7 @@ else
 fi
 
 # If fortune is installed, run a fortune
-if command -v fortune > /dev/null; then
+if command -v fortune &> /dev/null; then
     echo " "
     printf '%.s-' $(seq 1 $(tput cols))
     echo ✨🔮✨ $(fortune -s)
@@ -70,20 +70,24 @@ select-word-style bash
 # From https://github.com/nvm-sh/nvm#calling-nvm-use-automatically-in-a-directory-with-a-nvmrc-file
 autoload -U add-zsh-hook
 load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
+  if ! command -v nvm &> /dev/null; then
+  
+  else
+    local node_version="$(nvm version)"
+    local nvmrc_path="$(nvm_find_nvmrc)"
 
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
+    if [ -n "$nvmrc_path" ]; then
+      local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+  
+      if [ "$nvmrc_node_version" = "N/A" ]; then
+        nvm install
+      elif [ "$nvmrc_node_version" != "$node_version" ]; then
+        nvm use
+      fi
+    elif [ "$node_version" != "$(nvm version default)" ]; then
+      echo "Reverting to nvm default version"
+      nvm use default
     fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
   fi
 }
 add-zsh-hook chpwd load-nvmrc
@@ -189,7 +193,7 @@ alias tailc='multitail -c'
 alias mtail='multitail -c'
 
 # force mtr to be sudo-run
-if command -v mtr > /dev/null; then
+if command -v mtr &> /dev/null; then
   alias mtr='sudo mtr -t'
 fi
 
@@ -201,7 +205,7 @@ alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias ping='prettyping -c 5 --nolegend'
 
 # bat for cat purposes
-if command -v bat > /dev/null; then
+if command -v bat &> /dev/null; then
   alias cat='bat'
 fi
 
@@ -224,4 +228,10 @@ alias weather='curl -4 https://wttr.in/Boxborough\?format\="%l:+%c+%t+%m\n"'
 alias moon='curl -4 https://wttr.in/Moon'
 
 # Enabled zoxide with the cd alias
-eval "$(zoxide init --cmd cd zsh)"
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init --cmd cd zsh)"
+fi
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+eval "$(mise activate zsh)" # added by https://mise.run/zsh
