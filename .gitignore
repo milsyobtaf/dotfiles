@@ -1,9 +1,11 @@
 # dumb indeed stuff
-ssh/indeed.conf
 scripts/iql
 
-# dumb audible stuff
+# dumb adbl stuff
 .config/ada
+
+# ssh configs
+.ssh/config.d/
 
 # vim-plug directory
 .vim/plugged
