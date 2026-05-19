@@ -235,3 +235,6 @@ fi
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
 eval "$(mise activate zsh)" # added by https://mise.run/zsh
+
+# Added by AIM CLI
+export PATH="$HOME/.aim/mcp-servers:$PATH"

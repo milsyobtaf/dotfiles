@@ -3,6 +3,7 @@ scripts/iql
 
 # dumb adbl stuff
 .config/ada
+.config/brazil
 
 # ssh configs
 .ssh/config.d/
