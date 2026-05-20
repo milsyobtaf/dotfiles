@@ -33,8 +33,9 @@ echo "Use scroll gesture with the Ctrl (^) modifier key to zoom"
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 
-echo "Saving screenshots to ~/Downloads"
-defaults write com.apple.screencapture location ~/Downloads
+echo "Saving screenshots to ~/Desktop/Screenshots"
+mkdir ~/Desktop/Screenshots
+defaults write com.apple.screencapture location ~/Desktop/Screenshots
 
 # }}}
 # DOCK {{{
