@@ -9,6 +9,7 @@ fi
 
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Add Homebrew to $PATH
 export PATH="/opt/homebrew/bin:$PATH"
