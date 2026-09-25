@@ -12,6 +12,7 @@ framer
 # using herdr for now, ignore cmux until later
 cmux 
 
+.config/herdr/session.json
 .config/configstore
 .config/htop
 .config/cli-starter-kit
