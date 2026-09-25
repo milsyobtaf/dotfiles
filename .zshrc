@@ -35,6 +35,8 @@ export EZA_CONFIG_DIR="$HOME/.config/eza"
 unsetopt share_history
 setopt no_share_history
 
+# disabling async as a test due to weird output errors like "async_stop_worker:zle:8: No handler installed for fd 12"
+SPACESHIP_PROMPT_ASYNC=false
 # enable Spaceship
 source "/opt/homebrew/opt/spaceship/spaceship.zsh"
 
@@ -49,6 +51,9 @@ else
   export EDITOR='vim'
   export VISUAL='nova'
 fi
+
+# Set $BROWSER to 'Choosy' to force storybook to respect a friggin' default
+export BROWSER='Choosy'
 
 # If fortune is installed, run a fortune
 if command -v fortune &> /dev/null; then
@@ -72,14 +77,14 @@ select-word-style bash
 autoload -U add-zsh-hook
 load-nvmrc() {
   if ! command -v nvm &> /dev/null; then
-  
+
   else
     local node_version="$(nvm version)"
     local nvmrc_path="$(nvm_find_nvmrc)"
 
     if [ -n "$nvmrc_path" ]; then
       local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-  
+
       if [ "$nvmrc_node_version" = "N/A" ]; then
         nvm install
       elif [ "$nvmrc_node_version" != "$node_version" ]; then
@@ -233,6 +238,13 @@ if command -v zoxide &> /dev/null; then
   eval "$(zoxide init --cmd cd zsh)"
 fi
 
+# autoload ssh keys
+if command -v ssh-add &> /dev/null && [[ "$(ssh-add -l)" == "The agent has no identities." ]]; then
+  ssh-add --apple-load-keychain 2> /dev/null
+fi
+
+# AMZN stuff
+
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
 if command -v mise &> /dev/null; then
@@ -241,3 +253,7 @@ fi
 
 # Added by AIM CLI
 export PATH="$HOME/.aim/mcp-servers:$PATH"
+
+brazil-clone() {
+  brazil ws create --name $1 && cd $1 && brazil ws use --package $1
+}
