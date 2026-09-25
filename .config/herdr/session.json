@@ -6,8 +6,8 @@
       "custom_name": "meridian-prototypes",
       "identity_cwd": "/Users/younsdus/code/meridian-prototypes",
       "public_pane_numbers": {
-        "2": 4,
-        "1": 1
+        "1": 1,
+        "2": 4
       },
       "next_public_pane_number": 8,
       "public_tab_numbers": [
@@ -73,10 +73,10 @@
             }
           },
           "panes": {
-            "3": {
+            "4": {
               "cwd": "/Users/younsdus/code/mosaic-prototypes"
             },
-            "4": {
+            "3": {
               "cwd": "/Users/younsdus/code/mosaic-prototypes"
             }
           },
@@ -92,17 +92,17 @@
       "custom_name": "design-systems",
       "identity_cwd": "/Users/younsdus/code/AudibleDesignSystem/src/AudibleDesignSystem/packages/components/lit",
       "public_pane_numbers": {
-        "11": 24,
+        "14": 38,
         "13": 33,
-        "5": 1,
+        "9": 22,
         "10": 20,
+        "6": 2,
+        "8": 31,
+        "5": 1,
+        "15": 39,
         "12": 34,
         "7": 14,
-        "6": 2,
-        "15": 39,
-        "9": 22,
-        "14": 38,
-        "8": 31
+        "11": 24
       },
       "next_public_pane_number": 42,
       "public_tab_numbers": [
@@ -170,6 +170,9 @@
             }
           },
           "panes": {
+            "8": {
+              "cwd": "/Users/younsdus/code/AudibleMeridian/src/AudibleMeridian"
+            },
             "9": {
               "cwd": "/Users/younsdus/code/AudibleMeridian/src/AudibleMeridian",
               "agent_session": {
@@ -180,9 +183,6 @@
               }
             },
             "7": {
-              "cwd": "/Users/younsdus/code/AudibleMeridian/src/AudibleMeridian"
-            },
-            "8": {
               "cwd": "/Users/younsdus/code/AudibleMeridian/src/AudibleMeridian"
             }
           },
@@ -205,9 +205,6 @@
             }
           },
           "panes": {
-            "10": {
-              "cwd": "/Users/younsdus/code/BrickCityDesign"
-            },
             "11": {
               "cwd": "/Users/younsdus/code/BrickCityDesign",
               "agent_session": {
@@ -216,6 +213,9 @@
                 "kind": "id",
                 "value": "430234af-d7f0-4624-9a51-2f0370e9c4e2"
               }
+            },
+            "10": {
+              "cwd": "/Users/younsdus/code/BrickCityDesign"
             }
           },
           "zoomed": false,
@@ -237,9 +237,6 @@
             }
           },
           "panes": {
-            "12": {
-              "cwd": "/Users/younsdus/code/AudibleMeridianDSStaging/src/AudibleMeridianDSStaging/packages/design-tokens"
-            },
             "13": {
               "cwd": "/Users/younsdus/code/AudibleMeridianDSStaging/src/AudibleMeridianDSStaging",
               "agent_session": {
@@ -248,6 +245,9 @@
                 "kind": "id",
                 "value": "72baeebf-160d-4cca-8d53-d00d4c38fd86"
               }
+            },
+            "12": {
+              "cwd": "/Users/younsdus/code/AudibleMeridianDSStaging/src/AudibleMeridianDSStaging/packages/design-tokens"
             }
           },
           "zoomed": false,
@@ -269,6 +269,9 @@
             }
           },
           "panes": {
+            "14": {
+              "cwd": "/Users/younsdus/code/AudibleMeridianDSStaging/src/AudibleMeridianDSStaging/packages/components/lit"
+            },
             "15": {
               "cwd": "/Users/younsdus/code/AudibleMeridianDSStaging/src/AudibleMeridianDSStaging",
               "agent_session": {
@@ -277,9 +280,6 @@
                 "kind": "id",
                 "value": "b1ad7709-c603-495b-be0d-2c99398702d1"
               }
-            },
-            "14": {
-              "cwd": "/Users/younsdus/code/AudibleMeridianDSStaging/src/AudibleMeridianDSStaging/packages/components/lit"
             }
           },
           "zoomed": false,
@@ -295,9 +295,9 @@
       "identity_cwd": "/Users/younsdus/code/AudibleiOSApp",
       "public_pane_numbers": {
         "17": 4,
-        "18": 5,
         "20": 10,
         "19": 6,
+        "18": 5,
         "16": 1
       },
       "next_public_pane_number": 13,
@@ -388,8 +388,8 @@
       "custom_name": "a11y",
       "identity_cwd": "/Users/younsdus/code/_notes/rachel-a11y-project",
       "public_pane_numbers": {
-        "22": 8,
-        "21": 1
+        "21": 1,
+        "22": 8
       },
       "next_public_pane_number": 9,
       "public_tab_numbers": [
@@ -412,10 +412,10 @@
             }
           },
           "panes": {
-            "21": {
+            "22": {
               "cwd": "/Users/younsdus/code/_notes/rachel-a11y-project"
             },
-            "22": {
+            "21": {
               "cwd": "/Users/younsdus/code/_notes/rachel-a11y-project"
             }
           },
@@ -431,28 +431,28 @@
       "custom_name": "local-tools",
       "identity_cwd": "/Users/younsdus/code/_notes/act-one-attendees",
       "public_pane_numbers": {
-        "33": 5,
-        "30": 3,
-        "26": 49,
-        "29": 46,
-        "39": 62,
-        "35": 27,
-        "24": 28,
-        "23": 60,
         "32": 4,
-        "27": 50,
-        "31": 6,
-        "37": 32,
-        "40": 37,
-        "38": 36,
-        "25": 51,
-        "43": 47,
-        "44": 58,
         "28": 2,
-        "34": 26,
+        "25": 51,
+        "29": 46,
+        "30": 3,
+        "33": 5,
         "36": 31,
+        "37": 32,
+        "23": 60,
+        "38": 36,
+        "44": 58,
+        "31": 6,
+        "27": 50,
+        "26": 49,
         "42": 45,
-        "41": 44
+        "35": 27,
+        "39": 62,
+        "40": 37,
+        "34": 26,
+        "24": 28,
+        "41": 44,
+        "43": 47
       },
       "next_public_pane_number": 63,
       "public_tab_numbers": [
@@ -484,9 +484,6 @@
             }
           },
           "panes": {
-            "23": {
-              "cwd": "/Users/younsdus/code/_notes/act-one-attendees"
-            },
             "24": {
               "cwd": "/Users/younsdus/code/_notes",
               "agent_session": {
@@ -495,6 +492,9 @@
                 "kind": "id",
                 "value": "9ca2bb7b-ed01-4e76-9b2d-6341e66ad872"
               }
+            },
+            "23": {
+              "cwd": "/Users/younsdus/code/_notes/act-one-attendees"
             }
           },
           "zoomed": false,
@@ -525,12 +525,6 @@
             }
           },
           "panes": {
-            "26": {
-              "cwd": "/Users/younsdus/code/AUX-Platform/aux-tools/aux-spinner-toolbox"
-            },
-            "25": {
-              "cwd": "/Users/younsdus/code/AUX-Platform/aux-tools"
-            },
             "27": {
               "cwd": "/Users/younsdus/code/AUX-Platform",
               "agent_session": {
@@ -539,6 +533,12 @@
                 "kind": "id",
                 "value": "f34d4f9f-4a38-465c-998d-f5b72e131fd8"
               }
+            },
+            "25": {
+              "cwd": "/Users/younsdus/code/AUX-Platform/aux-tools"
+            },
+            "26": {
+              "cwd": "/Users/younsdus/code/AUX-Platform/aux-tools/aux-spinner-toolbox"
             }
           },
           "zoomed": false,
@@ -618,11 +618,11 @@
             }
           },
           "panes": {
-            "33": {
-              "cwd": "/Users/younsdus/.claude"
-            },
             "32": {
               "cwd": "/Users/younsdus/code/MosaicAISkills/src/MosaicAISkills"
+            },
+            "33": {
+              "cwd": "/Users/younsdus/.claude"
             }
           },
           "zoomed": false,
@@ -644,11 +644,11 @@
             }
           },
           "panes": {
-            "34": {
-              "cwd": "/Users/younsdus/github/dotfiles"
-            },
             "35": {
               "cwd": "/Users/younsdus/github/dotfiles/.config/herdr/plugins/github"
+            },
+            "34": {
+              "cwd": "/Users/younsdus/github/dotfiles"
             }
           },
           "zoomed": false,
@@ -670,10 +670,10 @@
             }
           },
           "panes": {
-            "36": {
+            "37": {
               "cwd": "/Users/younsdus/Desktop/clawdible-test"
             },
-            "37": {
+            "36": {
               "cwd": "/Users/younsdus/Desktop/clawdible-test"
             }
           },
@@ -705,6 +705,9 @@
             }
           },
           "panes": {
+            "38": {
+              "cwd": "/Users/younsdus/code/dt-mascot"
+            },
             "39": {
               "cwd": "/Users/younsdus/code/dt-mascot"
             },
@@ -716,9 +719,6 @@
                 "kind": "id",
                 "value": "e3fdfb5e-79c5-4f62-b578-98b4e80f53c6"
               }
-            },
-            "38": {
-              "cwd": "/Users/younsdus/code/dt-mascot"
             }
           },
           "zoomed": false,
@@ -740,11 +740,11 @@
             }
           },
           "panes": {
-            "42": {
-              "cwd": "/Users/younsdus/github/dotfiles"
-            },
             "41": {
               "cwd": "/Users/younsdus/code/Harmony-audible-api-docs/src/Harmony-audible-api-docs"
+            },
+            "42": {
+              "cwd": "/Users/younsdus/github/dotfiles"
             }
           },
           "zoomed": false,
@@ -766,6 +766,9 @@
             }
           },
           "panes": {
+            "43": {
+              "cwd": "/Users/younsdus/code"
+            },
             "44": {
               "cwd": "/Users/younsdus/code/framer-cms",
               "agent_session": {
@@ -774,9 +777,6 @@
                 "kind": "id",
                 "value": "4235ced3-b1e1-4b2d-aa4c-0f937acfb2df"
               }
-            },
-            "43": {
-              "cwd": "/Users/younsdus/code"
             }
           },
           "zoomed": false,
