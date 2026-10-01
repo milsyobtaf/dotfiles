@@ -47,3 +47,6 @@ keybind = cmd+arrow_left=csi:H
 keybind = cmd+arrow_right=csi:F
 keybind = cmd+backspace=text:\x15
 
+# === ghostty-crt:managed (do not edit by hand — use `ghostty-crt`) ===
+# mode = default   color = amber   tier = readable
+# === ghostty-crt:end ===
