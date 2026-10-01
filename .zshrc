@@ -19,11 +19,6 @@ export PATH="/opt/homebrew/sbin:$PATH"
 # https://github.com/sorin-ionescu/prezto/issues/966#issuecomment-172003005
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
-export PATH="${HOME}/.pyenv/shims:${PATH}"
-
-# Amazon toolbox app
-export PATH=$HOME/.toolbox/bin:$PATH
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -36,7 +31,9 @@ unsetopt share_history
 setopt no_share_history
 
 # disabling async as a test due to weird output errors like "async_stop_worker:zle:8: No handler installed for fd 12"
-SPACESHIP_PROMPT_ASYNC=false
+# reenabled async because everything became so painfully slow
+# in the future, maybe we get rid of prezto and go with antidote + spaceship?
+# SPACESHIP_PROMPT_ASYNC=false
 # enable Spaceship
 source "/opt/homebrew/opt/spaceship/spaceship.zsh"
 
@@ -246,6 +243,9 @@ fi
 # AMZN stuff
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# Amazon toolbox app
+export PATH=$HOME/.toolbox/bin:$PATH
 
 if command -v mise &> /dev/null; then
   eval "$(mise activate zsh)" # added by https://mise.run/zsh

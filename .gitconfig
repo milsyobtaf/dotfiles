@@ -51,6 +51,13 @@
   lg = log --date=human --color --graph -50 --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 # git alias finder, from http://brettterpstra.com/2014/08/04/shell-tricks-one-git-alias-to-rule-them-all/
   finda = "!grepalias() { git config --global --get-regexp alias | grep -i \"$1\" | awk -v nr=2 '{sub(/^alias\\./,\"\")};{printf \"\\033[31m%_10s\\033[1;37m\", $1};{sep=FS};{for (x=nr; x<=NF; x++) {printf \"%s%s\", sep, $x; }; print \"\\033[0;39m\"}'; }; grepalias"
+# audit commands
+# from https://piechowski.io/post/git-commands-before-reading-code/
+  audit-churn = log --format=format: --name-only --since="1 year ago" | sort | uniq -c | sort -nr | head -20
+  audit-who = shortlog -sn --no-merges
+  audit-bugs = log -i -E --grep="fix|bug|broken" --name-only --format='' | sort | uniq -c | sort -nr | head -20
+  audit-velocity = log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c
+  audit-fire-drill = log --oneline --since="1 year ago" | grep -iE 'revert|hotfix|emergency|rollback'
 [color]
 # Use colors in Git commands that are capable of colored output when outputting to the terminal
   ui = auto
@@ -78,6 +85,8 @@
   excludesfile = ~/.gitignore_global
   editor = vim
   longpaths = true
+  fsmonitor = true
+  untrackedCache = true
 [merge]
   tool = kaleidoscope
 [mergetool]
