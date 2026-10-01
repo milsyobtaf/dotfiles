@@ -5,6 +5,18 @@ scripts/iql
 .config/ada
 .config/brazil
 
+# dumb things i don't care about
+uv
+homebrew
+framer
+# using herdr for now, ignore cmux until later
+cmux 
+
+.config/herdr/session.json
+.config/configstore
+.config/htop
+.config/cli-starter-kit
+
 # ssh configs
 .ssh/config.d/
 

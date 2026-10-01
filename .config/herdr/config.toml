@@ -1,0 +1,52 @@
+onboarding = false
+
+[ui.sound]
+enabled = false
+
+[ui.toast]
+delivery = "off"
+
+[ui.sidebar.spaces]
+row_gap = 1
+rows = [
+  ["state_icon", "workspace"],
+  ["branch", "git_status"],
+]
+
+[ui.sidebar.agents]
+row_gap = 0
+rows = [
+  [{ token = "tab", fg = "#bdbdc7", bold = true, dim = false }],
+  ["state_icon", "state_text", "agent"],
+]
+
+[theme]
+name = "dracula"
+
+[[keys.command]]
+key = "prefix+m"
+type = "plugin_action"
+command = "osamahbeig.pane-mover.open"
+description = "move this pane"
+
+[keys]
+prefix = "cmd+p"
+goto = ["prefix+g", "cmd+shift+p"]
+next_workspace = "cmd+shift+down"
+previous_workspace = "cmd+shift+up"
+next_tab = ["prefix+n", "ctrl+tab"]
+previous_tab = ["prefix+p", "ctrl+shift+tab"]
+focus_pane_up = ["prefix+k", "cmd+shift+[", "cmd+up"]
+focus_pane_down = ["prefix+j", "cmd+shift+]", "cmd+down"]
+focus_pane_left = ["prefix+h", "cmd+[", "cmd+left"]
+focus_pane_right = ["prefix+l", "cmd+]", "cmd+right"]
+new_tab = ["prefix+c", "cmd+t"]
+split_vertical = ["prefix+v", "cmd+d"]
+split_horizontal = ["prefix+minus", "cmd+shift+d"]
+close_pane = ["cmd+x", "cmd+w"]
+close_tab = "cmd+shift+x"
+zoom = ["prefix+z", "ctrl+alt+z"]
+
+[ui]
+show_agent_labels_on_pane_borders = false
+pane_borders = "always"

@@ -1,0 +1,12 @@
+{
+  "folders": [],
+  "maxDepth": 1,
+  "ignore": [
+    ".git",
+    "node_modules",
+    "dist",
+    "build",
+    ".next"
+  ],
+  "sort": "priority"
+}

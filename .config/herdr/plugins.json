@@ -1,0 +1,89 @@
+[
+  {
+    "plugin_id": "dot.terminal-notifier",
+    "name": "terminal-notifier notifications",
+    "version": "0.1.0",
+    "min_herdr_version": "0.7.0",
+    "description": "Customizable macOS notifications for herdr agent state changes via terminal-notifier",
+    "manifest_path": "/Users/younsdus/github/dotfiles/.config/herdr/plugins/github/dot.terminal-notifier-769075972046/herdr-plugin.toml",
+    "plugin_root": "/Users/younsdus/github/dotfiles/.config/herdr/plugins/github/dot.terminal-notifier-769075972046",
+    "enabled": true,
+    "platforms": [
+      "macos"
+    ],
+    "build": [
+      {
+        "platforms": [
+          "macos"
+        ],
+        "command": [
+          "bash",
+          "scripts/setup-notifier.sh"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "pane.agent_status_changed",
+        "command": [
+          "bash",
+          "bin/notify.sh"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "dot",
+      "repo": "herdr-terminal-notifier",
+      "resolved_commit": "39bd6b9bf8b04f5776f2e402c9e7c9c7c4a973d0",
+      "managed_path": "/Users/younsdus/.config/herdr/plugins/github/dot.terminal-notifier-769075972046",
+      "installed_unix_ms": 1782848485529
+    }
+  },
+  {
+    "plugin_id": "osamahbeig.pane-mover",
+    "name": "Pane Mover",
+    "version": "0.2.0",
+    "min_herdr_version": "0.7.0",
+    "description": "Clickable overlay menu to move, re-split, or swap the current pane across tabs and workspaces.",
+    "manifest_path": "/Users/younsdus/github/dotfiles/.config/herdr/plugins/github/osamahbeig.pane-mover-d60fe0209b83/herdr-plugin.toml",
+    "plugin_root": "/Users/younsdus/github/dotfiles/.config/herdr/plugins/github/osamahbeig.pane-mover-d60fe0209b83",
+    "enabled": true,
+    "platforms": [
+      "macos",
+      "linux"
+    ],
+    "actions": [
+      {
+        "id": "open",
+        "title": "Move this pane…",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "node",
+          "open.js"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "mover",
+        "title": "Move pane",
+        "placement": "overlay",
+        "command": [
+          "node",
+          "mover.js"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "osamahbeig",
+      "repo": "herdr-pane-mover",
+      "resolved_commit": "a9fde7a4f98f1b6c230c64e2036b387d9c8d5bc3",
+      "managed_path": "/Users/younsdus/.config/herdr/plugins/github/osamahbeig.pane-mover-d60fe0209b83",
+      "installed_unix_ms": 1784056848719
+    }
+  }
+]

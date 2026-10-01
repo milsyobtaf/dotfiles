@@ -1,12 +1,14 @@
 [user]
   name = Dustin Younse
-  email = milsyobtaf@gmail.com
+	email = younsdus@amazon.com
+[includeIf "gitdir:~/code/"]
+  path = ~/.gitconfig-amzn
 [includeIf "gitdir:~/www/"]
   path = ~/www/.gitconfig
 [github]
   user = milsyobtaf
 [init]
-  defaultBranch = main
+	defaultBranch = mainline
 [pull]
   ff = only
 [alias]
@@ -38,6 +40,8 @@
   cdiff = diff -- ':!*[-.]lock*'        # clean diff without lock files
   dt = difftool                     # fire up Kaleidoscope diff
   diffwords = diff --color-words
+  stash-status = stash show
+  stash-diff = stash show -p
   filelog = log -u                  # show changes to a file
   local-clean = "git branch -vv | grep 'gone]' | awk '{print $1}' | xargs git branch -D"  # delete local branches that no longer exist on the remote
   mt = mergetool                    # fire up the merge tool
@@ -72,7 +76,8 @@
   pretty = format:%Cred%h%Creset %C(bold blue)%an%Creset %C(blue)<%ae>%Creset %Cgreen(%cr) %C(yellow)%d%Creset %n%C(bold white)%s%Creset %Creset %n%b
 [core]
   excludesfile = ~/.gitignore_global
-  editor = vim 
+  editor = vim
+  longpaths = true
 [merge]
   tool = kaleidoscope
 [mergetool]
@@ -88,5 +93,7 @@
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
+[lfs "ssh"]
+  automaticcredentials = true
 [branch]
   autosetuprebase = always

@@ -1,5 +1,6 @@
 theme = Dark Modern
 background = #161616
+split-divider-color = #595959
 unfocused-split-fill = #595959
 shell-integration-features = no-cursor
 cursor-style = block
@@ -45,7 +46,6 @@ keybind = opt+backspace=text:\x17
 keybind = cmd+arrow_left=csi:H
 keybind = cmd+arrow_right=csi:F
 keybind = cmd+backspace=text:\x15
-
 
 # === ghostty-crt:managed (do not edit by hand — use `ghostty-crt`) ===
 # mode = default   color = amber   tier = readable

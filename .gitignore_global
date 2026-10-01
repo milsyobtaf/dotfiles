@@ -57,3 +57,5 @@ node_modules
 # Drupal specific
 web/sites/default/settings.local.php
 sites/all/modules/contrib/stage_file_proxy/
+
+**/.claude/settings.local.json

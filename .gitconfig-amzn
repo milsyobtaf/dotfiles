@@ -1,0 +1,5 @@
+[user]
+  name = Dustin Younse
+  email = younsdus@amazon.com
+[init]
+  defaultBranch = main

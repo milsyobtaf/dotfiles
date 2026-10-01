@@ -4,3 +4,9 @@
 [submodule "zsh/eza-themes"]
 	path = zsh/eza-themes
 	url = git@github.com:eza-community/eza-themes.git
+[submodule ".config/herdr/plugins/github/dot.terminal-notifier-769075972046"]
+	path = .config/herdr/plugins/github/dot.terminal-notifier-769075972046
+	url = git@github.com:dot/herdr-terminal-notifier.git
+[submodule ".config/herdr/plugins/github/osamahbeig.pane-mover-d60fe0209b83"]
+	path = .config/herdr/plugins/github/osamahbeig.pane-mover-d60fe0209b83
+	url = git@github.com:osamahbeig/herdr-pane-mover.git
