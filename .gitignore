@@ -10,9 +10,10 @@ uv
 homebrew
 framer
 # using herdr for now, ignore cmux until later
-cmux 
+cmux
 
 .config/herdr/session.json
+.config/herdr/release-notes.json
 .config/configstore
 .config/htop
 .config/cli-starter-kit
