@@ -19,10 +19,6 @@ export PATH="/opt/homebrew/sbin:$PATH"
 # https://github.com/sorin-ionescu/prezto/issues/966#issuecomment-172003005
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # Set eza config directory for color themes
 export EZA_CONFIG_DIR="$HOME/.config/eza"
 
@@ -68,33 +64,6 @@ export FIGNORE="Application Scripts:ScriptingAdditions"
 # https://gist.github.com/anchor/4076792
 autoload -U select-word-style
 select-word-style bash
-
-# Run `nvm use` when loading a folder with a .nvmrc file
-# From https://github.com/nvm-sh/nvm#calling-nvm-use-automatically-in-a-directory-with-a-nvmrc-file
-autoload -U add-zsh-hook
-load-nvmrc() {
-  if ! command -v nvm &> /dev/null; then
-
-  else
-    local node_version="$(nvm version)"
-    local nvmrc_path="$(nvm_find_nvmrc)"
-
-    if [ -n "$nvmrc_path" ]; then
-      local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-      if [ "$nvmrc_node_version" = "N/A" ]; then
-        nvm install
-      elif [ "$nvmrc_node_version" != "$node_version" ]; then
-        nvm use
-      fi
-    elif [ "$node_version" != "$(nvm version default)" ]; then
-      echo "Reverting to nvm default version"
-      nvm use default
-    fi
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
 
 # fix for 'Error opening terminal: xterm-ghostty.' error
 # https://vninja.net/2024/12/28/ghostty-workaround-for-missing-or-unsuitable-terminal-xterm-ghostty/
@@ -247,13 +216,21 @@ fi
 # Amazon toolbox app
 export PATH=$HOME/.toolbox/bin:$PATH
 
-if command -v mise &> /dev/null; then
-  eval "$(mise activate zsh)" # added by https://mise.run/zsh
-fi
-
 # Added by AIM CLI
 export PATH="$HOME/.aim/mcp-servers:$PATH"
 
 brazil-clone() {
   brazil ws create --name $1 && cd $1 && brazil ws use --package $1
 }
+
+# mise wants to be last so it's first in $PATH
+unset __MISE_ORIG_PATH
+if command -v mise &> /dev/null; then
+  eval "$(mise activate zsh)" # added by https://mise.run/zsh
+fi
+
+# autocompletions for zsh
+fpath=(~/.zfunc $fpath)
+
+# prevent $PATH dupes
+typeset -U path PATH

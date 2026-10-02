@@ -13,7 +13,9 @@ framer
 cmux
 
 .config/herdr/session.json
+.config/herdr/session-snapshots
 .config/herdr/release-notes.json
+.config/herdr/herdr.sock.agent
 .config/configstore
 .config/htop
 .config/cli-starter-kit

@@ -1,2 +1,5 @@
 [tools]
 node = "24"
+deno = "2.9"
+python = "3.14"
+go = "1.27"

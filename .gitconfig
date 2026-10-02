@@ -87,6 +87,13 @@
   longpaths = true
   fsmonitor = true
   untrackedCache = true
+  pager = delta
+[diff]
+  algorithm = histogram
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
 [merge]
   tool = kaleidoscope
 [mergetool]
