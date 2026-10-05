@@ -21,7 +21,8 @@ cmux
 .config/cli-starter-kit
 
 # ssh configs
-.ssh/config.d/
+.ssh/config.d
+.ssh/config.d/*
 
 # vim-plug directory
 .vim/plugged
@@ -64,7 +65,6 @@ sublimetext3/Packages/User/*.user-ca-bundle
 sublimetext3/Packages/User/*.sublime-license
 sublimetext3/Packages/User/encoding_cache.json
 sublimetext3/Packages/User/oscrypto-ca-bundle.crt
-
 
 # phpstorm
 !phpstorm/*.jar
