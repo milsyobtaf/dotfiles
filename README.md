@@ -34,7 +34,9 @@ i'm now using `stow` to manage the symlinking mishegas. it's weird, but works a 
 
 `git submodule update --init --recursive`
 
-this installs all of the submodules we need, currently `.zprezto` and `/zsh/eza-themes`.
+this installs all of the submodules we need, currently `/zsh/eza-themes` and the herdr plugins.
+
+zsh plugins are managed by [antidote](https://antidote.sh) (`brew install antidote`) and listed in `.zsh_plugins.txt`. they are cloned automatically the first time a shell starts.
 
 ## vim setup
 
