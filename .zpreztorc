@@ -28,22 +28,11 @@ zstyle ':prezto:*:*' color 'yes'
 # The order matters.
 zstyle ':prezto:load' pmodule \
   'environment' \
-  'ssh' \
-  'terminal' \
   'editor' \
   'history' \
   'history-substring-search' \
   'autosuggestions' \
-  'directory' \
-  'spectrum' \
-  'gnu-utility' \
-  'utility' \
-  'completion' \
-  'fasd' \
-  'node'
-  # 'prompt' \
-  # 'contrib-prompt' \
-  # 'zoxide' \
+  'completion'
 
 #
 # Autosuggestions
@@ -166,7 +155,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 # Set the SSH identities to load into the agent.
 # zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'
-zstyle ':prezto:module:ssh:load' identities 'thebus'
+# zstyle ':prezto:module:ssh:load' identities 'thebus'
 #
 # Syntax Highlighting
 #
@@ -230,4 +219,4 @@ zstyle ':prezto:module:ssh:load' identities 'thebus'
 # Enabled safe options. This aliases cp, ln, mv and rm so that they prompt
 # before deleting or overwriting files. Set to 'no' to disable this safer
 # behavior.
-zstyle ':prezto:module:utility' safe-ops 'yes'
+# zstyle ':prezto:module:utility' safe-ops 'yes'

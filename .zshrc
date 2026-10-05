@@ -176,6 +176,9 @@ alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 # prettyping with ping limits
 alias ping='prettyping -c 5 --nolegend'
 
+# muscle memory alias for moving from silver searcher to ripgrep
+alias ag='rg'
+
 # bat for cat purposes
 if command -v bat &> /dev/null; then
   alias cat='bat'
