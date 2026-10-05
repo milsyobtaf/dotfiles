@@ -1,0 +1,18 @@
+# antidote plugin list, compiled to ~/.zsh_plugins.zsh by `antidote load`
+# order matters
+
+# completions: add to fpath before compinit runs
+zsh-users/zsh-completions kind:fpath path:src
+
+# replacements for prezto environment, editor, history, completion
+belak/zsh-utils path:editor
+belak/zsh-utils path:history
+belak/zsh-utils path:utility
+belak/zsh-utils path:completion
+
+# replacements for prezto autosuggestions, history-substring-search
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-history-substring-search
+
+# prompt
+spaceship-prompt/spaceship-prompt

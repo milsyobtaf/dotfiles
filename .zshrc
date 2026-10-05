@@ -2,9 +2,18 @@
 # https://github.com/sorin-ionescu/prezto/issues/2103#issuecomment-3218303002
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+# Load plugins with antidote (~/.zsh_plugins.txt), fall back to Prezto if antidote isn't installed
+# set SPACESHIP_* options above this block, since antidote loads spaceship here
+if [[ -r /opt/homebrew/opt/antidote/share/antidote/antidote.zsh ]]; then
+  source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+  antidote load
+
+  # history-substring-search needs explicit arrow-key bindings (prezto set these)
+  bindkey '^[[A' history-substring-search-up
+  bindkey '^[[B' history-substring-search-down
+elif [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+  _use_brew_spaceship=1
 fi
 
 export PATH="/usr/local/bin:$PATH"
@@ -30,8 +39,11 @@ setopt no_share_history
 # reenabled async because everything became so painfully slow
 # in the future, maybe we get rid of prezto and go with antidote + spaceship?
 # SPACESHIP_PROMPT_ASYNC=false
-# enable Spaceship
-source "/opt/homebrew/opt/spaceship/spaceship.zsh"
+# enable Spaceship (antidote loads it from .zsh_plugins.txt, Prezto fallback uses the brew copy)
+if (( ${+_use_brew_spaceship} )); then
+  source "/opt/homebrew/opt/spaceship/spaceship.zsh"
+  unset _use_brew_spaceship
+fi
 
 # Spaceship theme config
 # export SPACESHIP_CONFIG="$HOME/github/dotfiles/zsh/spaceship.zsh"
