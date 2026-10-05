@@ -1,20 +1,21 @@
-# Fix for homebrew-installed package completions in prezto
-# https://github.com/sorin-ionescu/prezto/issues/2103#issuecomment-3218303002
+# Set up homebrew environment, before plugins so homebrew-installed completions are on fpath
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Load plugins with antidote (~/.zsh_plugins.txt), fall back to Prezto if antidote isn't installed
-# set SPACESHIP_* options above this block, since antidote loads spaceship here
-if [[ -r /opt/homebrew/opt/antidote/share/antidote/antidote.zsh ]]; then
-  source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
-  antidote load
+# Spaceship options must be set before antidote loads the prompt
+# disabling async as a test due to weird output errors like "async_stop_worker:zle:8: No handler installed for fd 12"
+# reenabled async because everything became so painfully slow
+# SPACESHIP_PROMPT_ASYNC=false
 
-  # history-substring-search needs explicit arrow-key bindings (prezto set these)
-  bindkey '^[[A' history-substring-search-up
-  bindkey '^[[B' history-substring-search-down
-elif [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-  _use_brew_spaceship=1
-fi
+# Spaceship theme config
+# export SPACESHIP_CONFIG="$HOME/github/dotfiles/zsh/spaceship.zsh"
+
+# Load plugins with antidote (~/.zsh_plugins.txt)
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+antidote load
+
+# history-substring-search needs explicit arrow-key bindings
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
@@ -31,22 +32,9 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 # Set eza config directory for color themes
 export EZA_CONFIG_DIR="$HOME/.config/eza"
 
-# Prezto Settings
+# History settings, overrides zsh-utils history defaults
 unsetopt share_history
 setopt no_share_history
-
-# disabling async as a test due to weird output errors like "async_stop_worker:zle:8: No handler installed for fd 12"
-# reenabled async because everything became so painfully slow
-# in the future, maybe we get rid of prezto and go with antidote + spaceship?
-# SPACESHIP_PROMPT_ASYNC=false
-# enable Spaceship (antidote loads it from .zsh_plugins.txt, Prezto fallback uses the brew copy)
-if (( ${+_use_brew_spaceship} )); then
-  source "/opt/homebrew/opt/spaceship/spaceship.zsh"
-  unset _use_brew_spaceship
-fi
-
-# Spaceship theme config
-# export SPACESHIP_CONFIG="$HOME/github/dotfiles/zsh/spaceship.zsh"
 
 # Preferred editor for local and remote sessions
 # currently they are the same, but not always
