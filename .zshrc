@@ -13,6 +13,11 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 antidote load
 
+# Use emacs keybindings, zsh defaults to vi mode when EDITOR contains "vi"
+# must come after antidote load, zsh-utils editor resets keybindings with `bindkey -d`
+# vi mode also makes zsh-utils editor switch the cursor to a beam
+bindkey -e
+
 # history-substring-search needs explicit arrow-key bindings
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
