@@ -1,6 +1,16 @@
 # Set up homebrew environment, before plugins so homebrew-installed completions are on fpath
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# zsh-history-substring-search needs explicit arrow-key bindings
+function hss-bindkey() {
+  zmodload zsh/terminfo
+  local keymap
+  for keymap in 'main' 'emacs' 'viins'; do
+    bindkey -M "$keymap" "$terminfo[kcuu1]" history-substring-search-up
+    bindkey -M "$keymap" "$terminfo[kcud1]" history-substring-search-down
+  done
+}
+
 # Load plugins with antidote (~/.zsh_plugins.txt)
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 antidote load
@@ -9,10 +19,6 @@ antidote load
 # must come after antidote load, zsh-utils editor resets keybindings with `bindkey -d`
 # vi mode also makes zsh-utils editor switch the cursor to a beam
 bindkey -e
-
-# history-substring-search needs explicit arrow-key bindings
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
 
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
