@@ -1,14 +1,6 @@
 # Set up homebrew environment, before plugins so homebrew-installed completions are on fpath
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Spaceship options must be set before antidote loads the prompt
-# disabling async as a test due to weird output errors like "async_stop_worker:zle:8: No handler installed for fd 12"
-# reenabled async because everything became so painfully slow
-# SPACESHIP_PROMPT_ASYNC=false
-
-# Spaceship theme config
-# export SPACESHIP_CONFIG="$HOME/github/dotfiles/zsh/spaceship.zsh"
-
 # Load plugins with antidote (~/.zsh_plugins.txt)
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 antidote load
@@ -36,10 +28,6 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 # Set eza config directory for color themes
 export EZA_CONFIG_DIR="$HOME/.config/eza"
-
-# History settings, overrides zsh-utils history defaults
-unsetopt share_history
-setopt no_share_history
 
 # Preferred editor for local and remote sessions
 # currently they are the same, but not always
@@ -110,16 +98,6 @@ trash() {
   done
   IFS=$temp_ifs
 }
-
-# # notify on completion, from http://frantic.im/notify-on-completion
-# function f_notifyme {
-#   LAST_EXIT_CODE=$?
-#   CMD=$(fc -ln -1)
-#   # No point in waiting for the command to complete
-#   notifyme "$CMD" "$LAST_EXIT_CODE" &
-# }
-# # inject this function in front of every command
-# export PS1='$(f_notifyme)'$PS1
 
 # git extra features
 # from https://stackoverflow.com/a/73756647
@@ -230,6 +208,8 @@ export PATH="$HOME/.aim/mcp-servers:$PATH"
 brazil-clone() {
   brazil ws create --name $1 && cd $1 && brazil ws use --package $1
 }
+
+# end AMZN stuff
 
 # mise wants to be last so it's first in $PATH
 unset __MISE_ORIG_PATH
