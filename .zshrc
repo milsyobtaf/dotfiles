@@ -219,6 +219,8 @@ fi
 
 # autocompletions for zsh
 fpath=(~/.zfunc $fpath)
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+autoload -Uz compinit && compinit
 
 # prevent $PATH dupes
 typeset -U path PATH
