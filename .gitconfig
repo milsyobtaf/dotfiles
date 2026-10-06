@@ -113,3 +113,6 @@
   automaticcredentials = true
 [branch]
   autosetuprebase = always
+# keep fsmonitor off in homebrew repos, its daemon inherits brew's update lock and blocks brew
+[includeIf "gitdir:/opt/homebrew/"]
+  path = ~/.gitconfig-homebrew
