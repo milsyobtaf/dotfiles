@@ -34,7 +34,7 @@ known_hosts
 netrwhist
 
 log/
-zsh/themes/*milsyobtaf*
+archive/zsh/zsh-custom/themes/*milsyobtaf*
 *.zwc
 
 # atom
