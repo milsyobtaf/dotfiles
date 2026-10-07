@@ -16,3 +16,6 @@ zsh-users/zsh-history-substring-search
 
 # prompt
 spaceship-prompt/spaceship-prompt
+
+# substring search with custom key bindings in zshrc
+zsh-users/zsh-history-substring-search post:hss-bindkey
