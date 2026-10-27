@@ -1,10 +1,15 @@
 onboarding = false
 
+[ui]
+show_agent_labels_on_pane_borders = false
+pane_borders = "always"
+
+status_indicators = "symbols"
 [ui.sound]
 enabled = false
 
 [ui.toast]
-delivery = "off"
+delivery = "system"
 
 [ui.sidebar.spaces]
 row_gap = 1
@@ -46,7 +51,3 @@ split_horizontal = ["prefix+minus", "cmd+shift+d"]
 close_pane = ["cmd+x", "cmd+w"]
 close_tab = "cmd+shift+x"
 zoom = ["prefix+z", "ctrl+alt+z"]
-
-[ui]
-show_agent_labels_on_pane_borders = false
-pane_borders = "always"

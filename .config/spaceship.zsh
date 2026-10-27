@@ -54,12 +54,12 @@ SPACESHIP_PROMPT_ORDER=(
   gnu_screen     # GNU Screen section
   async          # Async jobs indicator
   line_sep       # Line break
-  battery        # Battery level and status
   sudo           # Sudo indicator
   char           # Prompt character
 )
 
 SPACESHIP_RPROMPT_ORDER=(
+  battery        # Battery level and status
   exec_time      # Execution time
   time           # Time stamps section
   jobs           # Background jobs indicator
@@ -72,6 +72,11 @@ SPACESHIP_RPROMPT_FIRST_PREFIX_SHOW=true
 # Spaceship prompt settings
 SPACESHIP_CHAR_SYMBOL="💰 "
 SPACESHIP_PROMPT_SEPARATE_LINE=true
+
+# battery prompt settings
+SPACESHIP_BATTERY_THRESHOLD=20
+SPACESHIP_BATTERY_SYMBOL_DISCHARGING="🪫"
+SPACESHIP_BATTERY_SYMBOL_CHARGING="⚡ "
 
 # Display of time
 SPACESHIP_TIME_SHOW=true
