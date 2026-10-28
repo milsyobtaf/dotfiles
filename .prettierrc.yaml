@@ -1,0 +1,27 @@
+# Global Prettier config. Project configs (.prettierrc in a repo) take precedence.
+# Found through the ~/.prettierrc.yaml symlink. Options: https://prettier.io/docs/options
+
+# All languages
+printWidth: 100
+tabWidth: 2
+useTabs: false
+endOfLine: lf
+
+# JavaScript and TypeScript (matches the existing aux-tools code: double quotes, semicolons)
+semi: true
+singleQuote: false
+trailingComma: all
+arrowParens: always
+
+# HTML, JSX, and Vue
+htmlWhitespaceSensitivity: css
+singleAttributePerLine: true
+
+# CSS, JSON, and YAML use the settings above.
+
+# Per-language overrides
+overrides:
+  # Markdown: rewrap paragraphs at printWidth (100)
+  - files: ["*.md", "*.mdx"]
+    options:
+      proseWrap: always
