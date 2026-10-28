@@ -215,6 +215,49 @@ brazil-clone() {
   brazil ws create --name $1 && cd $1 && brazil ws use --package $1
 }
 
+# morning login: run each command in order, stop on the first failure, then show a random ascii snippet
+# snippets live in ~/.config/howdy/snippets.txt, separated by lines containing only %
+howdy() {
+  local -a steps=(
+    'mwinit'
+    'ssh-add --apple-use-keychain'
+    'harmony npm'
+  )
+  local i cmd rc
+  for (( i = 1; i <= $#steps; i++ )); do
+    cmd=$steps[i]
+    print -P "%F{blue}→ $i/$#steps%f $cmd"
+    ${(z)cmd}
+    rc=$?
+    if (( rc != 0 )); then
+      print -P "%F{red}✗ step $i/$#steps $cmd failed (exit $rc)%f" >&2
+      return $rc
+    fi
+  done
+
+  local file="$HOME/.config/howdy/snippets.txt"
+  local -a snippets
+  local line chunk=''
+  if [[ -r $file ]]; then
+    while IFS= read -r line || [[ -n $line ]]; do
+      if [[ $line == '%' ]]; then
+        [[ -n ${chunk//[[:space:]]/} ]] && snippets+=("$chunk")
+        chunk=''
+      else
+        chunk+="$line"$'\n'
+      fi
+    done < $file
+    [[ -n ${chunk//[[:space:]]/} ]] && snippets+=("$chunk")
+  fi
+
+  print -P "%F{green}✓ all logged in%f"
+  if (( $#snippets )); then
+    print -rn -- "$snippets[RANDOM % $#snippets + 1]"
+  else
+    print -P "%F{yellow}no snippets found in $file%f"
+  fi
+}
+
 # end AMZN stuff
 
 # mise wants to be last so it's first in $PATH
