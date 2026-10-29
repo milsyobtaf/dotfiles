@@ -217,14 +217,23 @@ brazil-clone() {
 
 # morning login: run each command in order, stop on the first failure, then show a random ascii snippet
 # snippets live in ~/.config/howdy/snippets.txt, separated by lines containing only %
+# `howdy -s` shows a snippet without running the login steps
 howdy() {
+  local snippet_only=0
+  case $1 in
+    '') ;;
+    -s|--snippet) snippet_only=1 ;;
+    -h|--help) print "usage: howdy [-s|--snippet]"; return 0 ;;
+    *) print -P "%F{red}howdy: unknown option $1%f" >&2; print "usage: howdy [-s|--snippet]" >&2; return 2 ;;
+  esac
+
   local -a steps=(
     'mwinit'
     'ssh-add --apple-use-keychain'
     'harmony npm'
   )
   local i cmd rc
-  for (( i = 1; i <= $#steps; i++ )); do
+  (( snippet_only )) || for (( i = 1; i <= $#steps; i++ )); do
     cmd=$steps[i]
     print -P "%F{blue}→ $i/$#steps%f $cmd"
     ${(z)cmd}
@@ -250,7 +259,7 @@ howdy() {
     [[ -n ${chunk//[[:space:]]/} ]] && snippets+=("$chunk")
   fi
 
-  print -P "%F{green}✓ all logged in%f"
+  (( snippet_only )) || print -P "%F{green}✓ all logged in%f"
   if (( $#snippets )); then
     print -rn -- "$snippets[RANDOM % $#snippets + 1]"
   else

@@ -63,10 +63,10 @@
 %
 ╔────────────────────────────────────────╗
 │                                        │
-│   1) INSERT IDENTIFICATION CARD        │
+│    1) INSERT IDENTIFICATION CARD       │
 │    2) PLEASE READ THE FOLLOWING:       │
 │                                        │
-│    Hi. My Name Is 米米米米米米米米,       │
+│    Hi. My Name Is **********,          │
 │    My Voice Is My Passport.            │
 │    Verify Me.                          │
 │                                        │
