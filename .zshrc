@@ -191,6 +191,9 @@ alias myip='curl -4 https://icanhazip.com'
 alias weather='curl -4 https://wttr.in/Boxborough\?format\="%l:+%c+%t+%m\n"'
 alias moon='curl -4 https://wttr.in/Moon'
 
+# Bear notes command line tool, ships inside the app bundle
+alias bearcli='/Applications/Bear.app/Contents/MacOS/bearcli'
+
 # Enabled zoxide with the cd alias
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init --cmd cd zsh)"
