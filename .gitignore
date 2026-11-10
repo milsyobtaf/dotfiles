@@ -4,6 +4,8 @@ scripts/iql
 # dumb adbl stuff
 .config/ada
 .config/brazil
+# agent cli starter kit credential store, holds encrypted tokens too big for keychain
+.config/foundation-clis/
 
 # dumb things i don't care about
 uv
