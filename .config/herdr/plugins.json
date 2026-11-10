@@ -5,8 +5,8 @@
     "version": "0.1.0",
     "min_herdr_version": "0.7.0",
     "description": "Customizable macOS notifications for herdr agent state changes via terminal-notifier",
-    "manifest_path": "/Users/younsdus/github/dotfiles/.config/herdr/plugins/github/dot.terminal-notifier-769075972046/herdr-plugin.toml",
-    "plugin_root": "/Users/younsdus/github/dotfiles/.config/herdr/plugins/github/dot.terminal-notifier-769075972046",
+    "manifest_path": "/Users/younsdus/github/dotfiles/.config/herdr/plugins/github-installations/dot.terminal-notifier-769075972046/56173-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/Users/younsdus/github/dotfiles/.config/herdr/plugins/github-installations/dot.terminal-notifier-769075972046/56173-0/checkout",
     "enabled": true,
     "platforms": [
       "macos"
@@ -35,55 +35,209 @@
       "kind": "github",
       "owner": "dot",
       "repo": "herdr-terminal-notifier",
+      "requested_ref": "39bd6b9bf8b04f5776f2e402c9e7c9c7c4a973d0",
       "resolved_commit": "39bd6b9bf8b04f5776f2e402c9e7c9c7c4a973d0",
-      "managed_path": "/Users/younsdus/.config/herdr/plugins/github/dot.terminal-notifier-769075972046",
-      "installed_unix_ms": 1782848485529
+      "managed_path": "/Users/younsdus/.config/herdr/plugins/github-installations/dot.terminal-notifier-769075972046/56173-0/checkout",
+      "installed_unix_ms": 1794339150473
     }
   },
   {
-    "plugin_id": "osamahbeig.pane-mover",
-    "name": "Pane Mover",
-    "version": "0.2.0",
-    "min_herdr_version": "0.7.0",
-    "description": "Clickable overlay menu to move, re-split, or swap the current pane across tabs and workspaces.",
-    "manifest_path": "/Users/younsdus/github/dotfiles/.config/herdr/plugins/github/osamahbeig.pane-mover-d60fe0209b83/herdr-plugin.toml",
-    "plugin_root": "/Users/younsdus/github/dotfiles/.config/herdr/plugins/github/osamahbeig.pane-mover-d60fe0209b83",
+    "plugin_id": "drovr",
+    "name": "drovr",
+    "version": "0.4.8",
+    "min_herdr_version": "0.7.4",
+    "description": "Drive your herd: move the focused tab or pane, live agents included, anywhere with an fzf picker.",
+    "manifest_path": "/Users/younsdus/github/dotfiles/.config/herdr/plugins/github-installations/drovr-4bf708966830/8541-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/Users/younsdus/github/dotfiles/.config/herdr/plugins/github-installations/drovr-4bf708966830/8541-0/checkout",
     "enabled": true,
     "platforms": [
-      "macos",
-      "linux"
+      "linux",
+      "macos"
     ],
     "actions": [
       {
-        "id": "open",
-        "title": "Move this pane…",
+        "id": "move-pane",
+        "title": "Move pane to tab…",
         "contexts": [
-          "workspace"
+          "pane"
         ],
         "command": [
           "node",
-          "open.js"
+          "--import",
+          "./compile-cache.js",
+          "open-picker.ts",
+          "pane"
+        ]
+      },
+      {
+        "id": "move-tab",
+        "title": "Move tab to workspace…",
+        "contexts": [
+          "tab"
+        ],
+        "command": [
+          "node",
+          "--import",
+          "./compile-cache.js",
+          "open-picker.ts",
+          "tab"
         ]
       }
     ],
     "panes": [
       {
-        "id": "mover",
-        "title": "Move pane",
-        "placement": "overlay",
+        "id": "picker",
+        "title": "drovr",
+        "placement": "popup",
+        "width": 64,
+        "height": 28,
         "command": [
           "node",
-          "mover.js"
+          "--import",
+          "./compile-cache.js",
+          "pick-and-move.ts"
         ]
       }
     ],
     "source": {
       "kind": "github",
-      "owner": "osamahbeig",
-      "repo": "herdr-pane-mover",
-      "resolved_commit": "a9fde7a4f98f1b6c230c64e2036b387d9c8d5bc3",
-      "managed_path": "/Users/younsdus/.config/herdr/plugins/github/osamahbeig.pane-mover-d60fe0209b83",
-      "installed_unix_ms": 1784056848719
+      "owner": "AVGVSTVS96",
+      "repo": "herdr-drovr",
+      "resolved_commit": "03f38edba501f63d3f7044fc99cf3ae55438401e",
+      "managed_path": "/Users/younsdus/.config/herdr/plugins/github-installations/drovr-4bf708966830/8541-0/checkout",
+      "installed_unix_ms": 1793904702953
+    }
+  },
+  {
+    "plugin_id": "herdr-bar",
+    "name": "Bar",
+    "version": "0.14.0",
+    "min_herdr_version": "0.9.0",
+    "description": "Cmd+K command bar with agent icons, fuzzy search, and optional automatic tab titles",
+    "manifest_path": "/Users/younsdus/github/dotfiles/.config/herdr/plugins/github-installations/herdr-bar-96eebe452a9c/48694-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/Users/younsdus/github/dotfiles/.config/herdr/plugins/github-installations/herdr-bar-96eebe452a9c/48694-0/checkout",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "build": [
+      {
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "sh",
+          "scripts/install.sh"
+        ]
+      },
+      {
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "scripts/install.ps1"
+        ]
+      }
+    ],
+    "startup": [
+      {
+        "command": [
+          "bin/herdr-bar",
+          "--start-titles"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "open",
+        "title": "Open bar",
+        "description": "Fuzzy-jump to any tab, pane, or agent",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bin/herdr-bar",
+          "--open"
+        ]
+      },
+      {
+        "id": "open-windows",
+        "title": "Open bar",
+        "description": "Fuzzy-jump to any tab, pane, or agent",
+        "contexts": [
+          "global"
+        ],
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "bin/herdr-bar.exe",
+          "--open"
+        ]
+      },
+      {
+        "id": "start-titles",
+        "title": "Start tab watcher",
+        "description": "Start task title and tab status updates enabled in the plugin config",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bin/herdr-bar",
+          "--start-titles",
+          "--resume"
+        ]
+      },
+      {
+        "id": "stop-titles",
+        "title": "Stop tab watcher",
+        "description": "Stop this server's title and status watcher, restoring bare tab names",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bin/herdr-bar",
+          "--stop-titles"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "pane.agent_detected",
+        "command": [
+          "bin/herdr-bar",
+          "--start-titles"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "bar",
+        "title": "Bar",
+        "description": "Fuzzy-jump to any tab, pane, or agent",
+        "placement": "popup",
+        "width": "74%",
+        "height": "62%",
+        "command": [
+          "bin/herdr-bar"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "jeffarese",
+      "repo": "herdr-bar",
+      "resolved_commit": "d9cdd88cb734615e96b1c37ed17fc39be904f060",
+      "managed_path": "/Users/younsdus/.config/herdr/plugins/github-installations/herdr-bar-96eebe452a9c/48694-0/checkout",
+      "installed_unix_ms": 1793894547881
     }
   }
 ]

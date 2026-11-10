@@ -29,14 +29,26 @@ rows = [
 name = "dracula"
 
 [[keys.command]]
+key = "prefix+M"
+type = "plugin_action"
+command = "drovr.move-tab"
+description = "move tab to workspace"
+
+[[keys.command]]
 key = "prefix+m"
 type = "plugin_action"
-command = "osamahbeig.pane-mover.open"
-description = "move this pane"
+command = "drovr.move-pane"
+description = "move pane to tab"
+
+[[keys.command]]
+key = "cmd+p"
+type = "plugin_action"
+command = "herdr-bar.open"
+description = "command bar"
 
 [keys]
-prefix = "cmd+p"
-goto = ["prefix+g", "cmd+shift+p"]
+prefix = "cmd+shift+p"
+goto = "prefix+g"
 next_workspace = "cmd+shift+down"
 previous_workspace = "cmd+shift+up"
 next_tab = ["prefix+n", "ctrl+tab"]

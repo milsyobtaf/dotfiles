@@ -16,6 +16,9 @@ cmux
 .config/herdr/session-snapshots
 .config/herdr/release-notes.json
 .config/herdr/herdr.sock.agent
+# herdr-managed plugin checkouts and install locks, reinstalled from plugins.json
+.config/herdr/plugins/.locks/
+.config/herdr/plugins/github-installations/
 .config/configstore
 .config/htop
 .config/cli-starter-kit
