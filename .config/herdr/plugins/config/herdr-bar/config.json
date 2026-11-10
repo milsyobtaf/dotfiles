@@ -1,0 +1,16 @@
+{
+  "preview": false,
+  "mouse": true,
+  "refresh_ms": 900,
+  "workspaces": "auto",
+  "lowercase_titles": true,
+  "tab_status": false,
+  "running_time": false,
+  "actions": true,
+  "selection_background": "auto",
+  "colors": {
+    "accent": "#89b4fa",
+    "match": "#89b4fa",
+    "muted": "bright_black"
+  }
+}
