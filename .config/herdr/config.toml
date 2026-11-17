@@ -46,6 +46,14 @@ type = "plugin_action"
 command = "herdr-bar.open"
 description = "command bar"
 
+[[keys.command]]
+key = ["prefix+shift+z", "cmd+z"]
+type = "popup"
+description = "quickterm"
+command = "zsh"
+width = "50%"
+height = "50%"
+
 [keys]
 prefix = "cmd+shift+p"
 goto = "prefix+g"
