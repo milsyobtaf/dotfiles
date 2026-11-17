@@ -239,5 +239,36 @@
       "managed_path": "/Users/younsdus/.config/herdr/plugins/github-installations/herdr-bar-96eebe452a9c/48694-0/checkout",
       "installed_unix_ms": 1793894547881
     }
+  },
+  {
+    "plugin_id": "knolling",
+    "name": "knolling",
+    "version": "0.1.0",
+    "min_herdr_version": "0.9.0",
+    "description": "A shell in a repo, in a popup: what knolling's z key opens inside herdr",
+    "manifest_path": "/Users/younsdus/.local/share/knolling/herdr-plugin/herdr-plugin.toml",
+    "plugin_root": "/Users/younsdus/.local/share/knolling/herdr-plugin",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "panes": [
+      {
+        "id": "shell",
+        "title": "knolling",
+        "placement": "popup",
+        "width": "85%",
+        "height": "80%",
+        "command": [
+          "sh",
+          "-c",
+          "trap '[ -n \"$KNOLLING_DONE\" ] && : > \"$KNOLLING_DONE\"' EXIT; trap 'exit 129' HUP; trap 'exit 143' TERM; \"${SHELL:-/bin/sh}\""
+        ]
+      }
+    ],
+    "source": {
+      "kind": "local"
+    }
   }
 ]
