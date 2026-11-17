@@ -218,57 +218,7 @@ brazil-clone() {
   brazil ws create --name $1 && cd $1 && brazil ws use --package $1
 }
 
-# morning login: run each command in order, stop on the first failure, then show a random ascii snippet
-# snippets live in ~/.config/howdy/snippets.txt, separated by lines containing only %
-# `howdy -s` shows a snippet without running the login steps
-howdy() {
-  local snippet_only=0
-  case $1 in
-    '') ;;
-    -s|--snippet) snippet_only=1 ;;
-    -h|--help) print "usage: howdy [-s|--snippet]"; return 0 ;;
-    *) print -P "%F{red}howdy: unknown option $1%f" >&2; print "usage: howdy [-s|--snippet]" >&2; return 2 ;;
-  esac
-
-  local -a steps=(
-    'mwinit'
-    'ssh-add --apple-use-keychain'
-    'harmony npm'
-  )
-  local i cmd rc
-  (( snippet_only )) || for (( i = 1; i <= $#steps; i++ )); do
-    cmd=$steps[i]
-    print -P "%F{blue}→ $i/$#steps%f $cmd"
-    ${(z)cmd}
-    rc=$?
-    if (( rc != 0 )); then
-      print -P "%F{red}✗ step $i/$#steps $cmd failed (exit $rc)%f" >&2
-      return $rc
-    fi
-  done
-
-  local file="$HOME/.config/howdy/snippets.txt"
-  local -a snippets
-  local line chunk=''
-  if [[ -r $file ]]; then
-    while IFS= read -r line || [[ -n $line ]]; do
-      if [[ $line == '%' ]]; then
-        [[ -n ${chunk//[[:space:]]/} ]] && snippets+=("$chunk")
-        chunk=''
-      else
-        chunk+="$line"$'\n'
-      fi
-    done < $file
-    [[ -n ${chunk//[[:space:]]/} ]] && snippets+=("$chunk")
-  fi
-
-  (( snippet_only )) || print -P "%F{green}✓ all logged in%f"
-  if (( $#snippets )); then
-    print -rn -- "$snippets[RANDOM % $#snippets + 1]"
-  else
-    print -P "%F{yellow}no snippets found in $file%f"
-  fi
-}
+# howdy (the morning login) is in ~/code/personal-tools/howdy, installed to ~/.local/bin
 
 # end AMZN stuff
 
