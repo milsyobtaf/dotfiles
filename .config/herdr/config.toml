@@ -9,7 +9,7 @@ status_indicators = "symbols"
 enabled = false
 
 [ui.toast]
-delivery = "system"
+delivery = "off"
 
 [ui.sidebar.spaces]
 row_gap = 1
