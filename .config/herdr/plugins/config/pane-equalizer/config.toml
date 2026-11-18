@@ -1,0 +1,9 @@
+# pane-equalizer plugin configuration
+# Copy this file to config.toml inside the plugin config directory:
+#   herdr plugin config-dir pane-equalizer
+#
+# Mode controls when panes are resized.
+
+# "auto" (default) — equalize automatically on every pane creation.
+# "keybind" — never auto-resize; only when a plugin action is invoked.
+mode = "keybind"

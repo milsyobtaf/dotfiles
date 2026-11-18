@@ -54,6 +54,12 @@ command = "zsh"
 width = "50%"
 height = "50%"
 
+[[keys.command]]
+key = "prefix+e"
+type = "plugin_action"
+command = "pane-equalizer.equalize"
+description = "Equalize pane sizes"
+
 [keys]
 prefix = "cmd+shift+p"
 goto = "prefix+g"

@@ -270,5 +270,103 @@
     "source": {
       "kind": "local"
     }
+  },
+  {
+    "plugin_id": "pane-equalizer",
+    "name": "Pane Equalizer",
+    "version": "0.3.0",
+    "min_herdr_version": "0.8.0",
+    "description": "Equalize pane sizes on spawn or on demand",
+    "manifest_path": "/Users/younsdus/github/dotfiles/.config/herdr/plugins/github-installations/pane-equalizer-6688c13993d7/29764-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/Users/younsdus/github/dotfiles/.config/herdr/plugins/github-installations/pane-equalizer-6688c13993d7/29764-0/checkout",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "actions": [
+      {
+        "id": "equalize",
+        "title": "Equalize pane widths and heights",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "node",
+          "equalize.mjs",
+          "--axis",
+          "both"
+        ]
+      },
+      {
+        "id": "equalize-height",
+        "title": "Equalize pane heights",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "node",
+          "equalize.mjs",
+          "--axis",
+          "height"
+        ]
+      },
+      {
+        "id": "equalize-width",
+        "title": "Equalize pane widths",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "node",
+          "equalize.mjs",
+          "--axis",
+          "width"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "pane.closed",
+        "command": [
+          "node",
+          "equalize.mjs",
+          "--event"
+        ]
+      },
+      {
+        "on": "pane.created",
+        "command": [
+          "node",
+          "equalize.mjs",
+          "--event"
+        ]
+      },
+      {
+        "on": "pane.exited",
+        "command": [
+          "node",
+          "equalize.mjs",
+          "--event"
+        ]
+      },
+      {
+        "on": "pane.moved",
+        "command": [
+          "node",
+          "equalize.mjs",
+          "--event"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "shanefully-done",
+      "repo": "herdr-pane-equalizer",
+      "resolved_commit": "1f1c682d5dcef9d1cefcd8513de2cc0f365e6563",
+      "managed_path": "/Users/younsdus/.config/herdr/plugins/github-installations/pane-equalizer-6688c13993d7/29764-0/checkout",
+      "installed_unix_ms": 1795029728192
+    }
   }
 ]
