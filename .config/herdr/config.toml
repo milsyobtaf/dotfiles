@@ -3,8 +3,8 @@ onboarding = false
 [ui]
 show_agent_labels_on_pane_borders = false
 pane_borders = "always"
-
 status_indicators = "symbols"
+
 [ui.sound]
 enabled = false
 
