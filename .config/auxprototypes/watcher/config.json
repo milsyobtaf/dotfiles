@@ -1,0 +1,10 @@
+{
+  "schedule": {
+    "every": "15m"
+  },
+  "paused": false,
+  "include": [],
+  "exclude": [],
+  "notifyReplies": true,
+  "preview": true
+}
