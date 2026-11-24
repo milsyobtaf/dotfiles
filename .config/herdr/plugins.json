@@ -272,6 +272,44 @@
     }
   },
   {
+    "plugin_id": "open-links",
+    "name": "Open links",
+    "version": "0.1.0",
+    "min_herdr_version": "0.9.5",
+    "description": "Ctrl+click opens x-callback-urls (bear://, things:///, …) and file:// links with macOS open; herdr opens only http(s) on its own",
+    "manifest_path": "/Users/younsdus/code/personal-tools/herdr-open-links/herdr-plugin.toml",
+    "plugin_root": "/Users/younsdus/code/personal-tools/herdr-open-links",
+    "enabled": true,
+    "platforms": [
+      "macos"
+    ],
+    "actions": [
+      {
+        "id": "open",
+        "title": "Open the clicked link",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "sh",
+          "-c",
+          "exec /usr/bin/open \"$HERDR_PLUGIN_CLICKED_URL\""
+        ]
+      }
+    ],
+    "link_handlers": [
+      {
+        "id": "app-links",
+        "title": "Open in its app",
+        "pattern": "^(bear|things|obsidian|raycast|shortcuts|x-devonthink-item|file)://",
+        "action": "open"
+      }
+    ],
+    "source": {
+      "kind": "local"
+    }
+  },
+  {
     "plugin_id": "pane-equalizer",
     "name": "Pane Equalizer",
     "version": "0.3.0",
